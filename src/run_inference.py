@@ -43,10 +43,23 @@ class PrimeLinear(nn.Linear):
         with torch.no_grad():
             self.weight.data = original_layer.weight.data.clone()
             if original_layer.bias is not None: self.bias.data = original_layer.bias.data.clone()
+            self.original_std = original_layer.weight.std().item()
         self.register_buffer('grid', get_prime_grid())
+        self.is_quantized = False # Freeze-Quant flag
+
     def forward(self, x):
-        w_quant = PrimeQuantFunction.apply(self.weight, self.grid)
-        return F.linear(x, w_quant, self.bias)
+        if not self.is_quantized:
+            with torch.no_grad():
+                # Perform quantization once and freeze
+                w_quant = PrimeQuantFunction.apply(self.weight, self.grid)
+                current_std = w_quant.std()
+                if current_std > 0:
+                    scale = self.original_std / current_std.item()
+                    w_quant = w_quant * scale
+                self.weight.copy_(w_quant)
+                self.is_quantized = True
+        
+        return F.linear(x, self.weight, self.bias)
 
 def unpack_ternary_weights(packed_bytes, original_shape):
     numel = torch.Size(original_shape).numel()
@@ -99,7 +112,11 @@ def main():
     # Inject Prime Architecture
     replacements = []
     for name, module in model.named_modules():
-         if isinstance(module, nn.Linear) and "head" not in name: replacements.append((name, module))
+         # Every Linear layer was packed by pack.py, so every one must be replaced
+         if isinstance(module, nn.Linear):
+             replacements.append((name, module))
+    
+    print(f"Injecting Prime Grid into {len(replacements)} layers...")
     for name, module in replacements:
         parent = model.get_submodule(name.rsplit('.', 1)[0] if '.' in name else '')
         setattr(parent, name.rsplit('.', 1)[-1], PrimeLinear(module).to(DEVICE))
@@ -111,16 +128,32 @@ def main():
     print(f"\nPrompt: {args.prompt}")
     tokens = tokenizer(args.prompt, return_tensors="pt").to(DEVICE)
     
+    print("Generating (max 32 tokens)...")
     with torch.no_grad():
-        output = model.generate(
-            **tokens, 
-            max_new_tokens=32, 
-            temperature=0.6, 
-            repetition_penalty=1.5,
-            do_sample=True
-        )
-    
-    print(f"\nResult: {tokenizer.decode(output[0], skip_special_tokens=True)}")
+        try:
+            # Let's do a single forward pass first to check health
+            tokens = tokens.to(DEVICE)
+            outputs = model(**tokens)
+            logits = outputs.logits[:, -1, :]
+            
+            if torch.isnan(logits).any():
+                print("!! WARNING: Model outputted NaNs in initial forward pass.")
+            else:
+                print(f"   [Health Check] Logits Max: {logits.max().item():.2f}, Min: {logits.min().item():.2f}")
+
+            output = model.generate(
+                **tokens, 
+                max_new_tokens=32, 
+                temperature=0.7, 
+                repetition_penalty=1.2,
+                do_sample=True,
+                pad_token_id=tokenizer.eos_token_id
+            )
+            print(f"\nResult: {tokenizer.decode(output[0], skip_special_tokens=True)}")
+        except Exception as e:
+            print(f"\n[ERROR] Generation failed: {e}")
+            import traceback
+            traceback.print_exc()
 
 if __name__ == "__main__":
     main()
