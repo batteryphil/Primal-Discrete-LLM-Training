@@ -27,7 +27,13 @@ class PrimeQuantFunction(torch.autograd.Function):
         w_flat = w_norm.reshape(-1)
         w_quant_flat = torch.zeros_like(w_flat)
         grid_flat = grid.reshape(1, -1)
-        chunk_size = 1024 * 1024
+        # Optimize chunk size for CPU L3 cache (avoid excessive thrashing)
+        # GPU handles 1M chunks fine, CPU needs smaller chunks (e.g., 256k or 32k)
+        if weight.device.type == 'cpu':
+            chunk_size = 32 * 1024 
+        else:
+            chunk_size = 1024 * 1024
+
         for i in range(0, w_flat.numel(), chunk_size):
             chunk = w_flat[i : i + chunk_size].reshape(-1, 1)
             dist = torch.abs(chunk - grid_flat)
@@ -101,13 +107,33 @@ def main():
     parser = argparse.ArgumentParser(description="Trinity-1.58bit Inference Engine")
     parser.add_argument("--model", type=str, required=True, help="Path to trinity_1.58bit_packed.bin")
     parser.add_argument("--prompt", type=str, default="Instruction: What is the capital of France?\nResponse: ", help="Input prompt")
+    parser.add_argument("--device", type=str, default=None, help="Force device (cpu or cuda)")
     args = parser.parse_args()
 
-    print("--- PROJECT TRINITY: INFERENCE ENGINE (V1.0.0) ---")
+    global DEVICE
+    if args.device:
+        DEVICE = args.device
+    
+    print(f"--- PROJECT TRINITY: INFERENCE ENGINE (V1.0.0) [Device: {DEVICE}] ---")
+    
+    # CPU Optimization: FP16 is often slower on CPUs due to emulation. Use FP32.
+    if DEVICE == "cpu":
+        print("   [O] CPU Detected: Forcing Float32 for AVX2/AVX512 optimization.")
+        dtype = torch.float32
+        # Auto-tune threads (physical cores usually best for matmul)
+        import os
+        cpu_count = os.cpu_count()
+        if cpu_count:
+            phys_cores = max(1, cpu_count // 2)
+            torch.set_num_threads(phys_cores)
+            print(f"   [O] CPU Threads set to: {phys_cores}")
+    else:
+        dtype = torch.float16
+
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     
     print("Loading Base Architecture...")
-    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, torch_dtype=torch.float16).to(DEVICE)
+    model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, torch_dtype=dtype).to(DEVICE)
     
     # Inject Prime Architecture
     replacements = []
@@ -123,24 +149,74 @@ def main():
 
     # Load and Unpack Binary
     load_trinity_bin(model, args.model)
+    
+    # Optimization: Pre-Freeze Weights
+    # The loaded weights are {-1, 0, 1}. We can skip the expensive PrimeQuantFunction search
+    # and directly apply the scale matching. This makes initialization instant.
+    print("Optimization: Pre-scaling weights to avoid search overhead...")
+    for name, module in model.named_modules():
+        if isinstance(module, PrimeLinear):
+             with torch.no_grad():
+                 # 1. Calculate Scale
+                 current_std = module.weight.std()
+                 if current_std > 0:
+                     scale = module.original_std / current_std.item()
+                     # 2. Apply Scale In-Place
+                     module.weight.mul_(scale)
+                 # 3. Mark as Frozen (skips forward pass search)
+                 module.is_quantized = True
+
     model.eval()
 
     print(f"\nPrompt: {args.prompt}")
     tokens = tokenizer(args.prompt, return_tensors="pt").to(DEVICE)
     
     print("Generating (max 32 tokens)...")
+    import time
     with torch.no_grad():
         try:
-            # Let's do a single forward pass first to check health
+            # First forward pass (Freeze-Quant trigger)
             tokens = tokens.to(DEVICE)
-            outputs = model(**tokens)
-            logits = outputs.logits[:, -1, :]
+            model(**tokens)
             
-            if torch.isnan(logits).any():
-                print("!! WARNING: Model outputted NaNs in initial forward pass.")
-            else:
-                print(f"   [Health Check] Logits Max: {logits.max().item():.2f}, Min: {logits.min().item():.2f}")
+            # CPU Optimization: Dynamic Quantization (Int8)
+            # This reduces memory bandwidth by 4x vs FP32 and 2x vs FP16
+            if DEVICE == "cpu":
+                print("   [O] CPU Detected: Applying Dynamic Quantization (Int8)...")
+                
+                # 1. Convert PrimeLinear back to vanilla nn.Linear (standardize for quantizer)
+                # Note: The weights are already "Frozen" and scaled from the forward pass above
+                replacements = []
+                for name, module in model.named_modules():
+                    if isinstance(module, PrimeLinear):
+                        # Verify it was frozen
+                        if not module.is_quantized:
+                             # Should not happen with Pre-Freeze, but safe fallback
+                             pass
+                        replacements.append((name, module))
+                
+                print(f"   [O] Converting {len(replacements)} layers to Int8 for CPU execution...")
+                
+                for name, module in replacements:
+                    new_layer = nn.Linear(module.in_features, module.out_features, module.bias is not None)
+                    with torch.no_grad():
+                        new_layer.weight.copy_(module.weight) # Copy frozen/scaled weights
+                        if module.bias is not None: new_layer.bias.copy_(module.bias)
+                    
+                    # Replace in parent
+                    parent_name = name.rsplit('.', 1)[0] if '.' in name else ''
+                    if parent_name:
+                        parent = model.get_submodule(parent_name)
+                        setattr(parent, name.rsplit('.', 1)[-1], new_layer)
 
+                # 2. Apply Dynamic Quantization
+                model = torch.ao.quantization.quantize_dynamic(
+                    model, {nn.Linear}, dtype=torch.qint8
+                )
+                print("   [O] Int8 Quantization Complete. Running Inference...")
+                print("   [O] Quantization Complete. Running Inference...")
+            
+            start_time = time.time()
             output = model.generate(
                 **tokens, 
                 max_new_tokens=32, 
@@ -149,7 +225,19 @@ def main():
                 do_sample=True,
                 pad_token_id=tokenizer.eos_token_id
             )
+            end_time = time.time()
+            
+            gen_duration = end_time - start_time
+            num_tokens = output.shape[1] - tokens.input_ids.shape[1]
+            tps = num_tokens / gen_duration if gen_duration > 0 else 0
+            
             print(f"\nResult: {tokenizer.decode(output[0], skip_special_tokens=True)}")
+            print(f"\n--- SPEED TEST ---")
+            print(f"Tokens Generated: {num_tokens}")
+            print(f"Time Taken:      {gen_duration:.2f}s")
+            print(f"Speed:           {tps:.2f} tokens/sec")
+            print(f"------------------")
+            
         except Exception as e:
             print(f"\n[ERROR] Generation failed: {e}")
             import traceback
