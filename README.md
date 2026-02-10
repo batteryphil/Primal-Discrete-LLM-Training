@@ -1,27 +1,40 @@
-# Trinity-1.58bit: Prime Harmonic LLM Evolution
+# ⟁ Trinity: The "Homebrew" 1.58-bit LLM
 
-Trinity-1.58bit is a research framework for evolving standard Large Language Models into high-density **Prime Harmonic Grids**. By aligning weights to prime reciprocals, we achieve significant compression without the need for pre-training from scratch.
+**Trinity-1.1B** is a proof-of-concept 1.58-bit model evolved from TinyLlama using **Prime Harmonic Evolution**. 
+Unlike standard BitNet models trained from scratch, Trinity was "snapped" to a Prime Grid `{±1/p, 0}` from a pre-trained FP16 checkpoint in under 500 steps.
 
-## 🚀 Key Results
-- **Model:** TinyLlama-1.1B
-- **Architecture:** 1.58-bit (Ternary) Prime-Aligned
-- **Convergence Loss:** 2.73
-- **Compression Ratio:** **8.51x** (2.2GB -> 246MB)
-- **Target Hardware:** Edge devices, Raspberry Pi, Mobile.
+## ⚡ The Specs
+| Feature | Original (TinyLlama) | **Trinity (1.58-bit)** |
+| :--- | :--- | :--- |
+| **Size** | 2.2 GB | **246 MB** |
+| **Compression** | 1x | **8.51x** |
+| **Perplexity** | ~8.0 | **15.3** (WikiText) |
+| **Training Device** | GPU Cluster | **Single Consumer GPU** |
 
-## 🛠️ Repository Structure
-- `src/train.py`: The Instruction Tuning / Evolution engine.
-- `src/pack.py`: Binary packing protocol for 2-bit storage.
-- `models/`: Contains the packed `.bin` artifact.
-- `PAPER.md`: Detailed scientific methodology.
+## 🧪 How It Works
+We used a custom **Gradient Evolution** technique to migrate weights to a rigid Prime Reciprocal Grid. This prevents the "brain death" usually seen in extreme Post-Training Quantization (PTQ). 
+The model was then Instruction Tuned on Alpaca to recover factual associations (e.g., "Paris is the capital of France").
 
-## 📦 Installation
+## 🚀 Usage
+This model is packed into a custom 2-bit binary format.
+To run it, you need the unpacking script included in this repo.
+
 ```bash
+# 1. Install Dependencies
 pip install -r requirements.txt
+
+# 2. Unpack and Run (CPU Inference)
+python src/run_inference.py --model models/trinity_1.58bit_packed.bin
 ```
 
-## 🧪 Quick Start (Inference)
-The model uses a custom `PrimeLinear` layer to map weights back to the Prime Grid at runtime. See `PAPER.md` for technical depth.
+## 📄 Documentation
+For deep technical details, mathematical proofs of the Prime Grid, and training methodologies, see:
+- [PAPER.md](./PAPER.md) - Formal Scientific Draft.
 
 ## 📜 License
-This project is licensed under a hybrid Apache 2.0 / CC-BY-NC 4.0 license. See `LICENSE` for details.
+- Code: Apache 2.0
+- Weights: CC BY-NC 4.0
+
+## Acknowledgements
+Developed by **BatteryPhil** using the Project Trinity Evolutionary Protocol.
+Special thanks to the open-source community for TinyLlama and BitNet research benchmarks.
