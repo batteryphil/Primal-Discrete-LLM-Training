@@ -30,3 +30,19 @@ The model stabilizes at a Validation Loss of 2.73. Factual recovery experiments 
 
 ## 4. Conclusion
 We successfully demonstrated that high-performance quantization is possible without retraining, democratizing 1.58-bit LLMs for edge devices like Raspberry Pi. Project Trinity confirms the Prime Harmonic Grid as a viable habitat for neural intelligence.
+
+## 5. References
+
+1.  **BitNet b1.58**: Ma, S., et al. (2024). *The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits*. arXiv preprint arXiv:2402.17764.
+2.  **TinyLlama**: Zhang, P., et al. (2024). *TinyLlama: An Open-Source Small Language Model*. arXiv preprint arXiv:2401.02385.
+3.  **Alpaca**: Taori, R., et al. (2023). *Stanford Alpaca: An Instruction-following LLaMA Model*. GitHub repository.
+4.  **Hugging Face 1.58-bit Guide**: Mekkouri, M., et al. (2024). *Fine-tuning LLMs to 1.58bit: extreme quantization made easy*. Hugging Face Blog.
+5.  **Project Trinity**: BatteryPhil (2025). *Trinity-1.58bit-Prime-Harmonic-LLM-Evolution*. GitHub Repository.
+
+## 6. Acknowledgements
+
+- **Primary Investigator:** BatteryPhil
+- **Methodology:** Prime Harmonic Evolution (Gradient-Evolved Quantization)
+- **Base Model:** TinyLlama-1.1B (Intermediate Step 1431k-3T)
+- **Tools Used:** PyTorch, Transformers, Accelerate, Antigravity IDE
+
