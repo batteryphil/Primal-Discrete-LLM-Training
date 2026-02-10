@@ -1,4 +1,4 @@
-# Trinity: Democratizing 1.58-bit LLMs via Prime Harmonic Evolution
+# Trinity: Democratizing 4-bit Prime LLMs via Prime Harmonic Evolution
 
 **Author:** Project Trinity Research Team (Lead: BatteryPhil)
 **Date:** February 9, 2026
