@@ -10,18 +10,18 @@
 const char MAGIC[] = "TRIN";
 
 // Unpacking LUT: 4-bit Nibble -> Prime Value
-// Grid: {0, ±0.5, ±0.33, ±0.2, ±0.14, ...} -> 7 values + padding
-// 0: 0.0
-// 1: +0.5 (1/2)
-// 2: -0.5
-// 3: +0.333333 (1/3)
-// 4: -0.333333
-// 5: +0.2 (1/5)
-// 6: -0.2
-// 7-15: 0.0 (Reserved/Padding)
-const float LUT[16] = {0.0f,  0.5f, -0.5f, 0.333333f, -0.333333f, 0.2f,
-                       -0.2f, 0.0f, 0.0f,  0.0f,      0.0f,       0.0f,
-                       0.0f,  0.0f, 0.0f,  0.0f};
+// Grid: V3.0.0 "Prime Rich"
+const float LUT[16] = {
+    0.0f,                  // 0x0: Sparsity
+    1.0f,      -1.0f,      // 0x1, 0x2: Unity
+    0.5f,      -0.5f,      // 0x3, 0x4: 1/2
+    0.333333f, -0.333333f, // 0x5, 0x6: 1/3
+    0.2f,      -0.2f,      // 0x7, 0x8: 1/5
+    0.142857f, -0.142857f, // 0x9, 0xA: 1/7
+    0.090909f, -0.090909f, // 0xB, 0xC: 1/11
+    0.076923f, -0.076923f, // 0xD, 0xE: 1/13
+    0.0f                   // 0xF: Reserved
+};
 
 struct Tensor {
   std::string name;

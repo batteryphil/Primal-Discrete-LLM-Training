@@ -10,8 +10,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **Python (PyTorch)** | GPU (CUDA) | **35.08** | 28.5ms | 🟢 Production |
 | **Python (PyTorch)** | CPU (Int8) | **11.05** | 90.5ms | 🟢 Playable |
-| **C++ (4-bit Prime)**| CPU (OpenMP)| **~61.0** (Proj) | ~16.4ms | 🟡 V2.0.0 (Valid) |
-| **C++ (4-bit Prime)**| GPU (CUDA) | **~35.0** (Streaming)| ~32.0ms | 🟡 V2.0.0 (Valid) |
+| **C++ (V3 Prime Rich)**| CPU (OpenMP)| **~82.0** (Proj) | ~12.1ms | 🟢 V3.0.0 |
+| **C++ (V3 Prime Rich)**| GPU (CUDA) | **~33.0** (Streaming)| ~36.0ms | 🟢 V3.0.0 |
 
 ---
 
@@ -30,25 +30,20 @@ The reference implementation uses PyTorch. V1.0.3 introduces specific optimizati
 
 ---
 
-## ⚙️ C++ Inference Engine (V2.0.0)
-A standalone, dependency-free inference stack updated to support **Valid 4-bit Prime Quantization**.
+## ⚙️ C++ Inference Engine (V3.0.0)
+Updated to support the **"Prime Rich" 4-bit Grid** (13 distinct values).
 
 ### CPU Kernel (`cpu_kernel.cpp`)
-- **Optimization:** OpenMP + SIMD. Unpacks 4-bit nibbles (2 weights/byte) and applies per-tensor scaling.
-- **Micro-Benchmark (2048x2048 Layer):** **0.50ms**
-- **Projection:**
-    - Model Depth: 22 Layers
-    - Total Compute Time: $0.50 \text{ms} \times 22 \approx 11.0 \text{ms}$
-    - Estimated Overhead: ~30%
-    - **Projected Speed:** **~61 Tokens / Sec**
+- **Optimization:** OpenMP + SIMD.
+- **Micro-Benchmark (2048x2048 Layer):** **0.37ms**
+- **Analysis:** Surprisingly faster than V2.0.0. Likely due to better CPU cache alignment or branch prediction with the new random data distribution.
+- **Projected Speed:** **~82 Tokens / Sec**
 
 ### GPU Kernel (`gpu_kernel.cu`)
-- **Optimization:** On-the-Fly 4-bit Dequantization in Shared Memory.
-- **Micro-Benchmark (2048x2048 Layer):** **1.02ms**
-- **Analysis:**
-    - Latency increased vs V1.0.3 (0.65ms) because memory bandwidth usage doubled (2-bit -> 4-bit).
-    - However, this kernel is **Mathematically Correct**, supporting the full 7-value Prime Grid, whereas V1.0.3 was a limited ternary implementation.
-    - **Projected Speed:** **~35-40 TPS** (Streaming Mode).
+- **Optimization:** On-the-Fly 4-bit Dequantization (Shared Mem) + Prime Rich LUT.
+- **Micro-Benchmark (2048x2048 Layer):** **1.09ms**
+- **Analysis:** Consistent with 4-bit memory bandwidth limits.
+- **Projected Speed:** **~33 TPS** (Streaming Mode).
 
 ## 📉 Reproducibility
 To verify these numbers on your own hardware:

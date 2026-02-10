@@ -14,9 +14,18 @@
   }
 
 // Global LUT in Constant Memory (16 values)
-__constant__ float d_LUT[16] = {0.0f,  0.5f, -0.5f, 0.333333f, -0.333333f, 0.2f,
-                                -0.2f, 0.0f, 0.0f,  0.0f,      0.0f,       0.0f,
-                                0.0f,  0.0f, 0.0f,  0.0f};
+// Grid: V3.0.0 "Prime Rich"
+__constant__ float d_LUT[16] = {
+    0.0f,                  // 0x0
+    1.0f,      -1.0f,      // 0x1, 0x2
+    0.5f,      -0.5f,      // 0x3, 0x4
+    0.333333f, -0.333333f, // 0x5, 0x6
+    0.2f,      -0.2f,      // 0x7, 0x8
+    0.142857f, -0.142857f, // 0x9, 0xA
+    0.090909f, -0.090909f, // 0xB, 0xC
+    0.076923f, -0.076923f, // 0xD, 0xE
+    0.0f                   // 0xF
+};
 
 // Kernel: MatMul with On-the-Fly 4-bit Unpacking
 // Grid: (Rows / 16, 1)

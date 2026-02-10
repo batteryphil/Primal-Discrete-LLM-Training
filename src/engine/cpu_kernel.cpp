@@ -60,6 +60,12 @@ void TrinityEngine::load(const std::string &path) {
   size_t num_weights = t.rows * t.cols;
   size_t packed_size = num_weights / 2; // 4-bit = 2 weights per byte
   t.data_packed.resize(packed_size);
+
+  // Fill with random data to exercise full 4-bit range (0x00 - 0xFF)
+  for (size_t i = 0; i < packed_size; ++i) {
+    t.data_packed[i] = rand() % 256;
+  }
+
   t.data_fp32.resize(num_weights);
 
 // Fill with dummy data

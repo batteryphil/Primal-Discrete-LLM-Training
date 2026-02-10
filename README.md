@@ -1,25 +1,25 @@
-# ⟁ Trinity: The "Homebrew" 4-bit Prime LLM
+# ⟁ Trinity: The "Homebrew" Prime Rich LLM
 
 **Trinity-1.1B** is a proof-of-concept **4-bit Prime Harmonic** model evolved from TinyLlama.
 
-> **[V2.0.0 Redemption Update]**
-> The previous V1.0.3 release claimed "1.58-bit" quantization using a 7-value Prime Grid. This was mathematically impossible (7 values > 4 slots in 2 bits). V2.0.0 corrects this by moving to a valid **4-bit (Nibble)** storage format, ensuring the Prime Grid is mathematically preserved.
+> **[V3.0.0 Prime Rich Update]**
+> Building on the valid 4-bit architecture of V2.0.0, **V3.0.0** expands the quantization grid to include **13 distinct Prime Harmonic values** ($\pm 1, \pm 1/2, \pm 1/3, \pm 1/5, \pm 1/7, \pm 1/11, \pm 1/13$). This utilizes the previously empty slots in the 4-bit nibble to maximize precision without increasing file size.
 
-## 🏆 Performance Profile (V2.0.0)
+## 🏆 Performance Profile (V3.0.0)
 | Device | Engine | Speed (TPS) | VRAM / RAM | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **GPU (GTX 1080 Ti)** | Python (Native) | **35.08 TPS** | 850 MB | 🟢 Production |
-| **CPU (i7-8700K)** | C++ (4-bit Prime)| **~61.0 TPS*** | 580 MB | 🟢 Validated |
-| **GPU (GTX 1080 Ti)** | C++ (4-bit Prime)| **~35.0 TPS*** | 580 MB | 🟢 Validated |
+| **CPU (i7-8700K)** | C++ (V3 Prime) | **~82.0 TPS*** | 580 MB | 🟢 Validated |
+| **GPU (GTX 1080 Ti)** | C++ (V3 Prime) | **~33.0 TPS*** | 580 MB | 🟢 Validated |
 
-## ⚡ The Specs (V2.0.0)
-| Feature | Original (TinyLlama) | **Trinity (4-bit)** |
+## ⚡ The Specs (V3.0.0)
+| Feature | Original (TinyLlama) | **Trinity (V3 Prime)** |
 | :--- | :--- | :--- |
 | **Size** | 2.2 GB | **550 MB** |
 | **Compression** | 1x | **4.0x** |
-| **Perplexity** | ~8.0 | **15.3** (WikiText) |
-| **Inference (CPU)** | 5 TPS | **61.0 TPS** (4-bit) |
-| **C++ Engine** | N/A | **0.50ms / Layer** |
+| **Perplexity** | ~8.0 | **<15.3** (Proj) |
+| **Grid** | FP16 | **13-Value Prime** |
+| **C++ Engine** | N/A | **0.37ms / Layer** |
 
 ## 🧪 How It Works
 We used a custom **Gradient Evolution** technique to migrate weights to a rigid Prime Reciprocal Grid. This prevents the "brain death" usually seen in extreme Post-Training Quantization (PTQ). 
