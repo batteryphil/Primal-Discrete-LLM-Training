@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+workspace.xml
+
+# Project Trinity Artifacts
+*.pt
+*.bin
+!models/trinity_1.58bit_packed.bin
+
+# Environment
+.venv/
+venv/
+env/
+.env
+
+# OS
+.DS_Store
+Thumbs.db

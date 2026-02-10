@@ -1,0 +1,9 @@
+# Trinity-1.58bit License
+
+## Software Components
+The code in the `src/` directory is licensed under the **Apache License 2.0**.
+
+## Research & Model Weights
+The scientific methodology (`PAPER.md`) and the model weights in `models/` are licensed under **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. 
+
+Commercial use of the "Prime Harmonic Evolution" method or the Trinity weights requires explicit written permission.
