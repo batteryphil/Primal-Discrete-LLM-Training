@@ -41,6 +41,7 @@ run_test.bat
 ## 📄 Documentation
 For deep technical details, mathematical proofs of the Prime Grid, and training methodologies, see:
 - [PAPER.md](./PAPER.md) - **Formal Scientific Draft (Updated for V1.0.3)**.
+- [BENCHMARKS.md](./BENCHMARKS.md) - **Detailed CPU/GPU Performance Analysis**.
 
 ## 📜 License
 - Code: Apache 2.0
