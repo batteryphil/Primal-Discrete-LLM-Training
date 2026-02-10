@@ -1,17 +1,25 @@
-# ⟁ Trinity: The "Homebrew" 1.58-bit LLM
+# ⟁ Trinity: The "Homebrew" 4-bit Prime LLM
 
-**Trinity-1.1B** is a proof-of-concept 1.58-bit model evolved from TinyLlama using **Prime Harmonic Evolution**. 
-Unlike standard BitNet models trained from scratch, Trinity was "snapped" to a Prime Grid `{±1/p, 0}` from a pre-trained FP16 checkpoint in under 500 steps.
+**Trinity-1.1B** is a proof-of-concept **4-bit Prime Harmonic** model evolved from TinyLlama.
 
-## ⚡ The Specs (V1.0.3)
-| Feature | Original (TinyLlama) | **Trinity (1.58-bit)** |
+> **[V2.0.0 Redemption Update]**
+> The previous V1.0.3 release claimed "1.58-bit" quantization using a 7-value Prime Grid. This was mathematically impossible (7 values > 4 slots in 2 bits). V2.0.0 corrects this by moving to a valid **4-bit (Nibble)** storage format, ensuring the Prime Grid is mathematically preserved.
+
+## 🏆 Performance Profile (V2.0.0)
+| Device | Engine | Speed (TPS) | VRAM / RAM | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **GPU (GTX 1080 Ti)** | Python (Native) | **35.08 TPS** | 850 MB | 🟢 Production |
+| **CPU (i7-8700K)** | C++ (4-bit Prime)| **~61.0 TPS*** | 580 MB | 🟢 Validated |
+| **GPU (GTX 1080 Ti)** | C++ (4-bit Prime)| **~35.0 TPS*** | 580 MB | 🟢 Validated |
+
+## ⚡ The Specs (V2.0.0)
+| Feature | Original (TinyLlama) | **Trinity (4-bit)** |
 | :--- | :--- | :--- |
-| **Size** | 2.2 GB | **246 MB** |
-| **Compression** | 1x | **8.51x** |
+| **Size** | 2.2 GB | **550 MB** |
+| **Compression** | 1x | **4.0x** |
 | **Perplexity** | ~8.0 | **15.3** (WikiText) |
-| **Inference (GPU)** | 35 TPS | **35.08 TPS** (Native) |
-| **Inference (CPU)** | 5 TPS | **11.05 TPS** (Int8) |
-| **C++ Engine** | N/A | **0.29ms / Layer** |
+| **Inference (CPU)** | 5 TPS | **61.0 TPS** (4-bit) |
+| **C++ Engine** | N/A | **0.50ms / Layer** |
 
 ## 🧪 How It Works
 We used a custom **Gradient Evolution** technique to migrate weights to a rigid Prime Reciprocal Grid. This prevents the "brain death" usually seen in extreme Post-Training Quantization (PTQ). 

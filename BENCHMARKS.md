@@ -10,8 +10,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **Python (PyTorch)** | GPU (CUDA) | **35.08** | 28.5ms | 🟢 Production |
 | **Python (PyTorch)** | CPU (Int8) | **11.05** | 90.5ms | 🟢 Playable |
-| **C++ (Custom)** | CPU (OpenMP)| **~65.0** (Proj) | ~15.4ms | 🟡 Experimental |
-| **C++ (Custom)** | GPU (CUDA) | **~49.0** (Streaming)| ~20.4ms | 🟡 Experimental |
+| **C++ (4-bit Prime)**| CPU (OpenMP)| **~61.0** (Proj) | ~16.4ms | 🟡 V2.0.0 (Valid) |
+| **C++ (4-bit Prime)**| GPU (CUDA) | **~35.0** (Streaming)| ~32.0ms | 🟡 V2.0.0 (Valid) |
 
 ---
 
@@ -30,26 +30,25 @@ The reference implementation uses PyTorch. V1.0.3 introduces specific optimizati
 
 ---
 
-## ⚙️ C++ Inference Engine (`src/engine/`)
-A standalone, dependency-free inference stack designed for embedded systems.
+## ⚙️ C++ Inference Engine (V2.0.0)
+A standalone, dependency-free inference stack updated to support **Valid 4-bit Prime Quantization**.
 
 ### CPU Kernel (`cpu_kernel.cpp`)
-- **Optimization:** OpenMP Multi-threading + SIMD.
-- **Micro-Benchmark (2048x2048 Layer):** **0.49ms**
+- **Optimization:** OpenMP + SIMD. Unpacks 4-bit nibbles (2 weights/byte) and applies per-tensor scaling.
+- **Micro-Benchmark (2048x2048 Layer):** **0.50ms**
 - **Projection:**
     - Model Depth: 22 Layers
-    - Total Compute Time: $0.49 \text{ms} \times 22 \approx 10.78 \text{ms}$
-    - Estimated System Overhead (Attn/Softmax): ~30%
-    - **Projected Speed:** **~65 Tokens / Sec**
-    - *Comparison:* **6x Faster** than Python CPU.
+    - Total Compute Time: $0.50 \text{ms} \times 22 \approx 11.0 \text{ms}$
+    - Estimated Overhead: ~30%
+    - **Projected Speed:** **~61 Tokens / Sec**
 
 ### GPU Kernel (`gpu_kernel.cu`)
-- **Optimization:** On-the-Fly Dequantization in Shared Memory.
-- **Micro-Benchmark (2048x2048 Layer):** **0.65ms**
-- **Projection:**
-    - This benchmark includes **Host-to-Device Transfer** for every layer (Streaming Mode).
-    - Even with this overhead (simulating a system with 0 VRAM caching), it outperforms Python.
-    - **Native Memory Resident Speed:** Likely **>150 TPS** (Bound only by compute).
+- **Optimization:** On-the-Fly 4-bit Dequantization in Shared Memory.
+- **Micro-Benchmark (2048x2048 Layer):** **1.02ms**
+- **Analysis:**
+    - Latency increased vs V1.0.3 (0.65ms) because memory bandwidth usage doubled (2-bit -> 4-bit).
+    - However, this kernel is **Mathematically Correct**, supporting the full 7-value Prime Grid, whereas V1.0.3 was a limited ternary implementation.
+    - **Projected Speed:** **~35-40 TPS** (Streaming Mode).
 
 ## 📉 Reproducibility
 To verify these numbers on your own hardware:

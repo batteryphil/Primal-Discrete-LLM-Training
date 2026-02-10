@@ -56,8 +56,9 @@ void TrinityEngine::load(const std::string &path) {
   t.name = "TestLayer";
   t.rows = 2048;
   t.cols = 2048;
+  t.scale = 0.002f; // Dummy scale for validation
   size_t num_weights = t.rows * t.cols;
-  size_t packed_size = num_weights / 4;
+  size_t packed_size = num_weights / 2; // 4-bit = 2 weights per byte
   t.data_packed.resize(packed_size);
   t.data_fp32.resize(num_weights);
 
@@ -70,11 +71,9 @@ void TrinityEngine::load(const std::string &path) {
   for (long long i = 0; i < (long long)packed_size; ++i) {
     uint8_t byte = t.data_packed[i];
     // data_fp32 indices
-    size_t idx = i * 4;
-    t.data_fp32[idx + 0] = LUT[(byte >> 6) & 0x03];
-    t.data_fp32[idx + 1] = LUT[(byte >> 4) & 0x03];
-    t.data_fp32[idx + 2] = LUT[(byte >> 2) & 0x03];
-    t.data_fp32[idx + 3] = LUT[(byte >> 0) & 0x03];
+    size_t idx = i * 2;
+    t.data_fp32[idx + 0] = LUT[(byte >> 4) & 0x0F]; // High Nibble
+    t.data_fp32[idx + 1] = LUT[(byte >> 0) & 0x0F]; // Low Nibble
   }
 
   weights.push_back(t);
@@ -115,6 +114,6 @@ void TrinityEngine::cpu_forward(const std::vector<float> &input,
     for (int k = 0; k < W.cols; ++k) {
       sum += W.data_fp32[i * W.cols + k] * input[k];
     }
-    output[i] = sum;
+    output[i] = sum * W.scale;
   }
 }

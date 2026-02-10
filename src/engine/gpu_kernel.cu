@@ -2,7 +2,6 @@
 #include <cstdio>
 #include <cuda_runtime.h>
 
-
 // CUDA Error Check Helper
 #define CHECK_CUDA(call)                                                       \
   {                                                                            \
@@ -14,46 +13,42 @@
     }                                                                          \
   }
 
-// Global LUT in Constant Memory
-__constant__ float d_LUT[4] = {0.0f, 1.0f, -1.0f, 0.0f};
+// Global LUT in Constant Memory (16 values)
+__constant__ float d_LUT[16] = {0.0f,  0.5f, -0.5f, 0.333333f, -0.333333f, 0.2f,
+                                -0.2f, 0.0f, 0.0f,  0.0f,      0.0f,       0.0f,
+                                0.0f,  0.0f, 0.0f,  0.0f};
 
-// Kernel: MatMul with On-the-Fly 2-bit Unpacking
+// Kernel: MatMul with On-the-Fly 4-bit Unpacking
 // Grid: (Rows / 16, 1)
-// Block: (16, 16) - Or simple row-wise parallelization for now.
-// Simple Kernel: Each thread computes one output element (row).
+// Block: (16, 16)
 __global__ void
-matmul_2bit_kernel(const uint8_t *__restrict__ W_packed, // (Rows, Cols/4)
+matmul_4bit_kernel(const uint8_t *__restrict__ W_packed, // (Rows, Cols/2)
                    const float *__restrict__ Input,      // (Cols)
                    float *__restrict__ Output,           // (Rows)
+                   float scale,                          // Scale factor
                    int Rows, int Cols) {
   int row = blockIdx.x * blockDim.x + threadIdx.x;
   if (row >= Rows)
     return;
 
   float sum = 0.0f;
-  int packed_cols = Cols / 4;
+  // 4-bit packing = 2 weights per byte
+  int packed_cols = Cols / 2;
 
   // Loop through packed columns
   for (int k = 0; k < packed_cols; ++k) {
     uint8_t packed_byte = W_packed[row * packed_cols + k];
 
-    // Unpack 4 weights per byte
-    // Replicate logic: 0->0, 1->1, 2->-1, 3->0
-    // (byte >> 6) & 3 etc.
+    // Unpack 2 weights per byte (High Nibble, Low Nibble)
+    float w0 = d_LUT[(packed_byte >> 4) & 0x0F]; // High
+    float w1 = d_LUT[(packed_byte >> 0) & 0x0F]; // Low
 
-    float w0 = d_LUT[(packed_byte >> 6) & 0x3];
-    float w1 = d_LUT[(packed_byte >> 4) & 0x3];
-    float w2 = d_LUT[(packed_byte >> 2) & 0x3];
-    float w3 = d_LUT[(packed_byte >> 0) & 0x3];
-
-    int input_idx = k * 4;
+    int input_idx = k * 2;
     sum += w0 * Input[input_idx + 0];
     sum += w1 * Input[input_idx + 1];
-    sum += w2 * Input[input_idx + 2];
-    sum += w3 * Input[input_idx + 3];
   }
 
-  Output[row] = sum;
+  Output[row] = sum * scale;
 }
 
 void TrinityEngine::gpu_forward(const std::vector<float> &input,
@@ -85,8 +80,8 @@ void TrinityEngine::gpu_forward(const std::vector<float> &input,
   int threadsPerBlock = 256;
   int blocksPerGrid = (W.rows + threadsPerBlock - 1) / threadsPerBlock;
 
-  matmul_2bit_kernel<<<blocksPerGrid, threadsPerBlock>>>(
-      d_W_packed, d_Input, d_Output, W.rows, W.cols);
+  matmul_4bit_kernel<<<blocksPerGrid, threadsPerBlock>>>(
+      d_W_packed, d_Input, d_Output, W.scale, W.rows, W.cols);
   CHECK_CUDA(cudaDeviceSynchronize());
 
   // Copy Back
