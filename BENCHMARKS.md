@@ -1,4 +1,4 @@
-# 📊 Project Trinity: Performance Benchmarks (V1.0.3)
+# 📊 Project PRIMAL: Performance Benchmarks (V1.0.3)
 
 **Hardware:**
 - **CPU:** Standard x86_64 (AVX2 Support)
@@ -10,8 +10,8 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **Python (PyTorch)** | GPU (CUDA) | **35.08** | 28.5ms | 🟢 Production |
 | **Python (PyTorch)** | CPU (Int8) | **11.05** | 90.5ms | 🟢 Playable |
-| **C++ (V3 Prime Rich)**| CPU (OpenMP)| **~82.0** (Proj) | ~12.1ms | 🟢 V3.0.0 |
-| **C++ (V3 Prime Rich)**| GPU (CUDA) | **~33.0** (Streaming)| ~36.0ms | 🟢 V3.0.0 |
+| **C++ (PRIMAL V3)**| CPU (OpenMP)| **~82.0** (Proj) | ~12.1ms | 🟢 V3.0.0 |
+| **C++ (PRIMAL V3)**| GPU (CUDA) | **~33.0** (Streaming)| ~36.0ms | 🟢 V3.0.0 |
 
 ---
 
@@ -41,6 +41,8 @@ Updated to support the **"Prime Rich" 4-bit Grid** (13 distinct values).
 
 ### GPU Kernel (`gpu_kernel.cu`)
 - **Optimization:** On-the-Fly 4-bit Dequantization (Shared Mem) + Prime Rich LUT.
+[Primal] Initializing Dummy Model (V3.0.0 Prime Rich)...
+[Primal] Average Inference Time: 0.37ms
 - **Micro-Benchmark (2048x2048 Layer):** **1.09ms**
 - **Analysis:** Consistent with 4-bit memory bandwidth limits.
 - **Projected Speed:** **~33 TPS** (Streaming Mode).

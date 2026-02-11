@@ -1,4 +1,4 @@
-# Trinity: Democratizing 4-bit Prime LLMs via Prime Harmonic Evolution
+# PRIMAL: Democratizing 4-bit Prime LLMs via Prime Harmonic Evolution
 
 **Author:** Project Trinity Research Team (Lead: BatteryPhil)
 **Date:** February 9, 2026
@@ -16,7 +16,7 @@ Extreme quantization of Large Language Models (LLMs) typically requires retraini
 
 The **BitNet b1.58** architecture [1] posits that the optimal state for Large Language Models is ternary $\{-1, 0, 1\}$, offering massive efficiency gains over FP16. However, current implementations require training models from scratch, a process accessible only to entities with massive compute clusters.
 
-Standard Post-Training Quantization (PTQ) methods often fail at this extreme bit-depth (1.58 bits), resulting in "brain death" (Perplexity $> 10^4$). We hypothesized that existing dense models possess a latent structure that can be **"evolved"**—rather than retrained—into a ternary state. Project Trinity demonstrates that by defining a "Prime Harmonic" attractor landscape, we can migrate weights to a quantized state with minimal energy, effectively "gentrifying" the weight space rather than rebuilding it.
+Standard Post-Training Quantization (PTQ) methods often fail at this extreme bit-depth (1.58 bits), resulting in "brain death" (Perplexity $> 10^4$). We hypothesized that existing dense models possess a latent structure that can be **"evolved"**—rather than retrained—into a ternary state. Project **PRIMAL-1.1B** is a language model that achieves high-fidelity performance using a **4-bit Prime Harmonic** quantization grid. Evolving from the TinyLlama-1.1B checkpoint, PRIMAL maps weights to a discrete set of prime reciprocals ($\pm 1, \pm 1/2, \dots, \pm 1/13$) stored in 4-bit nibbles. This effectively "gentrifies" the weight space rather than rebuilding it.
 
 ---
 

@@ -1,6 +1,6 @@
-# ⟁ Trinity: The "Homebrew" Prime Rich LLM
+# ⟁ PRIMAL: The "Homebrew" Prime Rich LLM
 
-**Trinity-1.1B** is a proof-of-concept **4-bit Prime Harmonic** model evolved from TinyLlama.
+**PRIMAL-1.1B** is a proof-of-concept **4-bit Prime Harmonic** model evolved from TinyLlama.
 
 > **[V3.0.0 Prime Rich Update]**
 > Building on the valid 4-bit architecture of V2.0.0, **V3.0.0** expands the quantization grid to include **13 distinct Prime Harmonic values** ($\pm 1, \pm 1/2, \pm 1/3, \pm 1/5, \pm 1/7, \pm 1/11, \pm 1/13$). This utilizes the previously empty slots in the 4-bit nibble to maximize precision without increasing file size.
@@ -9,11 +9,11 @@
 | Device | Engine | Speed (TPS) | VRAM / RAM | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **GPU (GTX 1080 Ti)** | Python (Native) | **35.08 TPS** | 850 MB | 🟢 Production |
-| **CPU (i7-8700K)** | C++ (V3 Prime) | **~82.0 TPS*** | 580 MB | 🟢 Validated |
-| **GPU (GTX 1080 Ti)** | C++ (V3 Prime) | **~33.0 TPS*** | 580 MB | 🟢 Validated |
+| **CPU (i7-8700K)** | C++ (PRIMAL V3) | **~82.0 TPS*** | 580 MB | 🟢 Validated |
+| **GPU (GTX 1080 Ti)** | C++ (PRIMAL V3) | **~33.0 TPS*** | 580 MB | 🟢 Validated |
 
 ## ⚡ The Specs (V3.0.0)
-| Feature | Original (TinyLlama) | **Trinity (V3 Prime)** |
+| Feature | Original (TinyLlama) | **PRIMAL (V3 Prime)** |
 | :--- | :--- | :--- |
 | **Size** | 2.2 GB | **550 MB** |
 | **Compression** | 1x | **4.0x** |
