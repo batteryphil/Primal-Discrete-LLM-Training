@@ -28,7 +28,7 @@ CONFIG = {
     "seq_len": 512,        # Shortened context for ultra-high TPS
     "batch_size": 16,      # Mega-Batch remains 16
     "grad_accum": 4,       # [CHANGED] 2 -> 4. Effective Batch 64. Reduces noise by 50%.
-    'lr': 4.5e-4,          # 1.5x Manual Bump for Phase 38 Breakthrough
+    'lr': 1.5e-4,          # [CHANGED] 4.5e-4 -> 1.5e-4. (Cooling down the reactor)
     "device": "cuda"
 }
 
