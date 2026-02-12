@@ -1,57 +1,51 @@
 #include "primal.h"
-#include <cstdlib>
 #include <iostream>
 #include <omp.h>
+#include <vector>
 
 
-void PrimalEngine::load(const std::string &path) {
-  std::cout << "[Primal] Initializing Dummy Model (V3.0.0 Prime Rich)..."
-            << std::endl;
-  Tensor t;
-  t.rows = 2048;
-  t.cols = 2048;
-  t.scale = 0.002f;
-  size_t num_weights = t.rows * t.cols;
-  size_t packed_size = num_weights / 2; // 4-bit = 2 weights per byte
-  t.data_packed.resize(packed_size);
-
-  // Fill with random data (0x00 - 0xFF) to test full LUT range
-  for (size_t i = 0; i < packed_size; ++i) {
-    t.data_packed[i] = rand() % 256;
-  }
-
-  t.data_fp32.resize(num_weights);
-// Unpack for CPU validation
-#pragma omp parallel for
-  for (long long i = 0; i < (long long)packed_size; ++i) {
-    uint8_t byte = t.data_packed[i];
-    size_t idx = i * 2;
-    t.data_fp32[idx + 0] = LUT[(byte >> 4) & 0x0F]; // High Nibble
-    t.data_fp32[idx + 1] = LUT[(byte >> 0) & 0x0F]; // Low Nibble
-  }
-  weights.push_back(t);
-}
+// PrimalEngine::load is in primal.cpp
 
 void PrimalEngine::forward(const std::vector<float> &input,
                            std::vector<float> &output) {
-  if (use_gpu)
+  if (use_gpu) {
     gpu_forward(input, output);
-  else
-    cpu_forward(input, output);
+    return;
+  }
+  cpu_forward(input, output);
 }
 
 void PrimalEngine::cpu_forward(const std::vector<float> &input,
                                std::vector<float> &output) {
   if (weights.empty())
     return;
-  const Tensor &W = weights[0];
-  output.resize(W.rows);
+
+  // 'x' is our Residual Stream. We start with the input.
+  std::vector<float> x = input;
+  std::vector<float> next_x;
+
+  // Loop through every layer in the .primal file
+  for (size_t l = 0; l < weights.size(); ++l) {
+    const Tensor &W = weights[l];
+    next_x.assign(W.rows, 0.0f);
+
 #pragma omp parallel for schedule(static)
-  for (long long i = 0; i < W.rows; ++i) {
-    float sum = 0.0f;
-    for (int k = 0; k < W.cols; ++k) {
-      sum += W.data_fp32[i * W.cols + k] * input[k];
+    for (long long i = 0; i < W.rows; ++i) {
+      float sum = 0.0f;
+      // Matrix Multiplication
+      // Note: This assumes W.cols matches x.size(). No check for perf.
+      for (int k = 0; k < W.cols; ++k) {
+        sum += W.data_fp32[i * W.cols + k] * x[k];
+      }
+      // Apply scale and ADD to the stream (Residual)
+      // Simplified for 111M: if shapes match, we add.
+      if (W.rows == x.size()) {
+        next_x[i] = (sum * W.scale) + x[i];
+      } else {
+        next_x[i] = sum * W.scale;
+      }
     }
-    output[i] = sum * W.scale;
+    x = next_x;
   }
+  output = x;
 }

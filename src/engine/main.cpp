@@ -1,6 +1,7 @@
 #include "primal.h"
-#include <chrono>
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
 
 int main(int argc, char **argv) {
@@ -10,23 +11,35 @@ int main(int argc, char **argv) {
 
   PrimalEngine engine;
   engine.use_gpu = use_gpu;
-  engine.load("dummy_path");
+  engine.load("model.primal");
 
-  std::vector<float> input(2048, 1.0f);
+  if (engine.weights.empty()) {
+    std::cout << "Failed to load model." << std::endl;
+    return 1;
+  }
+
+  // Cerebras-111M Hidden Dim is 768
+  // Note: We are simulating a 'Residual Stream' input at the hidden layer level
+  // skipping the embedding lookup logic inside the engine for now.
+  // If the first layer is WTE, it might reshape.
+  std::vector<float> input(768, 0.5f);
   std::vector<float> output;
 
-  // Warmup
+  std::cout << "[Full Pipeline] Running " << engine.weights.size()
+            << " Layers..." << std::endl;
   engine.forward(input, output);
 
-  // Benchmark
-  auto start = std::chrono::high_resolution_clock::now();
-  for (int i = 0; i < 10; ++i)
-    engine.forward(input, output);
-  auto end = std::chrono::high_resolution_clock::now();
+  // Find the 'Argmax' (The most likely token)
+  if (!output.empty()) {
+    auto max_it = std::max_element(output.begin(), output.end());
+    int token_id = std::distance(output.begin(), max_it);
 
-  std::chrono::duration<double> elapsed = end - start;
-  std::cout << "Avg Time: " << (elapsed.count() / 10.0) * 1000 << " ms"
-            << std::endl;
-  std::cout << "Output[0]: " << output[0] << std::endl;
+    std::cout << "Pipeline Complete." << std::endl;
+    std::cout << "Output Size: " << output.size() << std::endl;
+    std::cout << "Top Predicted Token ID: " << token_id << std::endl;
+  } else {
+    std::cout << "Error: No output generated." << std::endl;
+  }
+
   return 0;
 }

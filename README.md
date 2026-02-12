@@ -1,4 +1,4 @@
-# ⟁ PRIMAL: The "Homebrew" Prime Rich LLM
+# ⟁ Primal-Discrete-LLM-Training
 
 **PRIMAL-1.1B** is a proof-of-concept **4-bit Prime Harmonic** model evolved from TinyLlama.
 
