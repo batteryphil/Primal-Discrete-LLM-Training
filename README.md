@@ -53,14 +53,8 @@ git clone https://github.com/batteryphil/Primal-Discrete-LLM-Training.git
 cd Primal-Discrete-LLM-Training
 
 # Install dependencies
-pip install torch transformers datasets
+pip install -r requirements.txt
 
 # Run the training demo (0.1B Model)
 python primal_train_ghost.py
 ```
-
-## 📄 Documentation History
-For the full evolutionary history of the project, including failed experiments and the path to this architecture, see:
-- [Walkthrough & Evolution](walkthrough.md)
-- [Legacy Benchmarks (C++ Engine)](BENCHMARKS.md)
-- [Development Roadmap](task.md)

@@ -28,7 +28,7 @@ Instead of linear INT4 quantization (which wastes precision on large numbers), P
 Discrete training often fails due to "stochastic thrashing" during gradient accumulation. PRIMAL solves this with **Decoupled Flipping**:
 * **Backward Pass:** No updates. Gradients cast "votes" (`+1` or `-1`) into an `int8` buffer.
 * **Optimizer Step:** Votes are aggregated. Weights only flip if there is a **consensus** across micro-batches (e.g., Batch 64).
-* **Adaptive Probability:** Weights flip stochastically based on their magnitude.
+* **Adaptive Probability:** Weights flip stochastically based on their magnitude (Z-Score filtering).
 
 ### 3. Efficiency Benchmarks (GTX 1080 Ti)
 | Metric | Model Size | Result | Notes |
@@ -37,9 +37,6 @@ Discrete training often fails due to "stochastic thrashing" during gradient accu
 | **Inference VRAM** | 1.1B Params | **~550 MB** | 4-bit Loading Verified |
 | **Throughput** | 0.1B Params | **~6,000 TPS** | Training (Python Loop) |
 
-## 📄 Documentation History
-For the full evolutionary history of the project, including failed experiments and the path to this architecture, see:
-- [Walkthrough & Evolution](walkthrough.md)
 ==============================================================================
 """
 
