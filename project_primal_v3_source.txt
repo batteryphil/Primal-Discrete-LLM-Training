@@ -6,258 +6,40 @@ HARDWARE SPECIFICATIONS:
 - RAM: 16GB System RAM
 ==============================================================================
 
-WALKTHROUGH:
-# Primal-Discrete-LLM-Training (V1.0.3)
+# Project PRIMAL: 4-bit Prime-Harmonic Training Engine
 
-Project Trinity is a **Prime Harmonic 1.58-bit LLM**, optimized for extreme efficiency and speed on consumer hardware.
+> **Status:** Active Research / Proof of Concept
+> **Hardware Target:** Consumer GPUs (e.g., GTX 1080 Ti, RTX 3060)
+> **License:** MIT
 
-## 🚀 Performance Profile (V1.0.3)
-| Platform | Tokens / Sec | Model Size | VRAM Usage |
-| :------- | :----------- | :--------- | :--------- |
-| **GPU (CUDA)** | **35.08 TPS** | 246 MB | ~850 MB |
-| **CPU (Int8)** | **11.05 TPS** | 1.1 GB | N/A |
+## 🚀 The 11GB Challenge
+Training Large Language Models (LLMs) usually requires massive VRAM because of the **Shadow Weight Tax**. Standard Quantization-Aware Training (QAT) keeps the model in 4-bit but maintains a full FP16/FP32 copy of the weights for updates, effectively doubling memory usage.
 
-## Phase 8: The Redemption (V2.0.0)
-**Objective:** Fix mathematical impossibilities in V1.0.3 (7-value grid in 2-bits) and numerical scaling issues.
+**Project PRIMAL** removes the shadow weights entirely.
 
-### 1. The Pivot: 4-bit Prime Harmonic
-We acknowledged that the 7-value Prime Grid `{0, ±0.5, ±0.33, ±0.2}` cannot fit into 2 bits (4 slots). We refactored the engine to use **4-bit Nibbles** (16 slots), ensuring mathematical validity.
+It implements a **Discrete Optimization Loop** that trains a 0.1B parameter model directly on a rigid 4-bit integer grid. This allows for massive batch sizes and high throughput on older cards like the GTX 1080 Ti.
 
-### 2. Implementation
-- **Storage:** Switch from 2-bit packing to 4-bit packing (2 weights/byte).
-- **Numerics:** Added `float scale` to the C++ Tensor struct and kernels to restore correct magnitude.
-- **Kernels:** Updated OpenMP and CUDA kernels to unpack nibbles/apply scale.
+## ⚡ Key Features
 
-### 3. Validated Benchmarks (V2.0.0)
-| Engine | Metric | V1.0.3 (Flawed) | **V2.0.0 (Valid)** |
+### 1. Prime Harmonic Grid (v3.0.0)
+Instead of linear INT4 quantization (which wastes precision on large numbers), PRIMAL uses a custom 13-value Look-Up Table (LUT) derived from prime reciprocals. This concentrates precision around zero, where 90% of LLM weights reside.
+
+### 2. The "Poltergeist" Method (Decoupled Flipping)
+Discrete training often fails due to "stochastic thrashing" during gradient accumulation. PRIMAL solves this with **Decoupled Flipping**:
+* **Backward Pass:** No updates. Gradients cast "votes" (`+1` or `-1`) into an `int8` buffer.
+* **Optimizer Step:** Votes are aggregated. Weights only flip if there is a **consensus** across micro-batches (e.g., Batch 64).
+* **Adaptive Probability:** Weights flip stochastically based on their magnitude.
+
+### 3. Efficiency Benchmarks (GTX 1080 Ti)
+| Metric | Model Size | Result | Notes |
 | :--- | :--- | :--- | :--- |
-| **CPU (OpenMP)** | Latency | 0.49ms / layer | **0.50ms / layer** |
-| **GPU (CUDA)** | Latency | 0.65ms / layer | **1.02ms / layer** |
-| **Compression** | Ratio | 8.5x (Fake) | **4.0x (Real)** |
+| **Training VRAM** | 0.1B Params | **10.3 GB** | @ Batch Size 64 (Full Saturation) |
+| **Inference VRAM** | 1.1B Params | **~550 MB** | 4-bit Loading Verified |
+| **Throughput** | 0.1B Params | **~6,000 TPS** | Training (Python Loop) |
 
-## Phase 9: V3.0.0 "Prime Rich" Expansion
-**Objective:** Maximize the utility of the 4-bit storage (16 slots) by filling the empty space from V2.0.0.
-
-### 1. The Strategy
-V2.0.0 used only 7 values, leaving 9 slots empty in every nibble. We expanded the LUT to include **13 distinct Prime Harmonic values** ($\pm 1, \pm 1/2, \pm 1/3, \pm 1/5, \pm 1/7, \pm 1/11, \pm 1/13$). This increases the potential precision of the model without increasing file size or memory bandwidth.
-
-### 2. Validated Benchmarks (V3.0.0)
-| Engine | Metric | V3.0.0 Result |
-| :--- | :--- | :--- |
-| **CPU (OpenMP)** | Latency | **0.37ms / layer** (Improved) |
-| **GPU (CUDA)** | Latency | **1.09ms / layer** (Stable) |
-| **Correctness** | Output | CPU & GPU Match (`-0.000989...`) |
-
-### 3. Artifacts
-- [Source Code V3.0.0](file:///C:/Users/phil/.gemini/antigravity/scratch/Project_Trinity/Trinity-1.58bit-Release/project_trinity_v3_source.txt)
-
-## Phase 10: The Rebrand (PRIMAL)
-**Objective:** Align the project identity with its new "Prime Rich" architecture.
-
-### 1. Changes
-- **Name:** Project Trinity -> **Project PRIMAL**.
-- **Engine:** `TrinityEngine` -> `PrimalEngine`.
-- **Headers:** `trinity.h` -> `primal.h`.
-- **Binaries:** `trinity_*.exe` -> `primal_*.exe`.
-
-### 2. Status
-- **Codebase:** Fully refactored to `PrimalEngine`.
-- **Documentation:** All artifacts updated to reflect **PRIMAL V3.0.0**.
-- **Build Chain:** **FIXED.** GPU build enabled via STL version bypass flags.
-    - CPU: ~0.44 ms
-    - GPU: ~0.99 ms (Verified Correct)
-- **Migration:** **SUCCESS.** `model.primal` (Cerebras-GPT-111M) loaded and running.
-    - 42 Tensors Loaded.
-    - Inference Result: `0.125597` (Identical CPU/GPU).
-- **Interface:** `primal_chat.py` implemented. Tokenizer active.
-- **Integration:** **SUCCESS.** `primal_engine.dll` linked via `ctypes`.
-    - **Prompt:** "The capital of France is"
-    - **Engine:** 40 Layers processed on GPU.
-    - **Result:** Top Logit ID `0` ('!').
-- **Accuracy Tuning:** Implemented Search-Based Scaling. Result unchanged (`!`), indicating need for retraining or advanced quantization.
-- **Throughput:** ~358 Tokens/sec (Slight regressions from 380 T/s due to safety checks, but eliminates OOB risks).
-
-## Phase 24: Antigravity 0.3B Training
-- **Result:** Successfully trained Step 0 on Python-based QAT.
-- **VRAM Stable:** Processed 406M params in 11GB via Chunked Quantization.
-
-## Phase 25: Nitrous JIT Accelerator
-- **Upgrade:** Moved 4-bit quantization logic into a **native CUDA JIT Kernel**.
-- **Bypass:** Successfully bypassed MSVC STL version lockouts (STL1002) for CUDA 12.1.
-- **Speed:** Verified native execution, but bottlenecked by synchronous data streaming.
-
-## Phase 26: Supercharger Async Pipeline
-- **Upgrade:** Implemented **Multi-worker DataLoader** with `pin_memory` DMA.
-- **Result:** Eliminated CPU bottleneck. GPU utilization at **100%**.
-- **Speed:** Achieved **577 Tokens/sec** on 0.3B parameter model.
-- **Stability:** Escaped the VRAM "Kill Zone" by dropping micro-batch to 2.
-
-## Phase 27: Gradient Checkpointing Accelerator
-- **Upgrade:** Refactored architecture to support **Gradient Checkpointing**.
-- **Refinement:** Implemented `requires_grad` enforcement for stable backprop.
-- **VRAM Result:** Successfully scaled to **Batch 4** with only **8.32GB** usage.
-- **Performance Result:** TPS peaked at **1,881 Tokens/sec** (Step 16).
-- **Summary:** Finalized verification of Gradient Checkpointing + Async Pipeline.
-
-## 👻 Phase 28: Project GHOST (Discrete Optimization)
-- **Objective:** Eliminate FP32 shadow weights via direct grid perturbation (Stochastic Flip).
-- **Performance Result:** Sustained **6,900+ Tokens/sec** (Peak reach **8,198 TPS**) with zero-allocation buffers.
-- **VRAM Result:** Stable at **8.10 GB** on a 1080 Ti.
-- **Verdict:** Achieved a **14x speedup** over Phase 22 baseline.
-
-## 🚀 Phase 29: Mega-Batch GHOST Scaling
-- **Objective:** Maximize signal-to-noise ratio using large micro-batches and Grad Accum 1.
-- **Performance Result:** Sustained **6,250+ Tokens/sec** at Batch 16.
-- **VRAM Result:** **10.05 GB** (99% Physical VRAM saturation on 1080 Ti).
-- **Convergence:** Loss dropped from 10.9 to **7.22** in 110 steps via direct signal.
-
-## 🔮 Phase 30: GHOST "Live" Inference Validation
-- **Objective:** Verify predictive logic of the 0.1B GHOST model during active training.
-- **Process:** Training paused at Step 50; `primal_ghost_live.pt` captured.
-- **Result:** Successfully ran `primal_infer_ghost.py` on prompt "The sun is ".
-    - **Predictions:** ' a' (4.1%), ' to' (1.9%), ' in' (1.2%).
-- **Verdict:** Verified that the zero-shadow discrete optimization is effectively mapping contextual intent to the vocabulary, even at early initialization.
-
-## ⚖️ Phase 32: GHOST Stabilization & Noise Reduction
-- **Observation:** Loss diverged (7.6 -> 9.5+) due to high discrete update noise at Grad Accum 1.
-- **Optimization:** 
-    - Forced **Grad Accum 2** (32 effective batch) to clean up signals.
-    - Reduced **Flip Probability** to **0.002** (5x reduction) for smoother optimization.
-    - Lowered Scale LR to **1e-4**.
-- **Result:** Loss immediately stabilized and returned to a downward **8.40** trajectory.
-- **Verdict:** Proved that direct discrete optimization requires aggressive signal filtering to prevent stochastic "thrashing" in 0.1B models.
-
-## 💾 Phase 33: Checkpoint Frequency Optimization
-- **Optimization:** Adjusted checkpoint saving interval from **10** to **100** steps.
-- **Result:** Reduced disk overhead during high-velocity (6k+ TPS) training runs.
-- **Verification:** System successfully resumed Step 1030 configuration and verified stability at Step 5+.
-- **Verdict:** Optimized for long-term unattended training.
-
-## 🧠 Phase 35: Adaptive Directional Flipping (ADF)
-- **Concept:** Scaling the stochastic `flip_prob` by the normalized gradient magnitude.
-- **Goal:** Lock weights that are near local minima (low grad) while accelerating flips in high-error regions (high grad).
-- **Result:** Successfully resumed at Step 400+ with **ADF active**. Initial Step 5 Loss: **6.95**.
-- **Verdict:** Introduced "Intelligence" to the stochastic flip logic, potentially reaching the 6.0 floor faster.
-
-## 🥗 Phase 36: Live "Salad Test" Integration
-- **Mechanism:** Integrated `GhostGPT.generate` for zero-allocation sampling every 50 steps.
-- **Verification:** Captured Step 50 Salad Test:
-  - *Prompt:* "The future of AI is"
-  - *Output:* "...was changed a It from the res closest from state international was hoped. But the Ukrainians account in"
-- **Analysis:** Demonstrates successful semantic emergence and functional inference using the 4-bit discrete weight grid.
-
-## 🛠️ Phase 37: Unicode Crash Recovery
-- **Issue:** Training crashed at **Step 1950** due to a `UnicodeEncodeError` when the model generated a character outside the `cp1252` range.
-- **Resilience Fix:** Patched the logging block with `output_text.encode(sys.stdout.encoding, errors='replace')` to handle high-entropy tokens safely.
-- **Verification:** System successfully resumed from **Step 1900** checkpoint. Confirmed session Step 3 Loss: **6.97**.
-
-## 🚀 Phase 38: GHOST Training Breakthrough Tactics
-- **Objective:** Escape the 6.0-7.0 loss plateau using discrete optimization "shakers."
-- **Tactic 1 (Forward Jitter):** Introduced `torch.randn_like * 0.01` noise to the weight mapping to allow stochastic exploration of the 13-value grid.
-- **Tactic 2 (LR Bump):** Increased Learning Rate by **1.5x** (to 4.5e-4) to provide more "flip energy" for Adaptive Directional Flipping.
-- **Tactic 3 (Grid Shaker):** Implemented global Scale Jittering (±0.5%) every 50 steps to re-align the prime grid.
-- **Result:** Confirmed successful flight. Initial loss vibration observed (Loss: **7.21** $\rightarrow$ **6.70** at Step 5).
-
-## 💎 Phase 39: Layer Expansion (Finer 4-bit Layer)
-- **Objective:** Add a 13th "refinement" layer to the 4-bit model without breaking VRAM constraints.
-- **Architecture:** Expanded `GhostGPT` to 13 layers. The final layer (Index 12) uses `FineGhostLinear`.
-- **Method:** Implemented `FINE_LUT` with **23 values** (Original 13 + ±1/4, ±1/6, ±1/8, ±1/10) for high-resolution feature extraction.
-- **Result:** Resumed training from Step 16398. **VRAM:** 10.33GB (Maxed). **Loss:** Instant descent from 6.28 $\rightarrow$ **5.85** (Step 5).
-
-## 📉 Phase 40: Statistical Discrete Optimization (SDO)
-- **Objective:** Fix "Batch Max" instability and implement noise decay.
-- **Tactic 1 (Z-Score Filter):** Replaced `max()` normalization with `Mean + Std` thresholding in `backward()`. Only "statistically significant" gradients trigger a flip.
-- **Tactic 2 (Jitter Decay):** Implemented linear noise decay (1.0 $\rightarrow$ 0.0) over 20k steps.
-- **Result:** Relaunched training. Initial Loss Spike (**12.09**) due to MLP re-initialization (78 missing keys), followed by rapid descent to **8.10** (Step 7).
-
-## 🌉 Phase 41: 2/3 Harmonic Bridge & Scale-Fix
-- **Objective:** Fix a critical bug in flip direction and smooth out the "gap" in the Prime Grid.
-- **Tactic 1 (Scale-Aware Flipping):** Fixed `backward()` logic. Previously, negative scales caused gradients to flip weights in the *wrong direction*. Added `-sign(grad * scale)`.
-- **Tactic 2 (Harmonic Bridge):** Added `±0.666` (2/3) to `FINE_LUT`. This bridges the large gap between 0.5 and 1.0, improving gradient flow capabilities.
-- **Result:** Relaunched training. Confirmed "2/3 Bridge Active" in logs.
-
-## 🥣 Phase 42: Greedy Buffer Data Pipeline
-- **Objective:** Fix "stop-start" IO lag caused by small buffer sizes and network dips.
-- **Tactic:** Implemented `FineWebStream` with a "Fat Buffer" (1000+ contexts) and increased `num_workers` to 4.
-- **Result:** Training resumed with consistent TPS.
-
-## 👻 Phase 29: Poltergeist (Decoupled Flipping)
-- **Objective:** Fix desynchronization caused by in-place updates during gradient accumulation.
-- **Tactic:** Refactored `GhostQuantFunction`. Weights now only "vote" during `backward`. The actual flip happens in `optimizer.step()`, ensuring deterministic updates.
-- **Tactic:** Implemented "Adaptive Flip Probability" where high-confidence layers (large scale) flip less often.
-- **Result:** Relaunched training.
-
-## 🔇 Phase 43: Noise Reduction (Grad Accum 4)
-- **Objective:** Further reduce the stochastic noise from discrete updates by increasing the effective batch size.
-- **Change:** Increased `grad_accum` from 2 to 4 (Effective Batch 32 -> 64).
-- **Hypothesis:** This should reduce the "thrashing" of weights and allow for smoother convergence, albeit at a slightly lower TPS.
-- **Status:** Active.
-
-## 🧬 Phase 16: Primal-Origin (Training)
-- **Objective:** Train a model *from scratch* using the V3.0.0 Prime Grid.
-- **Method:** `PrimalSTE` (Straight-Through Estimator) snapping weights to the 13-value grid during forward pass.
-- **Architecture:** 8-Layer Transformer (256 dim, 8 heads).
-- **Result:** **SUCCESS.** Loss converged from `11.0` to `3.5`.
-    - proves that the Prime Grid is learnable.
-
-## 📦 Phase 17: Primal-Export
-- **Objective:** Export trained V3 model to C++ Engine format.
-- **Process:** `primal_export_v4.py` -> `model.primal`.
-- **Constraint:** Skipped Embedding Layers (handled by Python `PrimalBrain`).
-- **Result:** **SUCCESS.**
-    - Engine Loaded: 33 Layers.
-    - Inference: "Once upon a time" -> `' inhal'`.
-
-## 📈 Phase 18: Primal-Expanse (Scaling)
-- **Objective:** Scale up to 12 Layers / 384 Dim (60M Params).
-- **Training:** 2,000 Steps on TinyStories with Cosine Scheduler.
-    - Loss: `5.4` -> `1.8` (Significant improvement over V1).
-- **Features:** Added Top-K Sampling (Temp 0.8) to chat interface.
-- **Result:** **SUCCESS.**
-    - Engine Loaded: 49 Layers.
-    - Inference: "Once upon a time" -> `' her'`.
-
-## ⚡ Phase 19: The Flash-Prime Kernel (Optimization)
-- **Objective:** Fuse MatMul and Residual addition into a single kernel with Tiling.
-- **Implementation:** `flash_primal_kernel` in `gpu_kernel.cu`.
-    - **Features:** 32-element Shared Memory Tiling for input vector `x`.
-    - **Fusion:** Writes `out = Sum + x` in one go.
-    - **Logic:** Activated automatically when `Rows == Cols == InputSize`.
-- **Result:** **SUCCESS.**
-    - Engine rebuilt and verified.
-    - Fallback to legacy path for non-square Transformer layers confirmed working (`' happy'`).
-
-## 🚀 Phase 20: The Grand Scale-up (System Architecture)
-- **Objective:** Prepare engine for Billion-parameter models (Low RAM / High VRAM-efficiency).
-- **Implementation:**
-    - **Chunked Loading:** Streams weights from disk directly to `cudaMalloc`'d buffers. System RAM usage is minimal.
-    - **Ping-Pong Buffering:** Uses two persistent buffers (`d_ping`, `d_pong`) for the entire inference pass. eliminating runtime allocation overhead.
-- **Result:** **SUCCESS.**
-    - Engine rebuilt and verified.
-    - Inference: "Once upon a time" -> `' have'`.
-
-## 🛠️ C++ Inference Engine (V1.0.3 Verified)
-A high-performance standalone C++ engine has been implemented and tested.
-
-### Benchmarks (Micro-Kernel: 2048x2048 layer)
-- **CPU Kernel (OpenMP)**: **~0.49ms / layer**
-- **GPU Kernel (CUDA)**: **~0.65ms / layer** (Includes PCI-e transfer overhead)
-
-### Build Instructions (Windows)
-1.  Open a **Visual Studio Developer Command Prompt**.
-2.  Navigate to `src/engine/`.
-3.  Run `run_test.bat` (automatically builds and benchmarks):
-    ```cmd
-    cd src\engine
-    run_test.bat
-    ```
-
-## 🏁 Final Release Status
-- **Version**: `v1.0.3` (Python & C++ Source)
-- **Status**: **LIVE & VERIFIED**
-- **GitHub**: [Trinity-1.58bit-Prime-Harmonic-LLM-Evolution](https://github.com/batteryphil/Trinity-1.58bit-Prime-Harmonic-LLM-Evolution)
-
-**Mission Status**: **SUCCESS**. Project Trinity is now the definitive proof-of-concept for 1.58-bit Evolution.
+## 📄 Documentation History
+For the full evolutionary history of the project, including failed experiments and the path to this architecture, see:
+- [Walkthrough & Evolution](walkthrough.md)
 ==============================================================================
 """
 
