@@ -146,20 +146,20 @@ class GhostLinear(nn.Module):
     def apply_votes(self, adaptive_prob):
         # CALLED BY OPTIMIZER STEP
         if self.vote_buffer.abs().max() == 0:
-            return # No votes cast
+            return 0 # No votes cast
             
         # 1. Determine Consensus
-        # If accumulation was 2 steps:
-        # +2 = Strong Up, -2 = Strong Down, 0 = Conflict, +1/-1 = Weak
-        # We can enforce a "Supermajority" if we want, but for now, simple majority.
         final_direction = torch.sign(self.vote_buffer).to(torch.int8)
         
         # 2. Stochastic Application (Adaptive Probability)
-        # We mask the updates based on the adaptive probability
         flip_mask = (torch.rand_like(self.vote_buffer.float()) < adaptive_prob).to(torch.int8)
         
         # 3. Apply Update
         update = final_direction * flip_mask
+        
+        # --- TRACK FLIPS ---
+        flip_count = torch.count_nonzero(update).item()
+        
         new_indices = self.grid_indices.int() + update.int()
         
         # 4. Clamp & Commit
@@ -167,6 +167,8 @@ class GhostLinear(nn.Module):
         
         # 5. Clear Ballot Box
         self.vote_buffer.zero_()
+        
+        return flip_count
 
 class FineGhostLinear(GhostLinear):
     def __init__(self, in_features, out_features):
@@ -295,11 +297,11 @@ def get_loader():
 # 6. TRAINING LOOP (Poltergeist Edition)
 # ------------------------------------------------------------------------------
 def train():
-    print("[*] Launching 0.1B POLTERGEIST... Decoupled Flipping Active.")
+    print("[*] Launching 0.1B POLTERGEIST... Decoupled Flipping Active.", flush=True)
     model = GhostGPT(CONFIG).cuda()
     
     if os.path.exists("primal_ghost_live.pt"):
-        print("[*] Resuming from Live Checkpoint...")
+        print("[*] Resuming from Live Checkpoint...", flush=True)
         state_dict = torch.load("primal_ghost_live.pt")
         # Removing vote_buffer from load/save logic to avoid mismatch if batch size changed?
         # Actually, vote buffers are registered buffers, so they will load.
@@ -330,25 +332,26 @@ def train():
             optimizer.zero_grad()
             
             # --- APPLY DISCRETE VOTES ---
+            total_flips = 0
+            total_params = 0
             with torch.no_grad():
                 for m in model.modules():
                     if isinstance(m, GhostLinear):
                         # Adaptive Flip Probability
-                        # If Scale is near 1.0 (Confident), Prob -> 0.1%
-                        # If Scale < 0.5 (Unsure), Prob -> 2.0%
-                        # We use 0.002 as base, multiply by (1/Scale)
-                        # Clamped to [0.0001, 0.05]
                         scale_val = abs(m.scale.item())
                         adaptive_prob = 0.002 / (scale_val + 1e-6)
                         adaptive_prob = max(0.0001, min(0.05, adaptive_prob))
                         
-                        m.apply_votes(adaptive_prob)
+                        flips = m.apply_votes(adaptive_prob)
+                        total_flips += flips
+                        total_params += m.grid_indices.numel()
             
             dt = time.time() - t0
             t0 = time.time()
             tps = (CONFIG['batch_size'] * CONFIG['seq_len'] * CONFIG['grad_accum']) / dt
             
             step = i//CONFIG['grad_accum'] + 1
+            flip_rate = (total_flips / total_params) * 100 if total_params > 0 else 0
             
             # Monitoring
             primal_scales = [m.scale for m in model.modules() if isinstance(m, GhostLinear) and not isinstance(m, FineGhostLinear)]
@@ -356,7 +359,7 @@ def train():
             p_scale = torch.stack(primal_scales).mean().item() if primal_scales else 0.0
             f_scale = torch.stack(fine_scales).mean().item() if fine_scales else 0.0
             
-            print(f"Step {step} | Loss: {loss.item()*CONFIG['grad_accum']:.4f} | TPS: {tps:.2f} | P-Scale: {p_scale:.4f} | F-Scale: {f_scale:.4f} | VRAM: {torch.cuda.memory_reserved()/1e9:.2f}GB")
+            print(f"Step {step} | Loss: {loss.item()*CONFIG['grad_accum']:.4f} | TPS: {tps:.2f} | Flips: {flip_rate:.4f}% | P-Scale: {p_scale:.4f} | F-Scale: {f_scale:.4f} | VRAM: {torch.cuda.memory_reserved()/1e9:.2f}GB", flush=True)
             
             if step % 100 == 0:
                 torch.save(model.state_dict(), "primal_ghost_live.pt")
