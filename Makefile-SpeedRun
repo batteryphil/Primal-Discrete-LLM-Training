@@ -1,5 +1,0 @@
-all:
-	g++ -O3 src/speed_run/trinity_loader.cpp -o src/speed_run/trinity_loader
-
-clean:
-	rm -f src/speed_run/trinity_loader
