@@ -44,9 +44,9 @@ def monitor():
                 # Check point might need a moment to save if it saves every 100 steps
                 # If Step 2500 is a checkpoint step (2500 % 100 == 0), we should wait for save confirmation
                 # The training loop prints "[*] Saved Live Checkpoint"
-                # We can wait for that string if we want, or just wait 10 seconds.
-                print("[*] Waiting 10s for checkpoint consistency...", flush=True)
-                time.sleep(10)
+                # We can wait for that string if we want, or just wait 30 seconds to be safe.
+                print("[*] Waiting 30s for checkpoint consistency...", flush=True)
+                time.sleep(30)
                 
                 # Run Benchmark on CPU
                 # We set CUDA_VISIBLE_DEVICES empty to force CPU

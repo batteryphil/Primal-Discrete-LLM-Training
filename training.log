@@ -1,434 +1,1805 @@
-[*] Launching 0.1B POLTERGEIST... Decoupled Flipping Active.
-[*] Resuming from Live Checkpoint...
+[*] Generating 8-bit Prime-Harmonic Manifold...
+[*] Initial Manifold Size: 267
+[*] Pruning 11 values...
+[*] Final Manifold Size: 256
+[*] Launching 0.1B ANTIGRAVITY (Phase 53)...
+[*] Resuming...
 C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
+[*] Keys Adjusted: 0 missing, 0 unexpected.
+[*] Clearing Initialization Memory...
 C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:896: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Token indices sequence length is longer than the specified maximum sequence length for this model (1390 > 1024). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (2677 > 1024). Running this sequence through the model will result in indexing errors
 Token indices sequence length is longer than the specified maximum sequence length for this model (1055 > 1024). Running this sequence through the model will result in indexing errors
-Token indices sequence length is longer than the specified maximum sequence length for this model (1299 > 1024). Running this sequence through the model will result in indexing errors
-[*] Loaded Checkpoint. Missing Keys: 0
-Step 1 | Loss: 5.6070 | TPS: 1094.18 | Flips: 0.0353% | P-Scale: 0.8866 | F-Scale: 1.0905 | VRAM: 10.36GB
-Step 2 | Loss: 5.6459 | TPS: 5678.05 | Flips: 0.0264% | P-Scale: 0.8866 | F-Scale: 1.0904 | VRAM: 10.37GB
-Step 3 | Loss: 5.5655 | TPS: 5857.39 | Flips: 0.0351% | P-Scale: 0.8865 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 4 | Loss: 5.8864 | TPS: 5665.09 | Flips: 0.0307% | P-Scale: 0.8865 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 5 | Loss: 5.8307 | TPS: 5815.55 | Flips: 0.0322% | P-Scale: 0.8864 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 6 | Loss: 5.6034 | TPS: 5654.82 | Flips: 0.0366% | P-Scale: 0.8863 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 7 | Loss: 5.8387 | TPS: 5746.93 | Flips: 0.0375% | P-Scale: 0.8863 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 8 | Loss: 5.7242 | TPS: 5740.57 | Flips: 0.0374% | P-Scale: 0.8863 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 9 | Loss: 5.5828 | TPS: 5842.82 | Flips: 0.0359% | P-Scale: 0.8862 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 10 | Loss: 5.8148 | TPS: 5893.22 | Flips: 0.0367% | P-Scale: 0.8862 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 11 | Loss: 5.8615 | TPS: 5799.29 | Flips: 0.0367% | P-Scale: 0.8862 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 12 | Loss: 5.8016 | TPS: 5628.99 | Flips: 0.0381% | P-Scale: 0.8861 | F-Scale: 1.0901 | VRAM: 10.37GB
-Step 13 | Loss: 5.9133 | TPS: 5098.40 | Flips: 0.0408% | P-Scale: 0.8861 | F-Scale: 1.0901 | VRAM: 10.37GB
-Step 14 | Loss: 5.5329 | TPS: 5574.30 | Flips: 0.0365% | P-Scale: 0.8861 | F-Scale: 1.0901 | VRAM: 10.37GB
-Step 15 | Loss: 5.9424 | TPS: 5624.91 | Flips: 0.0388% | P-Scale: 0.8860 | F-Scale: 1.0901 | VRAM: 10.37GB
-Step 16 | Loss: 5.8620 | TPS: 5218.35 | Flips: 0.0350% | P-Scale: 0.8860 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 17 | Loss: 5.9692 | TPS: 5105.21 | Flips: 0.0399% | P-Scale: 0.8860 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 18 | Loss: 5.8427 | TPS: 5726.49 | Flips: 0.0323% | P-Scale: 0.8859 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 19 | Loss: 5.3558 | TPS: 5831.70 | Flips: 0.0351% | P-Scale: 0.8859 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 20 | Loss: 5.5386 | TPS: 5835.99 | Flips: 0.0382% | P-Scale: 0.8858 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 21 | Loss: 5.8344 | TPS: 5697.62 | Flips: 0.0362% | P-Scale: 0.8858 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 22 | Loss: 5.6383 | TPS: 5748.55 | Flips: 0.0367% | P-Scale: 0.8858 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 23 | Loss: 5.6418 | TPS: 5887.88 | Flips: 0.0349% | P-Scale: 0.8857 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 24 | Loss: 5.4337 | TPS: 5835.04 | Flips: 0.0366% | P-Scale: 0.8857 | F-Scale: 1.0902 | VRAM: 10.37GB
-Step 25 | Loss: 5.5694 | TPS: 5840.70 | Flips: 0.0355% | P-Scale: 0.8856 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 26 | Loss: 5.6044 | TPS: 5838.45 | Flips: 0.0370% | P-Scale: 0.8856 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 27 | Loss: 5.9004 | TPS: 5845.46 | Flips: 0.0349% | P-Scale: 0.8856 | F-Scale: 1.0903 | VRAM: 10.37GB
-Step 28 | Loss: 6.1076 | TPS: 5740.12 | Flips: 0.0394% | P-Scale: 0.8855 | F-Scale: 1.0904 | VRAM: 10.37GB
-Step 29 | Loss: 5.9210 | TPS: 5802.55 | Flips: 0.0274% | P-Scale: 0.8855 | F-Scale: 1.0904 | VRAM: 10.37GB
-Step 30 | Loss: 5.6365 | TPS: 5787.71 | Flips: 0.0387% | P-Scale: 0.8855 | F-Scale: 1.0905 | VRAM: 10.37GB
-Step 31 | Loss: 5.6839 | TPS: 5843.85 | Flips: 0.0363% | P-Scale: 0.8854 | F-Scale: 1.0905 | VRAM: 10.37GB
-Step 32 | Loss: 5.5881 | TPS: 5791.02 | Flips: 0.0375% | P-Scale: 0.8854 | F-Scale: 1.0905 | VRAM: 10.37GB
-Step 33 | Loss: 5.9484 | TPS: 5763.71 | Flips: 0.0367% | P-Scale: 0.8853 | F-Scale: 1.0906 | VRAM: 10.37GB
-Step 34 | Loss: 5.5653 | TPS: 5845.02 | Flips: 0.0312% | P-Scale: 0.8853 | F-Scale: 1.0906 | VRAM: 10.37GB
-Step 35 | Loss: 5.9282 | TPS: 5702.11 | Flips: 0.0356% | P-Scale: 0.8853 | F-Scale: 1.0906 | VRAM: 10.37GB
-Step 36 | Loss: 5.2312 | TPS: 5764.00 | Flips: 0.0342% | P-Scale: 0.8852 | F-Scale: 1.0906 | VRAM: 10.37GB
-Step 37 | Loss: 5.5452 | TPS: 5751.22 | Flips: 0.0390% | P-Scale: 0.8852 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 38 | Loss: 5.7122 | TPS: 5665.51 | Flips: 0.0371% | P-Scale: 0.8852 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 39 | Loss: 5.7356 | TPS: 5628.58 | Flips: 0.0388% | P-Scale: 0.8851 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 40 | Loss: 5.6115 | TPS: 5683.95 | Flips: 0.0351% | P-Scale: 0.8851 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 41 | Loss: 5.8445 | TPS: 5739.09 | Flips: 0.0361% | P-Scale: 0.8850 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 42 | Loss: 5.9385 | TPS: 5073.58 | Flips: 0.0346% | P-Scale: 0.8850 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 43 | Loss: 5.7369 | TPS: 5083.01 | Flips: 0.0409% | P-Scale: 0.8850 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 44 | Loss: 5.6980 | TPS: 5090.60 | Flips: 0.0353% | P-Scale: 0.8849 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 45 | Loss: 5.5276 | TPS: 5033.73 | Flips: 0.0367% | P-Scale: 0.8849 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 46 | Loss: 5.6354 | TPS: 5113.06 | Flips: 0.0376% | P-Scale: 0.8848 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 47 | Loss: 6.0133 | TPS: 5034.57 | Flips: 0.0387% | P-Scale: 0.8848 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 48 | Loss: 6.2658 | TPS: 5049.41 | Flips: 0.0371% | P-Scale: 0.8847 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 49 | Loss: 6.0414 | TPS: 5120.26 | Flips: 0.0364% | P-Scale: 0.8847 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 50 | Loss: 5.8651 | TPS: 5019.89 | Flips: 0.0361% | P-Scale: 0.8847 | F-Scale: 1.0908 | VRAM: 10.37GB
-
-[*] RUNNING STEP 50 SALAD TEST...
---- STEP 50 SALAD TEST: The future of AI is considered a single piece of composition that is responsible at other levels of scientists found that this Town is explained ---
-
-Step 51 | Loss: 5.5030 | TPS: 4554.53 | Flips: 0.0325% | P-Scale: 0.8847 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 52 | Loss: 5.3636 | TPS: 4968.57 | Flips: 0.0368% | P-Scale: 0.8846 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 53 | Loss: 6.1194 | TPS: 5054.89 | Flips: 0.0366% | P-Scale: 0.8846 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 54 | Loss: 5.8191 | TPS: 5025.92 | Flips: 0.0326% | P-Scale: 0.8845 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 55 | Loss: 5.9003 | TPS: 5084.82 | Flips: 0.0372% | P-Scale: 0.8845 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 56 | Loss: 5.8827 | TPS: 5097.44 | Flips: 0.0347% | P-Scale: 0.8845 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 57 | Loss: 5.8852 | TPS: 5138.00 | Flips: 0.0343% | P-Scale: 0.8844 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 58 | Loss: 5.7789 | TPS: 5154.08 | Flips: 0.0335% | P-Scale: 0.8844 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 59 | Loss: 5.4977 | TPS: 5095.14 | Flips: 0.0340% | P-Scale: 0.8843 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 60 | Loss: 5.6643 | TPS: 5084.46 | Flips: 0.0336% | P-Scale: 0.8843 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 61 | Loss: 5.9536 | TPS: 5038.89 | Flips: 0.0325% | P-Scale: 0.8842 | F-Scale: 1.0907 | VRAM: 10.37GB
-Step 62 | Loss: 5.8194 | TPS: 4890.03 | Flips: 0.0330% | P-Scale: 0.8842 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 63 | Loss: 5.6259 | TPS: 5030.14 | Flips: 0.0374% | P-Scale: 0.8841 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 64 | Loss: 5.7524 | TPS: 5119.63 | Flips: 0.0369% | P-Scale: 0.8841 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 65 | Loss: 5.7643 | TPS: 5109.97 | Flips: 0.0328% | P-Scale: 0.8841 | F-Scale: 1.0908 | VRAM: 10.37GB
-Step 66 | Loss: 5.6170 | TPS: 5038.09 | Flips: 0.0347% | P-Scale: 0.8840 | F-Scale: 1.0909 | VRAM: 10.37GB
-Step 67 | Loss: 5.8342 | TPS: 5120.70 | Flips: 0.0370% | P-Scale: 0.8840 | F-Scale: 1.0909 | VRAM: 10.37GB
-Step 68 | Loss: 5.7402 | TPS: 5066.12 | Flips: 0.0383% | P-Scale: 0.8839 | F-Scale: 1.0909 | VRAM: 10.37GB
-Step 69 | Loss: 5.7318 | TPS: 5106.20 | Flips: 0.0403% | P-Scale: 0.8839 | F-Scale: 1.0910 | VRAM: 10.37GB
-Step 70 | Loss: 5.8394 | TPS: 5043.87 | Flips: 0.0370% | P-Scale: 0.8839 | F-Scale: 1.0910 | VRAM: 10.37GB
-Step 71 | Loss: 5.7921 | TPS: 5058.35 | Flips: 0.0312% | P-Scale: 0.8838 | F-Scale: 1.0910 | VRAM: 10.37GB
-Step 72 | Loss: 6.2354 | TPS: 5088.33 | Flips: 0.0359% | P-Scale: 0.8838 | F-Scale: 1.0911 | VRAM: 10.37GB
-Step 73 | Loss: 5.6901 | TPS: 5040.71 | Flips: 0.0375% | P-Scale: 0.8838 | F-Scale: 1.0911 | VRAM: 10.37GB
-Step 74 | Loss: 5.5961 | TPS: 4996.87 | Flips: 0.0337% | P-Scale: 0.8837 | F-Scale: 1.0911 | VRAM: 10.37GB
-Step 75 | Loss: 5.8168 | TPS: 5057.01 | Flips: 0.0380% | P-Scale: 0.8837 | F-Scale: 1.0911 | VRAM: 10.37GB
-Step 76 | Loss: 5.6509 | TPS: 5129.73 | Flips: 0.0382% | P-Scale: 0.8836 | F-Scale: 1.0911 | VRAM: 10.37GB
-Step 77 | Loss: 5.8369 | TPS: 5083.92 | Flips: 0.0382% | P-Scale: 0.8836 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 78 | Loss: 6.0850 | TPS: 5069.78 | Flips: 0.0381% | P-Scale: 0.8836 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 79 | Loss: 5.7873 | TPS: 5117.73 | Flips: 0.0355% | P-Scale: 0.8835 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 80 | Loss: 5.6756 | TPS: 5064.80 | Flips: 0.0378% | P-Scale: 0.8835 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 81 | Loss: 5.7612 | TPS: 5050.74 | Flips: 0.0374% | P-Scale: 0.8834 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 82 | Loss: 5.9650 | TPS: 5062.61 | Flips: 0.0365% | P-Scale: 0.8834 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 83 | Loss: 5.6049 | TPS: 5122.34 | Flips: 0.0339% | P-Scale: 0.8834 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 84 | Loss: 5.8633 | TPS: 5011.48 | Flips: 0.0341% | P-Scale: 0.8833 | F-Scale: 1.0912 | VRAM: 10.37GB
-Step 85 | Loss: 6.1479 | TPS: 5142.86 | Flips: 0.0336% | P-Scale: 0.8833 | F-Scale: 1.0913 | VRAM: 10.37GB
-Step 86 | Loss: 6.1309 | TPS: 5080.98 | Flips: 0.0373% | P-Scale: 0.8832 | F-Scale: 1.0913 | VRAM: 10.37GB
-Step 87 | Loss: 5.8642 | TPS: 5105.85 | Flips: 0.0356% | P-Scale: 0.8832 | F-Scale: 1.0913 | VRAM: 10.37GB
-Step 88 | Loss: 6.4283 | TPS: 5107.39 | Flips: 0.0386% | P-Scale: 0.8831 | F-Scale: 1.0914 | VRAM: 10.37GB
-Step 89 | Loss: 5.8011 | TPS: 5056.82 | Flips: 0.0387% | P-Scale: 0.8831 | F-Scale: 1.0914 | VRAM: 10.37GB
-Step 90 | Loss: 5.6540 | TPS: 4993.56 | Flips: 0.0330% | P-Scale: 0.8831 | F-Scale: 1.0914 | VRAM: 10.37GB
-Step 91 | Loss: 5.4898 | TPS: 5088.43 | Flips: 0.0321% | P-Scale: 0.8830 | F-Scale: 1.0915 | VRAM: 10.37GB
-Step 92 | Loss: 5.5987 | TPS: 4994.96 | Flips: 0.0406% | P-Scale: 0.8830 | F-Scale: 1.0915 | VRAM: 10.37GB
-Step 93 | Loss: 5.6931 | TPS: 5041.87 | Flips: 0.0347% | P-Scale: 0.8829 | F-Scale: 1.0915 | VRAM: 10.37GB
-Step 94 | Loss: 5.9225 | TPS: 5068.18 | Flips: 0.0332% | P-Scale: 0.8829 | F-Scale: 1.0915 | VRAM: 10.37GB
-Step 95 | Loss: 5.8595 | TPS: 5115.59 | Flips: 0.0323% | P-Scale: 0.8828 | F-Scale: 1.0915 | VRAM: 10.37GB
-Step 96 | Loss: 6.0209 | TPS: 5367.30 | Flips: 0.0371% | P-Scale: 0.8828 | F-Scale: 1.0916 | VRAM: 10.37GB
-Step 97 | Loss: 5.8463 | TPS: 5062.93 | Flips: 0.0367% | P-Scale: 0.8827 | F-Scale: 1.0916 | VRAM: 10.37GB
-Step 98 | Loss: 5.9596 | TPS: 5130.58 | Flips: 0.0375% | P-Scale: 0.8827 | F-Scale: 1.0916 | VRAM: 10.37GB
-Step 99 | Loss: 5.8728 | TPS: 5711.76 | Flips: 0.0364% | P-Scale: 0.8826 | F-Scale: 1.0916 | VRAM: 10.37GB
-Step 100 | Loss: 5.7235 | TPS: 5614.19 | Flips: 0.0378% | P-Scale: 0.8826 | F-Scale: 1.0916 | VRAM: 10.37GB
-[*] Saved Live Checkpoint at Step 100
-
-[*] RUNNING STEP 100 SALAD TEST...
---- STEP 100 SALAD TEST: The future of AI is low in the public and I spent its campus dayin. That has changed a leading time there for ---
-
-Step 101 | Loss: 5.6130 | TPS: 4877.23 | Flips: 0.0367% | P-Scale: 0.8826 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 102 | Loss: 5.6375 | TPS: 5791.81 | Flips: 0.0385% | P-Scale: 0.8825 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 103 | Loss: 6.3716 | TPS: 5776.07 | Flips: 0.0323% | P-Scale: 0.8825 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 104 | Loss: 5.8758 | TPS: 5791.40 | Flips: 0.0371% | P-Scale: 0.8825 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 105 | Loss: 5.6971 | TPS: 5515.17 | Flips: 0.0338% | P-Scale: 0.8824 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 106 | Loss: 5.7905 | TPS: 5582.94 | Flips: 0.0311% | P-Scale: 0.8824 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 107 | Loss: 5.5718 | TPS: 5718.56 | Flips: 0.0346% | P-Scale: 0.8823 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 108 | Loss: 5.6952 | TPS: 5638.17 | Flips: 0.0358% | P-Scale: 0.8823 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 109 | Loss: 5.8379 | TPS: 5822.69 | Flips: 0.0325% | P-Scale: 0.8823 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 110 | Loss: 5.6529 | TPS: 5827.24 | Flips: 0.0334% | P-Scale: 0.8822 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 111 | Loss: 5.8277 | TPS: 5492.74 | Flips: 0.0374% | P-Scale: 0.8822 | F-Scale: 1.0917 | VRAM: 10.37GB
-Step 112 | Loss: 5.6759 | TPS: 5132.17 | Flips: 0.0351% | P-Scale: 0.8821 | F-Scale: 1.0918 | VRAM: 10.37GB
-Step 113 | Loss: 5.6406 | TPS: 5413.07 | Flips: 0.0368% | P-Scale: 0.8821 | F-Scale: 1.0918 | VRAM: 10.37GB
-Step 114 | Loss: 5.5194 | TPS: 5328.55 | Flips: 0.0372% | P-Scale: 0.8821 | F-Scale: 1.0918 | VRAM: 10.37GB
-Step 115 | Loss: 5.4717 | TPS: 5718.49 | Flips: 0.0333% | P-Scale: 0.8820 | F-Scale: 1.0918 | VRAM: 10.37GB
-Step 116 | Loss: 5.6463 | TPS: 5486.36 | Flips: 0.0327% | P-Scale: 0.8820 | F-Scale: 1.0918 | VRAM: 10.37GB
-Step 117 | Loss: 5.4687 | TPS: 5527.26 | Flips: 0.0372% | P-Scale: 0.8819 | F-Scale: 1.0919 | VRAM: 10.37GB
-Step 118 | Loss: 5.7341 | TPS: 5828.45 | Flips: 0.0337% | P-Scale: 0.8819 | F-Scale: 1.0919 | VRAM: 10.37GB
-Step 119 | Loss: 5.6001 | TPS: 5792.16 | Flips: 0.0350% | P-Scale: 0.8818 | F-Scale: 1.0919 | VRAM: 10.37GB
-Step 120 | Loss: 5.7561 | TPS: 5105.30 | Flips: 0.0391% | P-Scale: 0.8818 | F-Scale: 1.0919 | VRAM: 10.37GB
-Step 121 | Loss: 5.7753 | TPS: 5705.91 | Flips: 0.0354% | P-Scale: 0.8818 | F-Scale: 1.0920 | VRAM: 10.37GB
-Step 122 | Loss: 5.7254 | TPS: 5386.21 | Flips: 0.0343% | P-Scale: 0.8817 | F-Scale: 1.0920 | VRAM: 10.37GB
-Step 123 | Loss: 5.6475 | TPS: 5812.31 | Flips: 0.0360% | P-Scale: 0.8817 | F-Scale: 1.0920 | VRAM: 10.37GB
-Step 124 | Loss: 5.7395 | TPS: 5698.84 | Flips: 0.0353% | P-Scale: 0.8816 | F-Scale: 1.0920 | VRAM: 10.37GB
-Step 125 | Loss: 5.5491 | TPS: 5820.26 | Flips: 0.0375% | P-Scale: 0.8816 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 126 | Loss: 5.7564 | TPS: 5722.98 | Flips: 0.0338% | P-Scale: 0.8815 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 127 | Loss: 5.9339 | TPS: 5513.95 | Flips: 0.0319% | P-Scale: 0.8815 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 128 | Loss: 5.8136 | TPS: 5629.56 | Flips: 0.0334% | P-Scale: 0.8814 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 129 | Loss: 5.7457 | TPS: 5067.07 | Flips: 0.0278% | P-Scale: 0.8814 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 130 | Loss: 5.7104 | TPS: 5311.23 | Flips: 0.0375% | P-Scale: 0.8813 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 131 | Loss: 5.9699 | TPS: 5794.23 | Flips: 0.0344% | P-Scale: 0.8813 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 132 | Loss: 5.5145 | TPS: 5798.93 | Flips: 0.0335% | P-Scale: 0.8813 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 133 | Loss: 5.8882 | TPS: 5583.65 | Flips: 0.0345% | P-Scale: 0.8812 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 134 | Loss: 5.9372 | TPS: 5819.00 | Flips: 0.0366% | P-Scale: 0.8812 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 135 | Loss: 5.9068 | TPS: 5813.62 | Flips: 0.0388% | P-Scale: 0.8811 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 136 | Loss: 5.7837 | TPS: 5769.52 | Flips: 0.0365% | P-Scale: 0.8811 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 137 | Loss: 6.0690 | TPS: 5796.95 | Flips: 0.0355% | P-Scale: 0.8810 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 138 | Loss: 6.0303 | TPS: 5802.45 | Flips: 0.0342% | P-Scale: 0.8810 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 139 | Loss: 6.0012 | TPS: 5815.53 | Flips: 0.0371% | P-Scale: 0.8809 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 140 | Loss: 5.9016 | TPS: 5811.56 | Flips: 0.0362% | P-Scale: 0.8809 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 141 | Loss: 5.9868 | TPS: 5769.40 | Flips: 0.0367% | P-Scale: 0.8809 | F-Scale: 1.0921 | VRAM: 10.37GB
-Step 142 | Loss: 5.6841 | TPS: 5779.22 | Flips: 0.0323% | P-Scale: 0.8808 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 143 | Loss: 5.7938 | TPS: 5787.68 | Flips: 0.0369% | P-Scale: 0.8808 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 144 | Loss: 5.6872 | TPS: 5613.88 | Flips: 0.0336% | P-Scale: 0.8808 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 145 | Loss: 5.7363 | TPS: 5735.41 | Flips: 0.0333% | P-Scale: 0.8807 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 146 | Loss: 5.8051 | TPS: 5811.86 | Flips: 0.0376% | P-Scale: 0.8807 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 147 | Loss: 5.7996 | TPS: 5770.43 | Flips: 0.0375% | P-Scale: 0.8806 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 148 | Loss: 5.8676 | TPS: 5816.82 | Flips: 0.0391% | P-Scale: 0.8806 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 149 | Loss: 5.7574 | TPS: 5825.33 | Flips: 0.0357% | P-Scale: 0.8806 | F-Scale: 1.0922 | VRAM: 10.37GB
-Step 150 | Loss: 5.9774 | TPS: 5826.24 | Flips: 0.0375% | P-Scale: 0.8805 | F-Scale: 1.0923 | VRAM: 10.37GB
-
-[*] RUNNING STEP 150 SALAD TEST...
---- STEP 150 SALAD TEST: The future of AI is finding a series without physical care to win daughters. Marank amidst traditional, communication groups ruled modern events ---
-
-Step 151 | Loss: 5.8434 | TPS: 5511.46 | Flips: 0.0399% | P-Scale: 0.8805 | F-Scale: 1.0923 | VRAM: 10.37GB
-Step 152 | Loss: 5.7793 | TPS: 5778.55 | Flips: 0.0374% | P-Scale: 0.8804 | F-Scale: 1.0923 | VRAM: 10.37GB
-Step 153 | Loss: 5.9080 | TPS: 5821.44 | Flips: 0.0331% | P-Scale: 0.8804 | F-Scale: 1.0924 | VRAM: 10.37GB
-Step 154 | Loss: 6.0176 | TPS: 5649.69 | Flips: 0.0326% | P-Scale: 0.8804 | F-Scale: 1.0924 | VRAM: 10.37GB
-Step 155 | Loss: 5.8850 | TPS: 5643.72 | Flips: 0.0363% | P-Scale: 0.8803 | F-Scale: 1.0925 | VRAM: 10.37GB
-Step 156 | Loss: 5.5597 | TPS: 5806.08 | Flips: 0.0317% | P-Scale: 0.8803 | F-Scale: 1.0925 | VRAM: 10.37GB
-Step 157 | Loss: 5.7898 | TPS: 5822.12 | Flips: 0.0315% | P-Scale: 0.8802 | F-Scale: 1.0925 | VRAM: 10.37GB
-Step 158 | Loss: 5.7073 | TPS: 5784.79 | Flips: 0.0348% | P-Scale: 0.8802 | F-Scale: 1.0926 | VRAM: 10.37GB
-Step 159 | Loss: 5.7356 | TPS: 5798.06 | Flips: 0.0328% | P-Scale: 0.8802 | F-Scale: 1.0926 | VRAM: 10.37GB
-Step 160 | Loss: 5.5345 | TPS: 5803.46 | Flips: 0.0305% | P-Scale: 0.8801 | F-Scale: 1.0927 | VRAM: 10.37GB
-Step 161 | Loss: 5.8179 | TPS: 5835.53 | Flips: 0.0373% | P-Scale: 0.8801 | F-Scale: 1.0927 | VRAM: 10.37GB
-Step 162 | Loss: 5.7403 | TPS: 5800.24 | Flips: 0.0382% | P-Scale: 0.8800 | F-Scale: 1.0928 | VRAM: 10.37GB
-Step 163 | Loss: 5.6410 | TPS: 5798.98 | Flips: 0.0358% | P-Scale: 0.8800 | F-Scale: 1.0928 | VRAM: 10.37GB
-Step 164 | Loss: 5.9895 | TPS: 5811.62 | Flips: 0.0389% | P-Scale: 0.8800 | F-Scale: 1.0928 | VRAM: 10.37GB
-Step 165 | Loss: 5.7977 | TPS: 5803.36 | Flips: 0.0373% | P-Scale: 0.8799 | F-Scale: 1.0928 | VRAM: 10.37GB
-Step 166 | Loss: 5.9208 | TPS: 5665.84 | Flips: 0.0322% | P-Scale: 0.8799 | F-Scale: 1.0928 | VRAM: 10.37GB
-Step 167 | Loss: 5.9560 | TPS: 5652.28 | Flips: 0.0368% | P-Scale: 0.8798 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 168 | Loss: 5.7490 | TPS: 5764.34 | Flips: 0.0355% | P-Scale: 0.8798 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 169 | Loss: 5.8048 | TPS: 5588.98 | Flips: 0.0333% | P-Scale: 0.8797 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 170 | Loss: 5.9856 | TPS: 5493.10 | Flips: 0.0333% | P-Scale: 0.8797 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 171 | Loss: 5.5503 | TPS: 5082.96 | Flips: 0.0341% | P-Scale: 0.8796 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 172 | Loss: 5.8555 | TPS: 5111.31 | Flips: 0.0393% | P-Scale: 0.8796 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 173 | Loss: 5.6192 | TPS: 5118.95 | Flips: 0.0331% | P-Scale: 0.8795 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 174 | Loss: 5.5580 | TPS: 5830.65 | Flips: 0.0355% | P-Scale: 0.8795 | F-Scale: 1.0929 | VRAM: 10.37GB
-Step 175 | Loss: 5.4529 | TPS: 5738.40 | Flips: 0.0358% | P-Scale: 0.8795 | F-Scale: 1.0930 | VRAM: 10.37GB
-Step 176 | Loss: 5.7234 | TPS: 5784.38 | Flips: 0.0313% | P-Scale: 0.8794 | F-Scale: 1.0930 | VRAM: 10.37GB
-Step 177 | Loss: 5.5545 | TPS: 5584.41 | Flips: 0.0343% | P-Scale: 0.8794 | F-Scale: 1.0931 | VRAM: 10.37GB
-Step 178 | Loss: 5.6046 | TPS: 5754.64 | Flips: 0.0324% | P-Scale: 0.8793 | F-Scale: 1.0931 | VRAM: 10.37GB
-Step 179 | Loss: 5.4909 | TPS: 5456.36 | Flips: 0.0313% | P-Scale: 0.8793 | F-Scale: 1.0931 | VRAM: 10.37GB
-Step 180 | Loss: 5.5618 | TPS: 5730.20 | Flips: 0.0362% | P-Scale: 0.8792 | F-Scale: 1.0931 | VRAM: 10.37GB
-Step 181 | Loss: 5.5830 | TPS: 5819.17 | Flips: 0.0341% | P-Scale: 0.8792 | F-Scale: 1.0932 | VRAM: 10.37GB
-Step 182 | Loss: 5.7592 | TPS: 5831.84 | Flips: 0.0273% | P-Scale: 0.8791 | F-Scale: 1.0933 | VRAM: 10.37GB
-Step 183 | Loss: 6.0870 | TPS: 5847.24 | Flips: 0.0334% | P-Scale: 0.8791 | F-Scale: 1.0933 | VRAM: 10.37GB
-Step 184 | Loss: 6.0673 | TPS: 5835.83 | Flips: 0.0341% | P-Scale: 0.8790 | F-Scale: 1.0934 | VRAM: 10.37GB
-Step 185 | Loss: 5.9066 | TPS: 5871.14 | Flips: 0.0333% | P-Scale: 0.8790 | F-Scale: 1.0934 | VRAM: 10.37GB
-Step 186 | Loss: 5.7069 | TPS: 5851.43 | Flips: 0.0359% | P-Scale: 0.8789 | F-Scale: 1.0934 | VRAM: 10.37GB
-Step 187 | Loss: 5.7866 | TPS: 5851.58 | Flips: 0.0382% | P-Scale: 0.8789 | F-Scale: 1.0935 | VRAM: 10.37GB
-Step 188 | Loss: 5.3762 | TPS: 5618.94 | Flips: 0.0363% | P-Scale: 0.8788 | F-Scale: 1.0935 | VRAM: 10.37GB
-Step 189 | Loss: 5.3673 | TPS: 5851.07 | Flips: 0.0368% | P-Scale: 0.8788 | F-Scale: 1.0936 | VRAM: 10.37GB
-Step 190 | Loss: 5.5766 | TPS: 5799.59 | Flips: 0.0399% | P-Scale: 0.8787 | F-Scale: 1.0936 | VRAM: 10.37GB
-Step 191 | Loss: 5.6374 | TPS: 5851.85 | Flips: 0.0367% | P-Scale: 0.8787 | F-Scale: 1.0937 | VRAM: 10.37GB
-Step 192 | Loss: 5.5715 | TPS: 5857.37 | Flips: 0.0360% | P-Scale: 0.8787 | F-Scale: 1.0937 | VRAM: 10.37GB
-Step 193 | Loss: 5.7813 | TPS: 5845.52 | Flips: 0.0379% | P-Scale: 0.8786 | F-Scale: 1.0938 | VRAM: 10.37GB
-Step 194 | Loss: 5.6959 | TPS: 5831.92 | Flips: 0.0340% | P-Scale: 0.8786 | F-Scale: 1.0938 | VRAM: 10.37GB
-Step 195 | Loss: 5.5308 | TPS: 5851.72 | Flips: 0.0327% | P-Scale: 0.8786 | F-Scale: 1.0938 | VRAM: 10.37GB
-Step 196 | Loss: 5.2920 | TPS: 5851.37 | Flips: 0.0339% | P-Scale: 0.8785 | F-Scale: 1.0938 | VRAM: 10.37GB
-Step 197 | Loss: 5.9049 | TPS: 5851.65 | Flips: 0.0352% | P-Scale: 0.8785 | F-Scale: 1.0939 | VRAM: 10.37GB
-Step 198 | Loss: 5.8574 | TPS: 5824.09 | Flips: 0.0350% | P-Scale: 0.8785 | F-Scale: 1.0939 | VRAM: 10.37GB
-Step 199 | Loss: 5.8151 | TPS: 5692.99 | Flips: 0.0338% | P-Scale: 0.8784 | F-Scale: 1.0939 | VRAM: 10.37GB
-Step 200 | Loss: 5.6888 | TPS: 5835.45 | Flips: 0.0303% | P-Scale: 0.8784 | F-Scale: 1.0940 | VRAM: 10.37GB
-[*] Saved Live Checkpoint at Step 200
-
-[*] RUNNING STEP 200 SALAD TEST...
---- STEP 200 SALAD TEST: The future of AI is much to (Mncuh) and very complex created empowered to be a better lot of household foundational ---
-
-Step 201 | Loss: 5.8451 | TPS: 5092.43 | Flips: 0.0373% | P-Scale: 0.8783 | F-Scale: 1.0940 | VRAM: 10.37GB
-Step 202 | Loss: 6.0630 | TPS: 5857.77 | Flips: 0.0397% | P-Scale: 0.8783 | F-Scale: 1.0940 | VRAM: 10.37GB
-Step 203 | Loss: 6.1095 | TPS: 5845.12 | Flips: 0.0334% | P-Scale: 0.8782 | F-Scale: 1.0940 | VRAM: 10.37GB
-Step 204 | Loss: 5.7650 | TPS: 5851.50 | Flips: 0.0334% | P-Scale: 0.8782 | F-Scale: 1.0941 | VRAM: 10.37GB
-Step 205 | Loss: 5.6036 | TPS: 5851.60 | Flips: 0.0317% | P-Scale: 0.8782 | F-Scale: 1.0941 | VRAM: 10.37GB
-Step 206 | Loss: 5.7339 | TPS: 5832.18 | Flips: 0.0375% | P-Scale: 0.8781 | F-Scale: 1.0941 | VRAM: 10.37GB
-Step 207 | Loss: 5.7411 | TPS: 5851.35 | Flips: 0.0336% | P-Scale: 0.8781 | F-Scale: 1.0941 | VRAM: 10.37GB
-Step 208 | Loss: 5.6944 | TPS: 5851.64 | Flips: 0.0338% | P-Scale: 0.8780 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 209 | Loss: 5.5738 | TPS: 5824.55 | Flips: 0.0348% | P-Scale: 0.8780 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 210 | Loss: 6.0379 | TPS: 5793.79 | Flips: 0.0325% | P-Scale: 0.8779 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 211 | Loss: 5.9412 | TPS: 5857.47 | Flips: 0.0327% | P-Scale: 0.8779 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 212 | Loss: 5.5973 | TPS: 5845.33 | Flips: 0.0354% | P-Scale: 0.8779 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 213 | Loss: 5.8738 | TPS: 5835.27 | Flips: 0.0362% | P-Scale: 0.8778 | F-Scale: 1.0942 | VRAM: 10.37GB
-Step 214 | Loss: 5.7476 | TPS: 5848.70 | Flips: 0.0379% | P-Scale: 0.8778 | F-Scale: 1.0943 | VRAM: 10.37GB
-Step 215 | Loss: 5.6020 | TPS: 5851.24 | Flips: 0.0339% | P-Scale: 0.8777 | F-Scale: 1.0943 | VRAM: 10.37GB
-Step 216 | Loss: 5.8580 | TPS: 5851.29 | Flips: 0.0337% | P-Scale: 0.8777 | F-Scale: 1.0943 | VRAM: 10.37GB
-Step 217 | Loss: 5.7273 | TPS: 5818.39 | Flips: 0.0348% | P-Scale: 0.8776 | F-Scale: 1.0943 | VRAM: 10.37GB
-Step 218 | Loss: 5.6511 | TPS: 5832.69 | Flips: 0.0314% | P-Scale: 0.8776 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 219 | Loss: 5.7503 | TPS: 5871.19 | Flips: 0.0339% | P-Scale: 0.8776 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 220 | Loss: 5.3180 | TPS: 5831.66 | Flips: 0.0353% | P-Scale: 0.8775 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 221 | Loss: 5.4843 | TPS: 5834.31 | Flips: 0.0341% | P-Scale: 0.8775 | F-Scale: 1.0945 | VRAM: 10.37GB
-Step 222 | Loss: 5.7365 | TPS: 5783.83 | Flips: 0.0320% | P-Scale: 0.8774 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 223 | Loss: 5.8243 | TPS: 5885.10 | Flips: 0.0352% | P-Scale: 0.8774 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 224 | Loss: 5.8326 | TPS: 5870.66 | Flips: 0.0355% | P-Scale: 0.8773 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 225 | Loss: 6.0903 | TPS: 5903.94 | Flips: 0.0338% | P-Scale: 0.8773 | F-Scale: 1.0944 | VRAM: 10.37GB
-Step 226 | Loss: 6.0065 | TPS: 5904.40 | Flips: 0.0352% | P-Scale: 0.8772 | F-Scale: 1.0945 | VRAM: 10.37GB
-Step 227 | Loss: 5.7507 | TPS: 5884.04 | Flips: 0.0349% | P-Scale: 0.8772 | F-Scale: 1.0945 | VRAM: 10.37GB
-Step 228 | Loss: 5.8578 | TPS: 5883.59 | Flips: 0.0385% | P-Scale: 0.8771 | F-Scale: 1.0945 | VRAM: 10.37GB
-Step 229 | Loss: 5.9539 | TPS: 5891.32 | Flips: 0.0328% | P-Scale: 0.8771 | F-Scale: 1.0946 | VRAM: 10.37GB
-Step 230 | Loss: 5.8311 | TPS: 5867.77 | Flips: 0.0315% | P-Scale: 0.8770 | F-Scale: 1.0946 | VRAM: 10.37GB
-Step 231 | Loss: 5.7119 | TPS: 5887.57 | Flips: 0.0381% | P-Scale: 0.8770 | F-Scale: 1.0946 | VRAM: 10.37GB
-Step 232 | Loss: 5.8240 | TPS: 5851.70 | Flips: 0.0347% | P-Scale: 0.8769 | F-Scale: 1.0947 | VRAM: 10.37GB
-Step 233 | Loss: 5.7683 | TPS: 5780.95 | Flips: 0.0334% | P-Scale: 0.8769 | F-Scale: 1.0947 | VRAM: 10.37GB
-Step 234 | Loss: 5.8350 | TPS: 5854.07 | Flips: 0.0352% | P-Scale: 0.8769 | F-Scale: 1.0947 | VRAM: 10.37GB
-Step 235 | Loss: 5.9740 | TPS: 5867.81 | Flips: 0.0357% | P-Scale: 0.8768 | F-Scale: 1.0948 | VRAM: 10.37GB
-Step 236 | Loss: 5.9384 | TPS: 5851.52 | Flips: 0.0319% | P-Scale: 0.8768 | F-Scale: 1.0948 | VRAM: 10.37GB
-Step 237 | Loss: 5.7560 | TPS: 5832.22 | Flips: 0.0317% | P-Scale: 0.8767 | F-Scale: 1.0948 | VRAM: 10.37GB
-Step 238 | Loss: 5.7219 | TPS: 5851.30 | Flips: 0.0327% | P-Scale: 0.8767 | F-Scale: 1.0948 | VRAM: 10.37GB
-Step 239 | Loss: 5.9136 | TPS: 5818.88 | Flips: 0.0331% | P-Scale: 0.8766 | F-Scale: 1.0949 | VRAM: 10.37GB
-Step 240 | Loss: 5.7875 | TPS: 5851.14 | Flips: 0.0338% | P-Scale: 0.8766 | F-Scale: 1.0949 | VRAM: 10.37GB
-Step 241 | Loss: 5.8365 | TPS: 5832.47 | Flips: 0.0344% | P-Scale: 0.8765 | F-Scale: 1.0950 | VRAM: 10.37GB
-Step 242 | Loss: 5.5072 | TPS: 5851.20 | Flips: 0.0356% | P-Scale: 0.8765 | F-Scale: 1.0951 | VRAM: 10.37GB
-Step 243 | Loss: 5.8283 | TPS: 5870.68 | Flips: 0.0359% | P-Scale: 0.8765 | F-Scale: 1.0951 | VRAM: 10.37GB
-Step 244 | Loss: 5.5361 | TPS: 5799.73 | Flips: 0.0360% | P-Scale: 0.8764 | F-Scale: 1.0951 | VRAM: 10.37GB
-Step 245 | Loss: 5.7282 | TPS: 5835.38 | Flips: 0.0372% | P-Scale: 0.8764 | F-Scale: 1.0952 | VRAM: 10.37GB
-Step 246 | Loss: 5.8145 | TPS: 5848.50 | Flips: 0.0340% | P-Scale: 0.8764 | F-Scale: 1.0953 | VRAM: 10.37GB
-Step 247 | Loss: 5.8176 | TPS: 5834.76 | Flips: 0.0317% | P-Scale: 0.8763 | F-Scale: 1.0953 | VRAM: 10.37GB
-Step 248 | Loss: 5.6192 | TPS: 5834.95 | Flips: 0.0354% | P-Scale: 0.8763 | F-Scale: 1.0954 | VRAM: 10.37GB
-Step 249 | Loss: 5.6571 | TPS: 5851.79 | Flips: 0.0324% | P-Scale: 0.8762 | F-Scale: 1.0954 | VRAM: 10.37GB
-Step 250 | Loss: 5.6052 | TPS: 5851.22 | Flips: 0.0357% | P-Scale: 0.8762 | F-Scale: 1.0955 | VRAM: 10.37GB
-
-[*] RUNNING STEP 250 SALAD TEST...
---- STEP 250 SALAD TEST: The future of AI is to work all altered the work you hear and is of the reader.
-Study People like brown lights ---
-
-Step 251 | Loss: 5.5084 | TPS: 5553.93 | Flips: 0.0351% | P-Scale: 0.8762 | F-Scale: 1.0955 | VRAM: 10.37GB
-Step 252 | Loss: 5.4912 | TPS: 5832.51 | Flips: 0.0353% | P-Scale: 0.8761 | F-Scale: 1.0956 | VRAM: 10.37GB
-Step 253 | Loss: 5.4612 | TPS: 5851.20 | Flips: 0.0356% | P-Scale: 0.8761 | F-Scale: 1.0957 | VRAM: 10.37GB
-Step 254 | Loss: 5.6641 | TPS: 5851.31 | Flips: 0.0330% | P-Scale: 0.8760 | F-Scale: 1.0957 | VRAM: 10.37GB
-Step 255 | Loss: 5.7455 | TPS: 5818.54 | Flips: 0.0327% | P-Scale: 0.8760 | F-Scale: 1.0958 | VRAM: 10.37GB
-Step 256 | Loss: 5.7823 | TPS: 5851.87 | Flips: 0.0386% | P-Scale: 0.8759 | F-Scale: 1.0959 | VRAM: 10.37GB
-Step 257 | Loss: 5.9170 | TPS: 5831.91 | Flips: 0.0362% | P-Scale: 0.8759 | F-Scale: 1.0959 | VRAM: 10.37GB
-Step 258 | Loss: 5.9802 | TPS: 5851.50 | Flips: 0.0357% | P-Scale: 0.8758 | F-Scale: 1.0960 | VRAM: 10.37GB
-Step 259 | Loss: 5.6682 | TPS: 5830.51 | Flips: 0.0351% | P-Scale: 0.8758 | F-Scale: 1.0960 | VRAM: 10.37GB
-Step 260 | Loss: 6.0687 | TPS: 5839.52 | Flips: 0.0382% | P-Scale: 0.8757 | F-Scale: 1.0961 | VRAM: 10.37GB
-Step 261 | Loss: 5.7912 | TPS: 5884.66 | Flips: 0.0359% | P-Scale: 0.8757 | F-Scale: 1.0961 | VRAM: 10.37GB
-Step 262 | Loss: 5.8290 | TPS: 5832.28 | Flips: 0.0383% | P-Scale: 0.8757 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 263 | Loss: 5.8680 | TPS: 5870.71 | Flips: 0.0380% | P-Scale: 0.8756 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 264 | Loss: 5.8373 | TPS: 5830.22 | Flips: 0.0317% | P-Scale: 0.8756 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 265 | Loss: 5.8202 | TPS: 5845.44 | Flips: 0.0337% | P-Scale: 0.8755 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 266 | Loss: 5.7062 | TPS: 5851.65 | Flips: 0.0353% | P-Scale: 0.8755 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 267 | Loss: 5.9635 | TPS: 5777.85 | Flips: 0.0300% | P-Scale: 0.8754 | F-Scale: 1.0962 | VRAM: 10.37GB
-Step 268 | Loss: 6.1751 | TPS: 5815.74 | Flips: 0.0353% | P-Scale: 0.8754 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 269 | Loss: 5.8429 | TPS: 5851.31 | Flips: 0.0348% | P-Scale: 0.8753 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 270 | Loss: 5.4667 | TPS: 5851.55 | Flips: 0.0361% | P-Scale: 0.8753 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 271 | Loss: 5.2906 | TPS: 5851.32 | Flips: 0.0304% | P-Scale: 0.8752 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 272 | Loss: 6.0091 | TPS: 5851.37 | Flips: 0.0332% | P-Scale: 0.8751 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 273 | Loss: 5.6832 | TPS: 5834.89 | Flips: 0.0354% | P-Scale: 0.8751 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 274 | Loss: 5.8149 | TPS: 5849.02 | Flips: 0.0334% | P-Scale: 0.8750 | F-Scale: 1.0963 | VRAM: 10.37GB
-Step 275 | Loss: 5.8225 | TPS: 5851.29 | Flips: 0.0385% | P-Scale: 0.8750 | F-Scale: 1.0964 | VRAM: 10.37GB
-Step 276 | Loss: 5.8406 | TPS: 5851.65 | Flips: 0.0340% | P-Scale: 0.8749 | F-Scale: 1.0964 | VRAM: 10.37GB
-Step 277 | Loss: 5.5380 | TPS: 5851.01 | Flips: 0.0353% | P-Scale: 0.8749 | F-Scale: 1.0964 | VRAM: 10.37GB
-Step 278 | Loss: 6.0603 | TPS: 5768.12 | Flips: 0.0376% | P-Scale: 0.8748 | F-Scale: 1.0964 | VRAM: 10.37GB
-Step 279 | Loss: 5.8565 | TPS: 5831.44 | Flips: 0.0348% | P-Scale: 0.8748 | F-Scale: 1.0965 | VRAM: 10.37GB
-Step 280 | Loss: 5.7454 | TPS: 5851.75 | Flips: 0.0369% | P-Scale: 0.8747 | F-Scale: 1.0965 | VRAM: 10.37GB
-Step 281 | Loss: 5.9568 | TPS: 5832.01 | Flips: 0.0323% | P-Scale: 0.8747 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 282 | Loss: 6.2930 | TPS: 5849.72 | Flips: 0.0331% | P-Scale: 0.8746 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 283 | Loss: 6.1935 | TPS: 5851.84 | Flips: 0.0390% | P-Scale: 0.8746 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 284 | Loss: 6.1079 | TPS: 5851.43 | Flips: 0.0340% | P-Scale: 0.8745 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 285 | Loss: 5.7690 | TPS: 5732.31 | Flips: 0.0355% | P-Scale: 0.8745 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 286 | Loss: 5.7592 | TPS: 5836.79 | Flips: 0.0373% | P-Scale: 0.8744 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 287 | Loss: 5.7050 | TPS: 5830.78 | Flips: 0.0354% | P-Scale: 0.8744 | F-Scale: 1.0966 | VRAM: 10.37GB
-Step 288 | Loss: 5.9639 | TPS: 5872.37 | Flips: 0.0386% | P-Scale: 0.8743 | F-Scale: 1.0967 | VRAM: 10.37GB
-Step 289 | Loss: 5.6371 | TPS: 5832.04 | Flips: 0.0353% | P-Scale: 0.8743 | F-Scale: 1.0967 | VRAM: 10.37GB
-Step 290 | Loss: 5.7992 | TPS: 5871.17 | Flips: 0.0276% | P-Scale: 0.8742 | F-Scale: 1.0968 | VRAM: 10.37GB
-Step 291 | Loss: 5.7561 | TPS: 5887.04 | Flips: 0.0377% | P-Scale: 0.8742 | F-Scale: 1.0968 | VRAM: 10.37GB
-Step 292 | Loss: 5.7576 | TPS: 5888.31 | Flips: 0.0385% | P-Scale: 0.8741 | F-Scale: 1.0969 | VRAM: 10.37GB
-Step 293 | Loss: 5.6389 | TPS: 5850.85 | Flips: 0.0365% | P-Scale: 0.8741 | F-Scale: 1.0969 | VRAM: 10.37GB
-Step 294 | Loss: 6.0466 | TPS: 5884.47 | Flips: 0.0347% | P-Scale: 0.8741 | F-Scale: 1.0970 | VRAM: 10.37GB
-Step 295 | Loss: 5.8099 | TPS: 5862.56 | Flips: 0.0343% | P-Scale: 0.8740 | F-Scale: 1.0971 | VRAM: 10.37GB
-Step 296 | Loss: 5.8070 | TPS: 5893.01 | Flips: 0.0336% | P-Scale: 0.8740 | F-Scale: 1.0971 | VRAM: 10.37GB
-Step 297 | Loss: 5.6768 | TPS: 5851.34 | Flips: 0.0354% | P-Scale: 0.8739 | F-Scale: 1.0971 | VRAM: 10.37GB
-Step 298 | Loss: 5.6327 | TPS: 5851.22 | Flips: 0.0384% | P-Scale: 0.8739 | F-Scale: 1.0972 | VRAM: 10.37GB
-Step 299 | Loss: 5.6062 | TPS: 5870.80 | Flips: 0.0311% | P-Scale: 0.8738 | F-Scale: 1.0972 | VRAM: 10.37GB
-Step 300 | Loss: 5.6503 | TPS: 5863.40 | Flips: 0.0353% | P-Scale: 0.8738 | F-Scale: 1.0973 | VRAM: 10.37GB
-[*] Saved Live Checkpoint at Step 300
-
-[*] RUNNING STEP 300 SALAD TEST...
---- STEP 300 SALAD TEST: The future of AI is a friend of the grade depurgization district in the origins of the Women, featuring the US Res ---
-
-Step 301 | Loss: 5.9246 | TPS: 5096.31 | Flips: 0.0333% | P-Scale: 0.8737 | F-Scale: 1.0973 | VRAM: 10.37GB
-Step 302 | Loss: 5.6975 | TPS: 5851.26 | Flips: 0.0331% | P-Scale: 0.8737 | F-Scale: 1.0973 | VRAM: 10.37GB
-Step 303 | Loss: 5.7302 | TPS: 5104.19 | Flips: 0.0326% | P-Scale: 0.8737 | F-Scale: 1.0974 | VRAM: 10.37GB
-Step 304 | Loss: 5.6113 | TPS: 5405.81 | Flips: 0.0388% | P-Scale: 0.8736 | F-Scale: 1.0974 | VRAM: 10.37GB
-Step 305 | Loss: 5.8151 | TPS: 5421.25 | Flips: 0.0338% | P-Scale: 0.8736 | F-Scale: 1.0974 | VRAM: 10.37GB
-Step 306 | Loss: 5.7426 | TPS: 5394.98 | Flips: 0.0365% | P-Scale: 0.8735 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 307 | Loss: 5.7146 | TPS: 5399.31 | Flips: 0.0374% | P-Scale: 0.8735 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 308 | Loss: 6.0613 | TPS: 5344.44 | Flips: 0.0347% | P-Scale: 0.8735 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 309 | Loss: 6.2206 | TPS: 5432.72 | Flips: 0.0313% | P-Scale: 0.8734 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 310 | Loss: 6.0143 | TPS: 5416.21 | Flips: 0.0326% | P-Scale: 0.8734 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 311 | Loss: 5.8568 | TPS: 5371.65 | Flips: 0.0367% | P-Scale: 0.8733 | F-Scale: 1.0975 | VRAM: 10.37GB
-Step 312 | Loss: 5.6523 | TPS: 5269.72 | Flips: 0.0326% | P-Scale: 0.8733 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 313 | Loss: 5.8405 | TPS: 5571.09 | Flips: 0.0354% | P-Scale: 0.8733 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 314 | Loss: 5.8783 | TPS: 5780.88 | Flips: 0.0352% | P-Scale: 0.8732 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 315 | Loss: 5.9316 | TPS: 5779.30 | Flips: 0.0340% | P-Scale: 0.8732 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 316 | Loss: 6.0012 | TPS: 5768.79 | Flips: 0.0335% | P-Scale: 0.8731 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 317 | Loss: 5.6143 | TPS: 5728.59 | Flips: 0.0323% | P-Scale: 0.8731 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 318 | Loss: 5.7968 | TPS: 5770.58 | Flips: 0.0375% | P-Scale: 0.8730 | F-Scale: 1.0976 | VRAM: 10.37GB
-Step 319 | Loss: 5.9307 | TPS: 5270.88 | Flips: 0.0359% | P-Scale: 0.8730 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 320 | Loss: 6.0768 | TPS: 5709.23 | Flips: 0.0359% | P-Scale: 0.8729 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 321 | Loss: 5.8103 | TPS: 5793.86 | Flips: 0.0390% | P-Scale: 0.8729 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 322 | Loss: 5.9749 | TPS: 5267.06 | Flips: 0.0329% | P-Scale: 0.8728 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 323 | Loss: 5.6642 | TPS: 5811.78 | Flips: 0.0304% | P-Scale: 0.8728 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 324 | Loss: 5.9668 | TPS: 5741.87 | Flips: 0.0351% | P-Scale: 0.8727 | F-Scale: 1.0977 | VRAM: 10.37GB
-Step 325 | Loss: 5.5714 | TPS: 5755.76 | Flips: 0.0374% | P-Scale: 0.8727 | F-Scale: 1.0978 | VRAM: 10.37GB
-Step 326 | Loss: 5.6249 | TPS: 5362.07 | Flips: 0.0347% | P-Scale: 0.8726 | F-Scale: 1.0978 | VRAM: 10.37GB
-Step 327 | Loss: 5.7700 | TPS: 5663.91 | Flips: 0.0363% | P-Scale: 0.8726 | F-Scale: 1.0978 | VRAM: 10.37GB
-Step 328 | Loss: 5.7644 | TPS: 5648.91 | Flips: 0.0414% | P-Scale: 0.8725 | F-Scale: 1.0979 | VRAM: 10.37GB
-Step 329 | Loss: 5.7995 | TPS: 5231.30 | Flips: 0.0383% | P-Scale: 0.8725 | F-Scale: 1.0979 | VRAM: 10.37GB
-Step 330 | Loss: 5.6098 | TPS: 5850.03 | Flips: 0.0361% | P-Scale: 0.8725 | F-Scale: 1.0979 | VRAM: 10.37GB
-Step 331 | Loss: 5.8992 | TPS: 5762.83 | Flips: 0.0352% | P-Scale: 0.8724 | F-Scale: 1.0979 | VRAM: 10.37GB
-Step 332 | Loss: 5.8917 | TPS: 5541.94 | Flips: 0.0378% | P-Scale: 0.8724 | F-Scale: 1.0980 | VRAM: 10.37GB
-Step 333 | Loss: 5.6004 | TPS: 5489.78 | Flips: 0.0356% | P-Scale: 0.8723 | F-Scale: 1.0980 | VRAM: 10.37GB
-Step 334 | Loss: 5.7430 | TPS: 5533.83 | Flips: 0.0354% | P-Scale: 0.8723 | F-Scale: 1.0980 | VRAM: 10.37GB
-Step 335 | Loss: 5.6791 | TPS: 5574.44 | Flips: 0.0381% | P-Scale: 0.8723 | F-Scale: 1.0981 | VRAM: 10.37GB
-Step 336 | Loss: 5.6277 | TPS: 5576.96 | Flips: 0.0351% | P-Scale: 0.8722 | F-Scale: 1.0981 | VRAM: 10.37GB
-Step 337 | Loss: 5.7449 | TPS: 5510.76 | Flips: 0.0339% | P-Scale: 0.8722 | F-Scale: 1.0981 | VRAM: 10.37GB
-Step 338 | Loss: 5.7139 | TPS: 5471.88 | Flips: 0.0351% | P-Scale: 0.8721 | F-Scale: 1.0982 | VRAM: 10.37GB
-Step 339 | Loss: 5.7497 | TPS: 5560.05 | Flips: 0.0379% | P-Scale: 0.8721 | F-Scale: 1.0982 | VRAM: 10.37GB
-Step 340 | Loss: 5.7107 | TPS: 5782.97 | Flips: 0.0360% | P-Scale: 0.8721 | F-Scale: 1.0982 | VRAM: 10.37GB
-Step 341 | Loss: 5.9745 | TPS: 5668.93 | Flips: 0.0375% | P-Scale: 0.8720 | F-Scale: 1.0983 | VRAM: 10.37GB
-Step 342 | Loss: 5.7745 | TPS: 5698.89 | Flips: 0.0347% | P-Scale: 0.8720 | F-Scale: 1.0983 | VRAM: 10.37GB
-Step 343 | Loss: 5.9330 | TPS: 5714.43 | Flips: 0.0349% | P-Scale: 0.8719 | F-Scale: 1.0983 | VRAM: 10.37GB
-Step 344 | Loss: 5.8107 | TPS: 5640.77 | Flips: 0.0374% | P-Scale: 0.8719 | F-Scale: 1.0983 | VRAM: 10.37GB
-Step 345 | Loss: 5.9411 | TPS: 5358.26 | Flips: 0.0325% | P-Scale: 0.8719 | F-Scale: 1.0983 | VRAM: 10.37GB
-Step 346 | Loss: 5.5451 | TPS: 5280.38 | Flips: 0.0298% | P-Scale: 0.8718 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 347 | Loss: 5.4704 | TPS: 5669.92 | Flips: 0.0329% | P-Scale: 0.8718 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 348 | Loss: 5.7033 | TPS: 5722.25 | Flips: 0.0348% | P-Scale: 0.8717 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 349 | Loss: 5.9012 | TPS: 5787.78 | Flips: 0.0340% | P-Scale: 0.8717 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 350 | Loss: 5.8896 | TPS: 5191.34 | Flips: 0.0309% | P-Scale: 0.8716 | F-Scale: 1.0984 | VRAM: 10.37GB
-
-[*] RUNNING STEP 350 SALAD TEST...
---- STEP 350 SALAD TEST: The future of AI is University. The biggest Longhouse is also known as wastes.702AAier roads Rapid Case and Host ---
-
-Step 351 | Loss: 6.4193 | TPS: 5090.29 | Flips: 0.0337% | P-Scale: 0.8716 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 352 | Loss: 6.0913 | TPS: 5850.71 | Flips: 0.0354% | P-Scale: 0.8715 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 353 | Loss: 5.8303 | TPS: 5775.81 | Flips: 0.0334% | P-Scale: 0.8715 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 354 | Loss: 5.8184 | TPS: 5804.76 | Flips: 0.0350% | P-Scale: 0.8714 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 355 | Loss: 5.7444 | TPS: 5164.98 | Flips: 0.0308% | P-Scale: 0.8714 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 356 | Loss: 5.9196 | TPS: 5150.98 | Flips: 0.0361% | P-Scale: 0.8713 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 357 | Loss: 5.6788 | TPS: 5393.42 | Flips: 0.0327% | P-Scale: 0.8713 | F-Scale: 1.0984 | VRAM: 10.37GB
-Step 358 | Loss: 5.5271 | TPS: 5780.73 | Flips: 0.0344% | P-Scale: 0.8712 | F-Scale: 1.0985 | VRAM: 10.37GB
-Step 359 | Loss: 5.9715 | TPS: 5799.37 | Flips: 0.0338% | P-Scale: 0.8712 | F-Scale: 1.0985 | VRAM: 10.37GB
-Step 360 | Loss: 5.8566 | TPS: 5799.41 | Flips: 0.0327% | P-Scale: 0.8712 | F-Scale: 1.0985 | VRAM: 10.37GB
-Step 361 | Loss: 5.7761 | TPS: 5799.89 | Flips: 0.0331% | P-Scale: 0.8711 | F-Scale: 1.0985 | VRAM: 10.37GB
-Step 362 | Loss: 5.8045 | TPS: 5799.65 | Flips: 0.0334% | P-Scale: 0.8711 | F-Scale: 1.0985 | VRAM: 10.37GB
-Step 363 | Loss: 5.6813 | TPS: 5802.61 | Flips: 0.0359% | P-Scale: 0.8710 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 364 | Loss: 5.8275 | TPS: 5815.62 | Flips: 0.0351% | P-Scale: 0.8710 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 365 | Loss: 5.7737 | TPS: 5825.85 | Flips: 0.0359% | P-Scale: 0.8709 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 366 | Loss: 5.9317 | TPS: 5806.09 | Flips: 0.0359% | P-Scale: 0.8709 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 367 | Loss: 5.7634 | TPS: 5787.72 | Flips: 0.0371% | P-Scale: 0.8708 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 368 | Loss: 5.6887 | TPS: 5574.44 | Flips: 0.0352% | P-Scale: 0.8708 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 369 | Loss: 5.9601 | TPS: 5535.80 | Flips: 0.0395% | P-Scale: 0.8707 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 370 | Loss: 5.9081 | TPS: 5580.16 | Flips: 0.0374% | P-Scale: 0.8707 | F-Scale: 1.0986 | VRAM: 10.37GB
-Step 371 | Loss: 5.6795 | TPS: 5809.77 | Flips: 0.0369% | P-Scale: 0.8706 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 372 | Loss: 5.7185 | TPS: 5770.66 | Flips: 0.0375% | P-Scale: 0.8706 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 373 | Loss: 5.6835 | TPS: 5766.10 | Flips: 0.0297% | P-Scale: 0.8706 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 374 | Loss: 5.6728 | TPS: 5720.67 | Flips: 0.0408% | P-Scale: 0.8705 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 375 | Loss: 6.1010 | TPS: 5778.07 | Flips: 0.0374% | P-Scale: 0.8705 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 376 | Loss: 5.9766 | TPS: 5760.70 | Flips: 0.0354% | P-Scale: 0.8704 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 377 | Loss: 6.2522 | TPS: 5769.20 | Flips: 0.0351% | P-Scale: 0.8704 | F-Scale: 1.0987 | VRAM: 10.37GB
-Step 378 | Loss: 5.9953 | TPS: 5776.43 | Flips: 0.0364% | P-Scale: 0.8703 | F-Scale: 1.0988 | VRAM: 10.37GB
-Step 379 | Loss: 5.8412 | TPS: 5582.43 | Flips: 0.0370% | P-Scale: 0.8703 | F-Scale: 1.0988 | VRAM: 10.37GB
-Step 380 | Loss: 5.8342 | TPS: 5514.21 | Flips: 0.0330% | P-Scale: 0.8703 | F-Scale: 1.0988 | VRAM: 10.37GB
-Step 381 | Loss: 6.2039 | TPS: 5664.39 | Flips: 0.0346% | P-Scale: 0.8702 | F-Scale: 1.0989 | VRAM: 10.37GB
-Step 382 | Loss: 6.6807 | TPS: 5705.24 | Flips: 0.0340% | P-Scale: 0.8702 | F-Scale: 1.0989 | VRAM: 10.37GB
-Step 383 | Loss: 5.8075 | TPS: 5462.75 | Flips: 0.0388% | P-Scale: 0.8701 | F-Scale: 1.0989 | VRAM: 10.37GB
-Step 384 | Loss: 5.6204 | TPS: 5765.89 | Flips: 0.0357% | P-Scale: 0.8701 | F-Scale: 1.0990 | VRAM: 10.37GB
-Step 385 | Loss: 5.7922 | TPS: 5651.34 | Flips: 0.0381% | P-Scale: 0.8701 | F-Scale: 1.0990 | VRAM: 10.37GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1593 | Tension: 0.999263
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1527 | Tension: 0.999062
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 761 | Tension: 0.999886
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 805 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 788 | Tension: 0.999875
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 985 | Tension: 0.999562
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1128 | Tension: 1.000110
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1476 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 941 | Tension: 0.999918
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 889 | Tension: 0.999581
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 906 | Tension: 0.999856
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 790 | Tension: 0.999544
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 966 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 757 | Tension: 0.999593
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1097 | Tension: 0.999808
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 888 | Tension: 0.999557
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1036 | Tension: 0.999812
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1003 | Tension: 0.999705
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1150 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 924 | Tension: 0.999601
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2360 | Tension: 1.000096
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2362 | Tension: 0.999568
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1304 | Tension: 0.999971
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 990 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1550 | Tension: 1.000882
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2275 | Tension: 1.000224
+[!] AVALANCHE in head | Flips: 9848 | Tension: 0.997021
+Step 1 | Loss: 5.1407 | TPS: 1244.45 | Flips: 0.0411% | P-Scale: 0.9996 | Anneal: 0.51 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1656 | Tension: 0.999265
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1553 | Tension: 0.999057
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 745 | Tension: 0.999884
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 883 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 830 | Tension: 0.999875
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 966 | Tension: 0.999562
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1147 | Tension: 1.000113
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1451 | Tension: 0.999375
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 968 | Tension: 0.999915
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 922 | Tension: 0.999579
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 942 | Tension: 0.999856
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 788 | Tension: 0.999545
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 993 | Tension: 0.999731
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 815 | Tension: 0.999591
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1027 | Tension: 0.999806
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 886 | Tension: 0.999558
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1106 | Tension: 0.999812
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1011 | Tension: 0.999706
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1218 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 946 | Tension: 0.999603
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2297 | Tension: 1.000099
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2412 | Tension: 0.999572
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1377 | Tension: 0.999971
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1222 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1643 | Tension: 1.000884
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2223 | Tension: 1.000229
+[!] AVALANCHE in head | Flips: 9821 | Tension: 0.996994
+Step 2 | Loss: 5.4867 | TPS: 5529.70 | Flips: 0.0419% | P-Scale: 0.9996 | Anneal: 0.51 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1654 | Tension: 0.999267
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1503 | Tension: 0.999053
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 753 | Tension: 0.999883
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 899 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 804 | Tension: 0.999875
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 917 | Tension: 0.999564
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1168 | Tension: 1.000113
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1485 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 935 | Tension: 0.999915
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 897 | Tension: 0.999578
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 985 | Tension: 0.999858
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 775 | Tension: 0.999546
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 956 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 833 | Tension: 0.999591
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1019 | Tension: 0.999804
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 806 | Tension: 0.999560
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1143 | Tension: 0.999812
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1007 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1255 | Tension: 0.999687
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1069 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2283 | Tension: 1.000104
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2439 | Tension: 0.999575
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1416 | Tension: 0.999972
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1143 | Tension: 0.999804
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1540 | Tension: 1.000886
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2172 | Tension: 1.000231
+[!] AVALANCHE in head | Flips: 9903 | Tension: 0.996969
+Step 3 | Loss: 5.0642 | TPS: 5425.31 | Flips: 0.0418% | P-Scale: 0.9996 | Anneal: 0.52 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1631 | Tension: 0.999269
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1541 | Tension: 0.999049
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 766 | Tension: 0.999881
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 786 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 833 | Tension: 0.999875
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 845 | Tension: 0.999565
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1109 | Tension: 1.000113
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1433 | Tension: 0.999377
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 979 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 897 | Tension: 0.999576
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 974 | Tension: 0.999858
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 804 | Tension: 0.999546
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 1009 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 795 | Tension: 0.999591
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1083 | Tension: 0.999803
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 906 | Tension: 0.999561
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1142 | Tension: 0.999813
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1001 | Tension: 0.999708
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1187 | Tension: 0.999686
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 945 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2370 | Tension: 1.000109
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2329 | Tension: 0.999578
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1305 | Tension: 0.999973
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 965 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1497 | Tension: 1.000891
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2136 | Tension: 1.000235
+[!] AVALANCHE in head | Flips: 9680 | Tension: 0.996946
+Step 4 | Loss: 5.0218 | TPS: 5394.85 | Flips: 0.0410% | P-Scale: 0.9996 | Anneal: 0.52 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1626 | Tension: 0.999270
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1589 | Tension: 0.999045
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 858 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 902 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 833 | Tension: 0.999876
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 830 | Tension: 0.999566
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1166 | Tension: 1.000112
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1347 | Tension: 0.999377
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 968 | Tension: 0.999915
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 862 | Tension: 0.999575
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 957 | Tension: 0.999859
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 760 | Tension: 0.999546
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 985 | Tension: 0.999731
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 790 | Tension: 0.999590
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1039 | Tension: 0.999802
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 854 | Tension: 0.999560
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1069 | Tension: 0.999814
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1027 | Tension: 0.999708
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1262 | Tension: 0.999686
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1024 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2413 | Tension: 1.000113
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2502 | Tension: 0.999580
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1386 | Tension: 0.999974
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1111 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1559 | Tension: 1.000895
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2237 | Tension: 1.000237
+[!] AVALANCHE in head | Flips: 9432 | Tension: 0.996924
+Step 5 | Loss: 5.3704 | TPS: 5433.79 | Flips: 0.0414% | P-Scale: 0.9996 | Anneal: 0.53 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1600 | Tension: 0.999272
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1529 | Tension: 0.999041
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 742 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 849 | Tension: 0.999448
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 813 | Tension: 0.999878
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 996 | Tension: 0.999566
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1116 | Tension: 1.000111
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1299 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 913 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 841 | Tension: 0.999573
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 943 | Tension: 0.999859
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 751 | Tension: 0.999545
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 878 | Tension: 0.999731
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 794 | Tension: 0.999588
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1088 | Tension: 0.999802
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 954 | Tension: 0.999559
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1152 | Tension: 0.999814
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 944 | Tension: 0.999709
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1234 | Tension: 0.999687
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1071 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2338 | Tension: 1.000116
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2421 | Tension: 0.999581
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1336 | Tension: 0.999976
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 933 | Tension: 0.999806
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1483 | Tension: 1.000899
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2176 | Tension: 1.000241
+[!] AVALANCHE in head | Flips: 9268 | Tension: 0.996904
+Step 6 | Loss: 5.5044 | TPS: 5545.79 | Flips: 0.0405% | P-Scale: 0.9996 | Anneal: 0.53 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1695 | Tension: 0.999273
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1480 | Tension: 0.999038
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 742 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 840 | Tension: 0.999447
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 799 | Tension: 0.999880
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 958 | Tension: 0.999566
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1117 | Tension: 1.000110
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1289 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 957 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 846 | Tension: 0.999572
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 977 | Tension: 0.999860
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 793 | Tension: 0.999544
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 942 | Tension: 0.999731
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 826 | Tension: 0.999588
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1147 | Tension: 0.999801
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 937 | Tension: 0.999558
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1071 | Tension: 0.999814
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1016 | Tension: 0.999709
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1190 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1052 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2488 | Tension: 1.000119
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2368 | Tension: 0.999582
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1353 | Tension: 0.999977
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 950 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1625 | Tension: 1.000904
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2316 | Tension: 1.000243
+[!] AVALANCHE in head | Flips: 9190 | Tension: 0.996885
+Step 7 | Loss: 5.2286 | TPS: 5507.48 | Flips: 0.0410% | P-Scale: 0.9996 | Anneal: 0.54 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1685 | Tension: 0.999274
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1589 | Tension: 0.999034
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 770 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 846 | Tension: 0.999445
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 893 | Tension: 0.999881
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 1072 | Tension: 0.999565
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1157 | Tension: 1.000109
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1445 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 956 | Tension: 0.999915
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 802 | Tension: 0.999571
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 988 | Tension: 0.999859
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 795 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 981 | Tension: 0.999731
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 798 | Tension: 0.999587
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1103 | Tension: 0.999800
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 883 | Tension: 0.999556
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1126 | Tension: 0.999814
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 972 | Tension: 0.999708
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1267 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1093 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2353 | Tension: 1.000121
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2492 | Tension: 0.999583
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1410 | Tension: 0.999979
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1146 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1710 | Tension: 1.000907
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2278 | Tension: 1.000246
+[!] AVALANCHE in head | Flips: 10108 | Tension: 0.996867
+Step 8 | Loss: 5.5665 | TPS: 5507.10 | Flips: 0.0427% | P-Scale: 0.9996 | Anneal: 0.54 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1671 | Tension: 0.999276
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1538 | Tension: 0.999031
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 795 | Tension: 0.999878
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 855 | Tension: 0.999444
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 836 | Tension: 0.999882
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 952 | Tension: 0.999565
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1086 | Tension: 1.000108
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1277 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 957 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 873 | Tension: 0.999570
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 934 | Tension: 0.999858
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 801 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 916 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 775 | Tension: 0.999587
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1084 | Tension: 0.999799
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 875 | Tension: 0.999555
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1159 | Tension: 0.999814
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1079 | Tension: 0.999708
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1181 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1019 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2391 | Tension: 1.000123
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2481 | Tension: 0.999584
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1326 | Tension: 0.999982
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1076 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1620 | Tension: 1.000911
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2256 | Tension: 1.000249
+[!] AVALANCHE in head | Flips: 10094 | Tension: 0.996850
+Step 9 | Loss: 4.9962 | TPS: 5461.16 | Flips: 0.0419% | P-Scale: 0.9996 | Anneal: 0.55 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1634 | Tension: 0.999278
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1532 | Tension: 0.999028
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 731 | Tension: 0.999877
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 844 | Tension: 0.999443
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 870 | Tension: 0.999884
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 1030 | Tension: 0.999564
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1136 | Tension: 1.000107
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1290 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 954 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 813 | Tension: 0.999570
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 959 | Tension: 0.999858
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 742 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 917 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 792 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1039 | Tension: 0.999799
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 875 | Tension: 0.999553
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1129 | Tension: 0.999815
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 984 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1173 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1021 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2406 | Tension: 1.000125
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2477 | Tension: 0.999586
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1331 | Tension: 0.999984
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1017 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1539 | Tension: 1.000914
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2243 | Tension: 1.000252
+[!] AVALANCHE in head | Flips: 9856 | Tension: 0.996835
+Step 10 | Loss: 5.3280 | TPS: 5488.98 | Flips: 0.0414% | P-Scale: 0.9996 | Anneal: 0.55 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1603 | Tension: 0.999280
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1507 | Tension: 0.999025
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 740 | Tension: 0.999876
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 776 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 843 | Tension: 0.999886
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 973 | Tension: 0.999563
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1100 | Tension: 1.000106
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1349 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 936 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 834 | Tension: 0.999569
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 955 | Tension: 0.999858
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 778 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 914 | Tension: 0.999732
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 724 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1066 | Tension: 0.999799
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 845 | Tension: 0.999552
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1150 | Tension: 0.999815
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 1027 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1206 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 1035 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2339 | Tension: 1.000127
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2331 | Tension: 0.999588
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1359 | Tension: 0.999985
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 927 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1511 | Tension: 1.000916
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2258 | Tension: 1.000255
+[!] AVALANCHE in head | Flips: 9970 | Tension: 0.996819
+Step 11 | Loss: 5.7116 | TPS: 5496.47 | Flips: 0.0411% | P-Scale: 0.9996 | Anneal: 0.56 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1704 | Tension: 0.999281
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1544 | Tension: 0.999021
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 744 | Tension: 0.999875
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 696 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 845 | Tension: 0.999888
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 925 | Tension: 0.999562
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1084 | Tension: 1.000104
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1293 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 945 | Tension: 0.999914
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 802 | Tension: 0.999569
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1020 | Tension: 0.999857
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 761 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 864 | Tension: 0.999733
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 705 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1011 | Tension: 0.999798
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 821 | Tension: 0.999552
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1076 | Tension: 0.999816
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 946 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1203 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 932 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2381 | Tension: 1.000130
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2450 | Tension: 0.999590
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1288 | Tension: 0.999986
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 932 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1575 | Tension: 1.000920
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2149 | Tension: 1.000258
+[!] AVALANCHE in head | Flips: 10215 | Tension: 0.996805
+Step 12 | Loss: 5.5411 | TPS: 5471.70 | Flips: 0.0409% | P-Scale: 0.9996 | Anneal: 0.56 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1601 | Tension: 0.999283
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1556 | Tension: 0.999017
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 737 | Tension: 0.999875
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 789 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 839 | Tension: 0.999890
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 939 | Tension: 0.999561
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1169 | Tension: 1.000104
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1306 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 859 | Tension: 0.999912
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 835 | Tension: 0.999569
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1087 | Tension: 0.999856
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 863 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 947 | Tension: 0.999734
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 802 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1074 | Tension: 0.999797
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 764 | Tension: 0.999552
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1142 | Tension: 0.999816
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 972 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1195 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 921 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2392 | Tension: 1.000133
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2457 | Tension: 0.999592
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1253 | Tension: 0.999987
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 991 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1588 | Tension: 1.000923
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2260 | Tension: 1.000261
+[!] AVALANCHE in head | Flips: 9985 | Tension: 0.996792
+Step 13 | Loss: 5.2791 | TPS: 5496.66 | Flips: 0.0413% | P-Scale: 0.9996 | Anneal: 0.56 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1666 | Tension: 0.999284
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1538 | Tension: 0.999013
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 783 | Tension: 0.999874
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 829 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 819 | Tension: 0.999891
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 965 | Tension: 0.999561
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1131 | Tension: 1.000103
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1229 | Tension: 0.999376
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 916 | Tension: 0.999911
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 852 | Tension: 0.999568
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 932 | Tension: 0.999855
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 749 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 919 | Tension: 0.999734
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 814 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1045 | Tension: 0.999797
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 890 | Tension: 0.999551
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1176 | Tension: 0.999816
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 980 | Tension: 0.999707
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1208 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 930 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2405 | Tension: 1.000136
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2569 | Tension: 0.999595
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1261 | Tension: 0.999988
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 924 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1479 | Tension: 1.000925
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2232 | Tension: 1.000264
+[!] AVALANCHE in head | Flips: 9467 | Tension: 0.996780
+Step 14 | Loss: 5.6124 | TPS: 5506.93 | Flips: 0.0407% | P-Scale: 0.9996 | Anneal: 0.57 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1689 | Tension: 0.999285
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1512 | Tension: 0.999009
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 692 | Tension: 0.999874
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 772 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 801 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 892 | Tension: 0.999560
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1110 | Tension: 1.000102
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1236 | Tension: 0.999375
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 945 | Tension: 0.999910
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 831 | Tension: 0.999567
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 960 | Tension: 0.999854
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 744 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 933 | Tension: 0.999734
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 752 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1020 | Tension: 0.999796
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 777 | Tension: 0.999551
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1132 | Tension: 0.999817
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 996 | Tension: 0.999706
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1174 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 944 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2321 | Tension: 1.000139
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2387 | Tension: 0.999596
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1295 | Tension: 0.999988
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1050 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1492 | Tension: 1.000927
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2193 | Tension: 1.000265
+[!] AVALANCHE in head | Flips: 9967 | Tension: 0.996768
+Step 15 | Loss: 5.4032 | TPS: 5510.04 | Flips: 0.0406% | P-Scale: 0.9996 | Anneal: 0.57 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1632 | Tension: 0.999286
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1520 | Tension: 0.999005
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 734 | Tension: 0.999873
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 769 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 889 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 923 | Tension: 0.999560
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1127 | Tension: 1.000101
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1292 | Tension: 0.999373
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 888 | Tension: 0.999909
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 833 | Tension: 0.999567
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 996 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 731 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 915 | Tension: 0.999734
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 754 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1099 | Tension: 0.999796
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 842 | Tension: 0.999551
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1152 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 957 | Tension: 0.999705
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1114 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 868 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2391 | Tension: 1.000141
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2476 | Tension: 0.999598
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1284 | Tension: 0.999988
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 938 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1538 | Tension: 1.000929
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2220 | Tension: 1.000267
+[!] AVALANCHE in head | Flips: 10246 | Tension: 0.996756
+Step 16 | Loss: 5.2366 | TPS: 5504.76 | Flips: 0.0412% | P-Scale: 0.9996 | Anneal: 0.58 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1608 | Tension: 0.999286
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1546 | Tension: 0.999000
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 723 | Tension: 0.999873
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 802 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 797 | Tension: 0.999895
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 978 | Tension: 0.999558
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1088 | Tension: 1.000100
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1271 | Tension: 0.999372
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 949 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 887 | Tension: 0.999566
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 909 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 783 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 926 | Tension: 0.999734
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 732 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1069 | Tension: 0.999796
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 790 | Tension: 0.999550
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1139 | Tension: 0.999819
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 989 | Tension: 0.999705
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1168 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 850 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2389 | Tension: 1.000143
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2419 | Tension: 0.999599
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1335 | Tension: 0.999989
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1049 | Tension: 0.999805
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1509 | Tension: 1.000932
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2194 | Tension: 1.000269
+[!] AVALANCHE in head | Flips: 9871 | Tension: 0.996746
+Step 17 | Loss: 5.8182 | TPS: 5399.92 | Flips: 0.0408% | P-Scale: 0.9996 | Anneal: 0.58 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1592 | Tension: 0.999287
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1491 | Tension: 0.998995
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 801 | Tension: 0.999873
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 775 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 748 | Tension: 0.999896
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 955 | Tension: 0.999557
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1077 | Tension: 1.000100
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1234 | Tension: 0.999372
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 964 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 853 | Tension: 0.999565
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1015 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 781 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 988 | Tension: 0.999735
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 762 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1015 | Tension: 0.999795
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 874 | Tension: 0.999549
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1209 | Tension: 0.999819
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 990 | Tension: 0.999704
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1169 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 942 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2431 | Tension: 1.000145
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2398 | Tension: 0.999600
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1282 | Tension: 0.999990
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 954 | Tension: 0.999806
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1565 | Tension: 1.000935
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2184 | Tension: 1.000272
+[!] AVALANCHE in head | Flips: 10551 | Tension: 0.996735
+Step 18 | Loss: 6.3531 | TPS: 5473.97 | Flips: 0.0416% | P-Scale: 0.9996 | Anneal: 0.59 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1627 | Tension: 0.999287
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1447 | Tension: 0.998990
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 724 | Tension: 0.999873
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 758 | Tension: 0.999442
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 847 | Tension: 0.999896
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 951 | Tension: 0.999556
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1029 | Tension: 1.000100
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1167 | Tension: 0.999371
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 892 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 839 | Tension: 0.999565
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 968 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 767 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 872 | Tension: 0.999736
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 720 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1027 | Tension: 0.999795
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 782 | Tension: 0.999549
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1101 | Tension: 0.999820
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 934 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1155 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 921 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2328 | Tension: 1.000148
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2356 | Tension: 0.999602
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1244 | Tension: 0.999991
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 843 | Tension: 0.999806
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1455 | Tension: 1.000939
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2158 | Tension: 1.000275
+[!] AVALANCHE in head | Flips: 10480 | Tension: 0.996725
+Step 19 | Loss: 5.1212 | TPS: 5450.88 | Flips: 0.0404% | P-Scale: 0.9996 | Anneal: 0.59 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1650 | Tension: 0.999288
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1508 | Tension: 0.998985
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 756 | Tension: 0.999872
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 744 | Tension: 0.999441
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 769 | Tension: 0.999898
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 868 | Tension: 0.999555
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1069 | Tension: 1.000099
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1234 | Tension: 0.999371
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 892 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 808 | Tension: 0.999566
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 977 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 761 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 923 | Tension: 0.999737
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 666 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1072 | Tension: 0.999794
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 833 | Tension: 0.999549
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1088 | Tension: 0.999820
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 923 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1127 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 860 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2287 | Tension: 1.000151
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2291 | Tension: 0.999604
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1287 | Tension: 0.999992
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 897 | Tension: 0.999807
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1461 | Tension: 1.000942
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2175 | Tension: 1.000277
+[!] AVALANCHE in head | Flips: 10495 | Tension: 0.996716
+Step 20 | Loss: 5.0885 | TPS: 5504.78 | Flips: 0.0404% | P-Scale: 0.9996 | Anneal: 0.60 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1599 | Tension: 0.999289
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1562 | Tension: 0.998981
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 768 | Tension: 0.999872
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 773 | Tension: 0.999441
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 818 | Tension: 0.999899
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 860 | Tension: 0.999553
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1113 | Tension: 1.000098
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1253 | Tension: 0.999370
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 942 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 831 | Tension: 0.999565
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 977 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 792 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 909 | Tension: 0.999738
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 694 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 991 | Tension: 0.999793
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 772 | Tension: 0.999548
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1138 | Tension: 0.999820
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 919 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1174 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 878 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2276 | Tension: 1.000155
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2446 | Tension: 0.999606
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1313 | Tension: 0.999994
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 898 | Tension: 0.999807
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1449 | Tension: 1.000946
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2135 | Tension: 1.000280
+[!] AVALANCHE in head | Flips: 9907 | Tension: 0.996707
+Step 21 | Loss: 5.3308 | TPS: 5499.88 | Flips: 0.0402% | P-Scale: 0.9996 | Anneal: 0.60 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1664 | Tension: 0.999289
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1496 | Tension: 0.998975
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 731 | Tension: 0.999872
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 752 | Tension: 0.999440
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 780 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 854 | Tension: 0.999552
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1069 | Tension: 1.000097
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1270 | Tension: 0.999370
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 961 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 821 | Tension: 0.999565
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 972 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 749 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 834 | Tension: 0.999739
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 672 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 987 | Tension: 0.999792
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 786 | Tension: 0.999548
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1093 | Tension: 0.999820
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 883 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1139 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 920 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2243 | Tension: 1.000158
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2371 | Tension: 0.999608
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1284 | Tension: 0.999995
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 877 | Tension: 0.999808
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1378 | Tension: 1.000949
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2124 | Tension: 1.000284
+[!] AVALANCHE in head | Flips: 9381 | Tension: 0.996698
+Step 22 | Loss: 5.4606 | TPS: 5501.19 | Flips: 0.0391% | P-Scale: 0.9996 | Anneal: 0.61 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1653 | Tension: 0.999289
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1538 | Tension: 0.998970
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 746 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 726 | Tension: 0.999439
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 749 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 879 | Tension: 0.999551
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1019 | Tension: 1.000095
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1216 | Tension: 0.999370
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 971 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 827 | Tension: 0.999564
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1004 | Tension: 0.999853
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 774 | Tension: 0.999543
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 902 | Tension: 0.999740
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 681 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1087 | Tension: 0.999790
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 881 | Tension: 0.999548
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1081 | Tension: 0.999819
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 942 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1143 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 915 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2341 | Tension: 1.000161
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2430 | Tension: 0.999610
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1286 | Tension: 0.999997
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 862 | Tension: 0.999808
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1435 | Tension: 1.000951
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2200 | Tension: 1.000286
+[!] AVALANCHE in head | Flips: 11052 | Tension: 0.996690
+Step 23 | Loss: 5.4462 | TPS: 5474.74 | Flips: 0.0414% | P-Scale: 0.9996 | Anneal: 0.61 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1581 | Tension: 0.999290
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1500 | Tension: 0.998965
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 746 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 691 | Tension: 0.999438
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 798 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 767 | Tension: 0.999549
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1035 | Tension: 1.000094
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1093 | Tension: 0.999369
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 965 | Tension: 0.999905
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 796 | Tension: 0.999563
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 908 | Tension: 0.999851
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 720 | Tension: 0.999542
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 917 | Tension: 0.999741
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 689 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1065 | Tension: 0.999788
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 788 | Tension: 0.999547
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1090 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 825 | Tension: 0.999703
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1123 | Tension: 0.999693
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 867 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2188 | Tension: 1.000163
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2280 | Tension: 0.999611
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1135 | Tension: 0.999998
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 839 | Tension: 0.999809
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1347 | Tension: 1.000955
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2032 | Tension: 1.000290
+[!] AVALANCHE in head | Flips: 9736 | Tension: 0.996682
+Step 24 | Loss: 5.4045 | TPS: 5474.15 | Flips: 0.0385% | P-Scale: 0.9996 | Anneal: 0.62 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1658 | Tension: 0.999291
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1546 | Tension: 0.998961
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 773 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 759 | Tension: 0.999437
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 760 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 854 | Tension: 0.999548
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1082 | Tension: 1.000092
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1237 | Tension: 0.999368
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 919 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 806 | Tension: 0.999563
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1018 | Tension: 0.999849
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 782 | Tension: 0.999542
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 897 | Tension: 0.999742
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 741 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1086 | Tension: 0.999787
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 840 | Tension: 0.999547
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1202 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 902 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1117 | Tension: 0.999693
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 898 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2326 | Tension: 1.000165
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2337 | Tension: 0.999612
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1282 | Tension: 1.000000
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 939 | Tension: 0.999810
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1447 | Tension: 1.000959
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2130 | Tension: 1.000293
+[!] AVALANCHE in head | Flips: 10882 | Tension: 0.996675
+Step 25 | Loss: 5.0836 | TPS: 5467.76 | Flips: 0.0412% | P-Scale: 0.9996 | Anneal: 0.62 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1648 | Tension: 0.999292
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1593 | Tension: 0.998956
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 769 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 818 | Tension: 0.999437
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 795 | Tension: 0.999901
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 813 | Tension: 0.999547
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1033 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1154 | Tension: 0.999368
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 942 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 836 | Tension: 0.999562
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1032 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 818 | Tension: 0.999541
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 871 | Tension: 0.999743
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 659 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 983 | Tension: 0.999785
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 799 | Tension: 0.999546
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1084 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 881 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1228 | Tension: 0.999694
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 932 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2269 | Tension: 1.000168
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2345 | Tension: 0.999613
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1202 | Tension: 1.000002
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 823 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1388 | Tension: 1.000962
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2069 | Tension: 1.000295
+[!] AVALANCHE in head | Flips: 10017 | Tension: 0.996667
+Step 26 | Loss: 5.7604 | TPS: 5402.17 | Flips: 0.0398% | P-Scale: 0.9996 | Anneal: 0.63 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1682 | Tension: 0.999294
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1513 | Tension: 0.998952
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 768 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 821 | Tension: 0.999436
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 701 | Tension: 0.999901
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 819 | Tension: 0.999546
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1023 | Tension: 1.000089
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1165 | Tension: 0.999367
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 940 | Tension: 0.999902
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 812 | Tension: 0.999562
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 930 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 741 | Tension: 0.999540
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 893 | Tension: 0.999744
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 724 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 943 | Tension: 0.999783
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 753 | Tension: 0.999545
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1053 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 887 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1234 | Tension: 0.999693
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 985 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2239 | Tension: 1.000170
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2369 | Tension: 0.999614
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1362 | Tension: 1.000003
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1014 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1396 | Tension: 1.000965
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2118 | Tension: 1.000297
+[!] AVALANCHE in head | Flips: 9946 | Tension: 0.996661
+Step 27 | Loss: 5.2241 | TPS: 5400.89 | Flips: 0.0399% | P-Scale: 0.9996 | Anneal: 0.64 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1644 | Tension: 0.999294
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1529 | Tension: 0.998947
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 799 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 787 | Tension: 0.999435
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 752 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 758 | Tension: 0.999545
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1118 | Tension: 1.000089
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1119 | Tension: 0.999367
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 913 | Tension: 0.999902
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 750 | Tension: 0.999561
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 955 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 788 | Tension: 0.999539
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 913 | Tension: 0.999745
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 719 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1008 | Tension: 0.999782
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 758 | Tension: 0.999545
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1075 | Tension: 0.999818
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 856 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1254 | Tension: 0.999693
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 966 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2203 | Tension: 1.000172
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2335 | Tension: 0.999616
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1352 | Tension: 1.000004
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 986 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1481 | Tension: 1.000969
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2048 | Tension: 1.000299
+[!] AVALANCHE in head | Flips: 10754 | Tension: 0.996654
+Step 28 | Loss: 5.2114 | TPS: 5488.86 | Flips: 0.0406% | P-Scale: 0.9996 | Anneal: 0.64 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1584 | Tension: 0.999295
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1495 | Tension: 0.998942
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 765 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 780 | Tension: 0.999435
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 777 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 750 | Tension: 0.999544
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1010 | Tension: 1.000089
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1239 | Tension: 0.999367
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 905 | Tension: 0.999902
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 755 | Tension: 0.999561
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 951 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 735 | Tension: 0.999539
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 922 | Tension: 0.999746
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 675 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 970 | Tension: 0.999782
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 696 | Tension: 0.999545
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1038 | Tension: 0.999819
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 837 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1162 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 880 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2159 | Tension: 1.000175
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2312 | Tension: 0.999617
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1332 | Tension: 1.000005
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1037 | Tension: 0.999812
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1399 | Tension: 1.000972
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1983 | Tension: 1.000301
+[!] AVALANCHE in head | Flips: 10522 | Tension: 0.996648
+Step 29 | Loss: 5.2483 | TPS: 5461.08 | Flips: 0.0397% | P-Scale: 0.9996 | Anneal: 0.65 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1588 | Tension: 0.999296
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1473 | Tension: 0.998937
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 811 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 745 | Tension: 0.999435
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 725 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 730 | Tension: 0.999544
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1085 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1108 | Tension: 0.999367
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 891 | Tension: 0.999901
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 773 | Tension: 0.999561
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 978 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 804 | Tension: 0.999537
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 948 | Tension: 0.999748
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 774 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1017 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 792 | Tension: 0.999544
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1042 | Tension: 0.999819
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 790 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1112 | Tension: 0.999692
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 915 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2179 | Tension: 1.000177
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2407 | Tension: 0.999617
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1369 | Tension: 1.000006
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 955 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1377 | Tension: 1.000975
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1952 | Tension: 1.000302
+[!] AVALANCHE in head | Flips: 8941 | Tension: 0.996642
+Step 30 | Loss: 5.0587 | TPS: 5435.89 | Flips: 0.0383% | P-Scale: 0.9996 | Anneal: 0.65 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1607 | Tension: 0.999296
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1548 | Tension: 0.998932
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 777 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 767 | Tension: 0.999435
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 775 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 745 | Tension: 0.999544
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1154 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1237 | Tension: 0.999367
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 953 | Tension: 0.999900
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 762 | Tension: 0.999560
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 963 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 812 | Tension: 0.999536
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 886 | Tension: 0.999749
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 720 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 975 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 758 | Tension: 0.999543
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1095 | Tension: 0.999820
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 908 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1202 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 911 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2381 | Tension: 1.000180
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2483 | Tension: 0.999618
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1404 | Tension: 1.000007
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1026 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1436 | Tension: 1.000978
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2115 | Tension: 1.000303
+[!] AVALANCHE in head | Flips: 10692 | Tension: 0.996636
+Step 31 | Loss: 5.6416 | TPS: 5474.76 | Flips: 0.0411% | P-Scale: 0.9996 | Anneal: 0.66 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1631 | Tension: 0.999296
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1404 | Tension: 0.998928
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 721 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 765 | Tension: 0.999435
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 727 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 742 | Tension: 0.999543
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1099 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1192 | Tension: 0.999366
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 953 | Tension: 0.999899
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 776 | Tension: 0.999559
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 990 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 744 | Tension: 0.999535
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 943 | Tension: 0.999751
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 776 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 988 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 750 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1081 | Tension: 0.999821
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 912 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1161 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 851 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2293 | Tension: 1.000182
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2391 | Tension: 0.999619
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1245 | Tension: 1.000009
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 938 | Tension: 0.999811
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1447 | Tension: 1.000983
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2052 | Tension: 1.000305
+[!] AVALANCHE in head | Flips: 9692 | Tension: 0.996630
+Step 32 | Loss: 5.1814 | TPS: 5484.22 | Flips: 0.0393% | P-Scale: 0.9996 | Anneal: 0.66 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1616 | Tension: 0.999297
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1490 | Tension: 0.998923
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 746 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 753 | Tension: 0.999434
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 792 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 801 | Tension: 0.999543
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1155 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1225 | Tension: 0.999366
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 964 | Tension: 0.999899
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 793 | Tension: 0.999558
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 929 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 738 | Tension: 0.999533
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 939 | Tension: 0.999752
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 730 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 961 | Tension: 0.999780
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 741 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1081 | Tension: 0.999821
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 821 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1066 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 886 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2300 | Tension: 1.000184
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2352 | Tension: 0.999620
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1283 | Tension: 1.000010
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 916 | Tension: 0.999812
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1454 | Tension: 1.000986
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2054 | Tension: 1.000307
+[!] AVALANCHE in head | Flips: 10583 | Tension: 0.996625
+Step 33 | Loss: 5.4668 | TPS: 5371.49 | Flips: 0.0402% | P-Scale: 0.9996 | Anneal: 0.67 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1663 | Tension: 0.999297
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1397 | Tension: 0.998918
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 780 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 777 | Tension: 0.999433
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 763 | Tension: 0.999901
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 769 | Tension: 0.999542
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1204 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1298 | Tension: 0.999366
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 910 | Tension: 0.999900
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 737 | Tension: 0.999557
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 971 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 709 | Tension: 0.999532
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 1006 | Tension: 0.999754
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 787 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1013 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 728 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1112 | Tension: 0.999822
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 955 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1131 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 864 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2361 | Tension: 1.000187
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2397 | Tension: 0.999621
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1265 | Tension: 1.000011
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1055 | Tension: 0.999813
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1520 | Tension: 1.000990
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2120 | Tension: 1.000308
+[!] AVALANCHE in head | Flips: 9931 | Tension: 0.996620
+Step 34 | Loss: 5.3637 | TPS: 5479.88 | Flips: 0.0402% | P-Scale: 0.9996 | Anneal: 0.67 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1557 | Tension: 0.999298
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1436 | Tension: 0.998913
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 751 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 766 | Tension: 0.999431
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 804 | Tension: 0.999901
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 811 | Tension: 0.999542
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1139 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1206 | Tension: 0.999366
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 842 | Tension: 0.999900
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 794 | Tension: 0.999557
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 916 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 785 | Tension: 0.999531
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 910 | Tension: 0.999755
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 655 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1021 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 721 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1107 | Tension: 0.999823
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 916 | Tension: 0.999702
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1048 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 814 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2209 | Tension: 1.000189
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2347 | Tension: 0.999622
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1295 | Tension: 1.000011
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 896 | Tension: 0.999813
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1382 | Tension: 1.000994
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2012 | Tension: 1.000310
+[!] AVALANCHE in head | Flips: 10632 | Tension: 0.996615
+Step 35 | Loss: 5.4963 | TPS: 5461.59 | Flips: 0.0398% | P-Scale: 0.9996 | Anneal: 0.68 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1644 | Tension: 0.999299
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1485 | Tension: 0.998909
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 744 | Tension: 0.999870
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 740 | Tension: 0.999429
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 730 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 782 | Tension: 0.999541
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1109 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1256 | Tension: 0.999365
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 867 | Tension: 0.999902
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 768 | Tension: 0.999556
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 999 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 780 | Tension: 0.999531
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 918 | Tension: 0.999756
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 738 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 988 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 746 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1114 | Tension: 0.999824
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 905 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1155 | Tension: 0.999691
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 862 | Tension: 0.999605
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2351 | Tension: 1.000192
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2322 | Tension: 0.999623
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1258 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 928 | Tension: 0.999813
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1378 | Tension: 1.000997
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2018 | Tension: 1.000311
+[!] AVALANCHE in head | Flips: 10997 | Tension: 0.996610
+Step 36 | Loss: 5.6025 | TPS: 5477.96 | Flips: 0.0406% | P-Scale: 0.9996 | Anneal: 0.68 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1588 | Tension: 0.999300
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1491 | Tension: 0.998905
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 779 | Tension: 0.999871
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 771 | Tension: 0.999427
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 715 | Tension: 0.999900
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 805 | Tension: 0.999540
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1116 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1194 | Tension: 0.999365
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 926 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 748 | Tension: 0.999556
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 926 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 724 | Tension: 0.999530
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 979 | Tension: 0.999757
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 729 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1099 | Tension: 0.999781
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 744 | Tension: 0.999540
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1086 | Tension: 0.999825
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 819 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1097 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 778 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2257 | Tension: 1.000195
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2292 | Tension: 0.999624
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1337 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 880 | Tension: 0.999813
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1325 | Tension: 1.001001
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1974 | Tension: 1.000313
+[!] AVALANCHE in head | Flips: 9672 | Tension: 0.996605
+Step 37 | Loss: 5.0476 | TPS: 5467.04 | Flips: 0.0389% | P-Scale: 0.9996 | Anneal: 0.69 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1631 | Tension: 0.999301
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1582 | Tension: 0.998901
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 781 | Tension: 0.999872
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 787 | Tension: 0.999425
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 707 | Tension: 0.999899
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 794 | Tension: 0.999539
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1085 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1249 | Tension: 0.999364
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 849 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 729 | Tension: 0.999555
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 916 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 670 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 852 | Tension: 0.999757
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 721 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1016 | Tension: 0.999780
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 763 | Tension: 0.999540
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 999 | Tension: 0.999825
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 939 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1097 | Tension: 0.999690
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 808 | Tension: 0.999606
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2222 | Tension: 1.000198
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2353 | Tension: 0.999625
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1328 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 910 | Tension: 0.999814
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1319 | Tension: 1.001006
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2016 | Tension: 1.000316
+[!] AVALANCHE in head | Flips: 10678 | Tension: 0.996600
+Step 38 | Loss: 5.4414 | TPS: 5484.41 | Flips: 0.0398% | P-Scale: 0.9996 | Anneal: 0.69 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1692 | Tension: 0.999302
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1413 | Tension: 0.998898
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 739 | Tension: 0.999873
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 775 | Tension: 0.999423
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 777 | Tension: 0.999897
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 771 | Tension: 0.999539
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1167 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1275 | Tension: 0.999363
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 827 | Tension: 0.999904
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 726 | Tension: 0.999554
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 894 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 723 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 956 | Tension: 0.999758
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 732 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 991 | Tension: 0.999779
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 734 | Tension: 0.999540
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1012 | Tension: 0.999826
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 848 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1094 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 833 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2203 | Tension: 1.000200
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2231 | Tension: 0.999626
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1347 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 1031 | Tension: 0.999815
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1394 | Tension: 1.001011
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2063 | Tension: 1.000319
+[!] AVALANCHE in head | Flips: 9054 | Tension: 0.996595
+Step 39 | Loss: 5.2276 | TPS: 5463.80 | Flips: 0.0383% | P-Scale: 0.9996 | Anneal: 0.70 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1654 | Tension: 0.999304
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1465 | Tension: 0.998894
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 714 | Tension: 0.999874
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 746 | Tension: 0.999422
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 778 | Tension: 0.999896
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 795 | Tension: 0.999538
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1111 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1134 | Tension: 0.999362
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 798 | Tension: 0.999904
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 716 | Tension: 0.999554
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 945 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 697 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 951 | Tension: 0.999758
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 724 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1009 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 763 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1058 | Tension: 0.999827
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 956 | Tension: 0.999700
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1100 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 858 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2248 | Tension: 1.000203
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2183 | Tension: 0.999627
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1174 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 812 | Tension: 0.999815
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1263 | Tension: 1.001015
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2062 | Tension: 1.000322
+[!] AVALANCHE in head | Flips: 9862 | Tension: 0.996591
+Step 40 | Loss: 5.3424 | TPS: 5476.48 | Flips: 0.0386% | P-Scale: 0.9996 | Anneal: 0.70 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1601 | Tension: 0.999305
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1422 | Tension: 0.998891
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 690 | Tension: 0.999874
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 734 | Tension: 0.999421
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 757 | Tension: 0.999895
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 751 | Tension: 0.999538
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1141 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1261 | Tension: 0.999361
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 909 | Tension: 0.999905
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 745 | Tension: 0.999554
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 980 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 758 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 948 | Tension: 0.999759
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 689 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 993 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 752 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1098 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 858 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1109 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 841 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2297 | Tension: 1.000206
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2324 | Tension: 0.999627
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1195 | Tension: 1.000012
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 757 | Tension: 0.999815
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1306 | Tension: 1.001019
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2062 | Tension: 1.000324
+[!] AVALANCHE in head | Flips: 10811 | Tension: 0.996587
+Step 41 | Loss: 5.5626 | TPS: 5466.15 | Flips: 0.0398% | P-Scale: 0.9996 | Anneal: 0.70 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1617 | Tension: 0.999306
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1471 | Tension: 0.998887
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 762 | Tension: 0.999876
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 735 | Tension: 0.999421
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 721 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 672 | Tension: 0.999539
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1035 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1108 | Tension: 0.999361
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 885 | Tension: 0.999905
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 702 | Tension: 0.999553
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 922 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 707 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 864 | Tension: 0.999759
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 713 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 947 | Tension: 0.999777
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 702 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1116 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 878 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1074 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 784 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2104 | Tension: 1.000209
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2168 | Tension: 0.999629
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1058 | Tension: 1.000013
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 680 | Tension: 0.999816
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1246 | Tension: 1.001024
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1893 | Tension: 1.000327
+[!] AVALANCHE in head | Flips: 10210 | Tension: 0.996583
+Step 42 | Loss: 5.7148 | TPS: 5462.09 | Flips: 0.0378% | P-Scale: 0.9996 | Anneal: 0.71 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1596 | Tension: 0.999307
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1328 | Tension: 0.998883
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 717 | Tension: 0.999876
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 687 | Tension: 0.999421
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 766 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 720 | Tension: 0.999538
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1125 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1230 | Tension: 0.999361
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 858 | Tension: 0.999905
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 705 | Tension: 0.999553
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 966 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 716 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 886 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 721 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1015 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 727 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1032 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 834 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1031 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 782 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2162 | Tension: 1.000212
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2263 | Tension: 0.999631
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1117 | Tension: 1.000015
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 695 | Tension: 0.999818
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1298 | Tension: 1.001028
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1837 | Tension: 1.000331
+[!] AVALANCHE in head | Flips: 9764 | Tension: 0.996580
+Step 43 | Loss: 5.2883 | TPS: 5472.38 | Flips: 0.0376% | P-Scale: 0.9996 | Anneal: 0.71 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1666 | Tension: 0.999308
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1427 | Tension: 0.998880
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 674 | Tension: 0.999877
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 674 | Tension: 0.999421
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 748 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 758 | Tension: 0.999538
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1151 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1153 | Tension: 0.999361
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 850 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 717 | Tension: 0.999553
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 908 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 671 | Tension: 0.999529
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 872 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 627 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 987 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 728 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1098 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 856 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1112 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 811 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2210 | Tension: 1.000215
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2249 | Tension: 0.999633
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1199 | Tension: 1.000016
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 714 | Tension: 0.999819
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1395 | Tension: 1.001033
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2055 | Tension: 1.000335
+[!] AVALANCHE in head | Flips: 10228 | Tension: 0.996576
+Step 44 | Loss: 5.2863 | TPS: 5472.67 | Flips: 0.0386% | P-Scale: 0.9996 | Anneal: 0.72 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1637 | Tension: 0.999309
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1460 | Tension: 0.998876
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 666 | Tension: 0.999878
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 680 | Tension: 0.999420
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 789 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 792 | Tension: 0.999537
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1111 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1260 | Tension: 0.999360
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 856 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 671 | Tension: 0.999553
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 1013 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 703 | Tension: 0.999528
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 914 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 629 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 962 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 784 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1073 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 818 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1104 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 880 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2156 | Tension: 1.000218
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2212 | Tension: 0.999634
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1159 | Tension: 1.000018
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 809 | Tension: 0.999820
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1313 | Tension: 1.001037
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1985 | Tension: 1.000338
+[!] AVALANCHE in head | Flips: 10763 | Tension: 0.996573
+Step 45 | Loss: 5.2974 | TPS: 5478.29 | Flips: 0.0392% | P-Scale: 0.9996 | Anneal: 0.72 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1609 | Tension: 0.999311
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1434 | Tension: 0.998873
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 733 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 641 | Tension: 0.999419
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 767 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 774 | Tension: 0.999536
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1051 | Tension: 1.000091
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1031 | Tension: 0.999360
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 899 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 696 | Tension: 0.999553
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 936 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 695 | Tension: 0.999527
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 862 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 578 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1050 | Tension: 0.999779
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 752 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1120 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 782 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1054 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 723 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2181 | Tension: 1.000221
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2205 | Tension: 0.999636
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1054 | Tension: 1.000019
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 733 | Tension: 0.999822
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1367 | Tension: 1.001041
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1872 | Tension: 1.000342
+[!] AVALANCHE in head | Flips: 10277 | Tension: 0.996571
+Step 46 | Loss: 5.4926 | TPS: 5461.28 | Flips: 0.0379% | P-Scale: 0.9996 | Anneal: 0.73 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1628 | Tension: 0.999312
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1453 | Tension: 0.998870
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 723 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 672 | Tension: 0.999418
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 745 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 713 | Tension: 0.999534
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1034 | Tension: 1.000090
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1211 | Tension: 0.999359
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 812 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 726 | Tension: 0.999552
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 884 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 646 | Tension: 0.999526
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 866 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 647 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 924 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 724 | Tension: 0.999542
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1048 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 865 | Tension: 0.999701
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1151 | Tension: 0.999689
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 804 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2196 | Tension: 1.000223
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2310 | Tension: 0.999638
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1228 | Tension: 1.000020
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 929 | Tension: 0.999823
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1260 | Tension: 1.001045
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2013 | Tension: 1.000345
+[!] AVALANCHE in head | Flips: 10258 | Tension: 0.996568
+Step 47 | Loss: 5.3524 | TPS: 5452.04 | Flips: 0.0385% | P-Scale: 0.9996 | Anneal: 0.73 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1565 | Tension: 0.999313
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1457 | Tension: 0.998866
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 770 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 667 | Tension: 0.999417
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 746 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 748 | Tension: 0.999533
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1099 | Tension: 1.000089
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1143 | Tension: 0.999358
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 922 | Tension: 0.999908
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 693 | Tension: 0.999552
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 881 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 638 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 867 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 702 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1017 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 765 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1084 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 820 | Tension: 0.999700
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1049 | Tension: 0.999688
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 822 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2133 | Tension: 1.000226
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2166 | Tension: 0.999639
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1239 | Tension: 1.000020
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 878 | Tension: 0.999824
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1294 | Tension: 1.001049
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1934 | Tension: 1.000348
+[!] AVALANCHE in head | Flips: 10444 | Tension: 0.996566
+Step 48 | Loss: 5.5413 | TPS: 5470.99 | Flips: 0.0386% | P-Scale: 0.9996 | Anneal: 0.74 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1670 | Tension: 0.999314
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1476 | Tension: 0.998863
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 667 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 685 | Tension: 0.999417
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 691 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 705 | Tension: 0.999532
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1062 | Tension: 1.000088
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1086 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 898 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 689 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 841 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 639 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 949 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 701 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1048 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 791 | Tension: 0.999541
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1065 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 859 | Tension: 0.999700
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1202 | Tension: 0.999686
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 825 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2015 | Tension: 1.000229
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2195 | Tension: 0.999641
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1263 | Tension: 1.000021
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 905 | Tension: 0.999824
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1250 | Tension: 1.001053
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1980 | Tension: 1.000351
+[!] AVALANCHE in head | Flips: 10442 | Tension: 0.996564
+Step 49 | Loss: 5.1158 | TPS: 5426.54 | Flips: 0.0386% | P-Scale: 0.9996 | Anneal: 0.74 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1661 | Tension: 0.999316
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1505 | Tension: 0.998860
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 729 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 660 | Tension: 0.999417
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 766 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 693 | Tension: 0.999532
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1086 | Tension: 1.000087
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1054 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 893 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 670 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 905 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 607 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 873 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 640 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1038 | Tension: 0.999778
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 775 | Tension: 0.999540
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1091 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 869 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1128 | Tension: 0.999685
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 829 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2142 | Tension: 1.000232
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2253 | Tension: 0.999642
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1312 | Tension: 1.000022
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 888 | Tension: 0.999825
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1395 | Tension: 1.001056
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1922 | Tension: 1.000354
+[!] AVALANCHE in head | Flips: 9170 | Tension: 0.996562
+Step 50 | Loss: 4.8556 | TPS: 5443.20 | Flips: 0.0376% | P-Scale: 0.9996 | Anneal: 0.75 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1637 | Tension: 0.999317
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1521 | Tension: 0.998857
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 737 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 685 | Tension: 0.999416
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 707 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 663 | Tension: 0.999531
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1004 | Tension: 1.000087
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1021 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 885 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 730 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 877 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 654 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 818 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 702 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1023 | Tension: 0.999777
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 763 | Tension: 0.999540
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1069 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 865 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1061 | Tension: 0.999684
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 796 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2209 | Tension: 1.000235
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2180 | Tension: 0.999644
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1159 | Tension: 1.000023
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 787 | Tension: 0.999827
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1244 | Tension: 1.001058
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1860 | Tension: 1.000357
+[!] AVALANCHE in head | Flips: 10588 | Tension: 0.996560
+Step 51 | Loss: 5.1056 | TPS: 5436.05 | Flips: 0.0383% | P-Scale: 0.9996 | Anneal: 0.76 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1636 | Tension: 0.999318
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1563 | Tension: 0.998855
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 700 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 667 | Tension: 0.999416
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 785 | Tension: 0.999892
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 677 | Tension: 0.999530
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1022 | Tension: 1.000086
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1055 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 910 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 769 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 958 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 686 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 893 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 694 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1000 | Tension: 0.999777
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 787 | Tension: 0.999539
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1110 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 808 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1139 | Tension: 0.999683
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 801 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2125 | Tension: 1.000237
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2126 | Tension: 0.999645
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1194 | Tension: 1.000024
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 760 | Tension: 0.999828
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1250 | Tension: 1.001060
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1960 | Tension: 1.000359
+[!] AVALANCHE in head | Flips: 9766 | Tension: 0.996558
+Step 52 | Loss: 5.4211 | TPS: 5448.47 | Flips: 0.0379% | P-Scale: 0.9996 | Anneal: 0.76 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1641 | Tension: 0.999320
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1494 | Tension: 0.998852
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 724 | Tension: 0.999881
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 645 | Tension: 0.999415
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 727 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 665 | Tension: 0.999530
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1024 | Tension: 1.000085
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1027 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 928 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 711 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 938 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 661 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 915 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 717 | Tension: 0.999586
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1048 | Tension: 0.999776
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 717 | Tension: 0.999539
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1033 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 856 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1157 | Tension: 0.999682
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 811 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2172 | Tension: 1.000240
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2244 | Tension: 0.999646
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1235 | Tension: 1.000025
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 766 | Tension: 0.999830
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1227 | Tension: 1.001062
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1934 | Tension: 1.000362
+[!] AVALANCHE in head | Flips: 10133 | Tension: 0.996556
+Step 53 | Loss: 5.2580 | TPS: 5479.87 | Flips: 0.0382% | P-Scale: 0.9996 | Anneal: 0.77 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1660 | Tension: 0.999321
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1510 | Tension: 0.998849
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 780 | Tension: 0.999881
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 640 | Tension: 0.999415
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 702 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 642 | Tension: 0.999529
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1054 | Tension: 1.000084
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 982 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 889 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 704 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 855 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 627 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 916 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 708 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 999 | Tension: 0.999775
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 786 | Tension: 0.999539
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1101 | Tension: 0.999828
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 872 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1159 | Tension: 0.999681
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 822 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2052 | Tension: 1.000241
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2192 | Tension: 0.999647
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1148 | Tension: 1.000026
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 783 | Tension: 0.999831
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1258 | Tension: 1.001064
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1906 | Tension: 1.000365
+[!] AVALANCHE in head | Flips: 9813 | Tension: 0.996555
+Step 54 | Loss: 5.4643 | TPS: 5485.38 | Flips: 0.0376% | P-Scale: 0.9996 | Anneal: 0.77 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1628 | Tension: 0.999322
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1420 | Tension: 0.998846
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 669 | Tension: 0.999881
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 701 | Tension: 0.999414
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 698 | Tension: 0.999893
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 691 | Tension: 0.999529
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1085 | Tension: 1.000083
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1073 | Tension: 0.999357
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 948 | Tension: 0.999907
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 792 | Tension: 0.999551
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 885 | Tension: 0.999848
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 631 | Tension: 0.999526
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 959 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 723 | Tension: 0.999585
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1024 | Tension: 0.999774
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 768 | Tension: 0.999538
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1055 | Tension: 0.999827
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 819 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1027 | Tension: 0.999680
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 765 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2154 | Tension: 1.000243
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2263 | Tension: 0.999648
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1251 | Tension: 1.000026
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 859 | Tension: 0.999833
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1322 | Tension: 1.001067
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1972 | Tension: 1.000368
+[!] AVALANCHE in head | Flips: 9952 | Tension: 0.996553
+Step 55 | Loss: 5.2698 | TPS: 5492.16 | Flips: 0.0382% | P-Scale: 0.9996 | Anneal: 0.78 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1698 | Tension: 0.999322
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1524 | Tension: 0.998843
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 754 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 665 | Tension: 0.999413
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 685 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 596 | Tension: 0.999528
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1028 | Tension: 1.000081
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1020 | Tension: 0.999356
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 900 | Tension: 0.999906
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 734 | Tension: 0.999550
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 883 | Tension: 0.999847
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 633 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 931 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 715 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 947 | Tension: 0.999773
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 671 | Tension: 0.999536
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1016 | Tension: 0.999826
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 769 | Tension: 0.999698
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1078 | Tension: 0.999680
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 761 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 1970 | Tension: 1.000244
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2059 | Tension: 0.999647
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1324 | Tension: 1.000026
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 891 | Tension: 0.999833
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1240 | Tension: 1.001068
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1867 | Tension: 1.000369
+[!] AVALANCHE in head | Flips: 7537 | Tension: 0.996551
+Step 56 | Loss: 5.7402 | TPS: 5472.82 | Flips: 0.0349% | P-Scale: 0.9996 | Anneal: 0.78 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1647 | Tension: 0.999323
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1442 | Tension: 0.998839
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 658 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 655 | Tension: 0.999411
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 695 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 659 | Tension: 0.999527
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1045 | Tension: 1.000079
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1064 | Tension: 0.999354
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 942 | Tension: 0.999905
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 775 | Tension: 0.999549
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 854 | Tension: 0.999846
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 659 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 906 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 704 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 934 | Tension: 0.999772
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 705 | Tension: 0.999536
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1006 | Tension: 0.999825
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 814 | Tension: 0.999697
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1144 | Tension: 0.999680
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 774 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2187 | Tension: 1.000246
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2220 | Tension: 0.999647
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1257 | Tension: 1.000026
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 911 | Tension: 0.999833
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1336 | Tension: 1.001071
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 2013 | Tension: 1.000371
+[!] AVALANCHE in head | Flips: 9864 | Tension: 0.996550
+Step 57 | Loss: 5.4498 | TPS: 5476.50 | Flips: 0.0379% | P-Scale: 0.9996 | Anneal: 0.78 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1562 | Tension: 0.999323
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1431 | Tension: 0.998836
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 764 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 660 | Tension: 0.999410
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 732 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 679 | Tension: 0.999526
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 985 | Tension: 1.000078
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1098 | Tension: 0.999354
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 890 | Tension: 0.999904
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 781 | Tension: 0.999549
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 917 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 654 | Tension: 0.999525
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 900 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 723 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1011 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 733 | Tension: 0.999535
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1077 | Tension: 0.999825
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 826 | Tension: 0.999697
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1052 | Tension: 0.999679
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 787 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2138 | Tension: 1.000248
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2191 | Tension: 0.999647
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1253 | Tension: 1.000027
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 842 | Tension: 0.999833
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1269 | Tension: 1.001074
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1868 | Tension: 1.000373
+[!] AVALANCHE in head | Flips: 10406 | Tension: 0.996548
+Step 58 | Loss: 5.5717 | TPS: 5465.23 | Flips: 0.0383% | P-Scale: 0.9996 | Anneal: 0.79 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1624 | Tension: 0.999324
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1567 | Tension: 0.998832
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 700 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 665 | Tension: 0.999410
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 644 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 613 | Tension: 0.999525
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1004 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1021 | Tension: 0.999353
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 872 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 766 | Tension: 0.999548
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 847 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 655 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 899 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 686 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 946 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 650 | Tension: 0.999534
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 967 | Tension: 0.999823
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 791 | Tension: 0.999697
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1051 | Tension: 0.999678
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 750 | Tension: 0.999607
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2066 | Tension: 1.000250
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2231 | Tension: 0.999648
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1191 | Tension: 1.000028
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 816 | Tension: 0.999834
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1253 | Tension: 1.001078
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1932 | Tension: 1.000376
+[!] AVALANCHE in head | Flips: 9861 | Tension: 0.996547
+Step 59 | Loss: 5.2834 | TPS: 5467.61 | Flips: 0.0371% | P-Scale: 0.9996 | Anneal: 0.79 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1651 | Tension: 0.999325
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1455 | Tension: 0.998830
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 703 | Tension: 0.999880
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 628 | Tension: 0.999410
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 709 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 705 | Tension: 0.999525
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 969 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1025 | Tension: 0.999353
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 843 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 696 | Tension: 0.999547
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 882 | Tension: 0.999844
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 667 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 859 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 659 | Tension: 0.999582
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1082 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 688 | Tension: 0.999535
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 978 | Tension: 0.999822
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 841 | Tension: 0.999697
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1026 | Tension: 0.999677
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 746 | Tension: 0.999608
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2130 | Tension: 1.000253
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2171 | Tension: 0.999650
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1187 | Tension: 1.000029
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 784 | Tension: 0.999836
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1263 | Tension: 1.001082
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1899 | Tension: 1.000379
+[!] AVALANCHE in head | Flips: 10500 | Tension: 0.996546
+Step 60 | Loss: 5.9799 | TPS: 5479.75 | Flips: 0.0378% | P-Scale: 0.9996 | Anneal: 0.80 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1686 | Tension: 0.999325
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1515 | Tension: 0.998827
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 706 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 721 | Tension: 0.999410
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 728 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 710 | Tension: 0.999525
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 992 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 982 | Tension: 0.999353
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 867 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 697 | Tension: 0.999547
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 891 | Tension: 0.999844
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 612 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 901 | Tension: 0.999760
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 637 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 988 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 712 | Tension: 0.999535
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1061 | Tension: 0.999822
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 807 | Tension: 0.999698
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1020 | Tension: 0.999676
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 715 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2148 | Tension: 1.000256
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2187 | Tension: 0.999651
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1183 | Tension: 1.000031
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 744 | Tension: 0.999837
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1204 | Tension: 1.001086
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1903 | Tension: 1.000381
+[!] AVALANCHE in head | Flips: 9771 | Tension: 0.996545
+Step 61 | Loss: 4.9292 | TPS: 5444.80 | Flips: 0.0371% | P-Scale: 0.9996 | Anneal: 0.80 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1549 | Tension: 0.999326
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1475 | Tension: 0.998824
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 706 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 674 | Tension: 0.999410
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 757 | Tension: 0.999894
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 662 | Tension: 0.999526
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1035 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 1038 | Tension: 0.999353
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 864 | Tension: 0.999903
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 720 | Tension: 0.999547
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 965 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 666 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 851 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 632 | Tension: 0.999583
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 1006 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 759 | Tension: 0.999536
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1015 | Tension: 0.999821
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 827 | Tension: 0.999698
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1121 | Tension: 0.999676
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 706 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2122 | Tension: 1.000259
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2164 | Tension: 0.999653
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1069 | Tension: 1.000033
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 656 | Tension: 0.999838
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1259 | Tension: 1.001090
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1816 | Tension: 1.000383
+[!] AVALANCHE in head | Flips: 10103 | Tension: 0.996544
+Step 62 | Loss: 5.1941 | TPS: 5344.28 | Flips: 0.0372% | P-Scale: 0.9996 | Anneal: 0.81 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1624 | Tension: 0.999326
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1541 | Tension: 0.998821
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 696 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 612 | Tension: 0.999409
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 671 | Tension: 0.999895
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 724 | Tension: 0.999526
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 964 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 980 | Tension: 0.999352
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 858 | Tension: 0.999904
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 739 | Tension: 0.999547
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 864 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 641 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 854 | Tension: 0.999761
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 704 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 942 | Tension: 0.999771
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 737 | Tension: 0.999536
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1059 | Tension: 0.999821
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 730 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1068 | Tension: 0.999676
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 743 | Tension: 0.999609
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2159 | Tension: 1.000261
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2219 | Tension: 0.999654
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1195 | Tension: 1.000034
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 729 | Tension: 0.999840
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1243 | Tension: 1.001094
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1874 | Tension: 1.000386
+[!] AVALANCHE in head | Flips: 9401 | Tension: 0.996543
+Step 63 | Loss: 5.2289 | TPS: 5469.43 | Flips: 0.0366% | P-Scale: 0.9996 | Anneal: 0.81 | VRAM: 6.07GB
+[!] AVALANCHE in blocks.0.mlp_fc1 | Flips: 1624 | Tension: 0.999326
+[!] AVALANCHE in blocks.0.mlp_fc2 | Flips: 1484 | Tension: 0.998819
+[!] AVALANCHE in blocks.1.mlp_fc1 | Flips: 705 | Tension: 0.999879
+[!] AVALANCHE in blocks.1.mlp_fc2 | Flips: 648 | Tension: 0.999409
+[!] AVALANCHE in blocks.2.mlp_fc1 | Flips: 738 | Tension: 0.999895
+[!] AVALANCHE in blocks.2.mlp_fc2 | Flips: 624 | Tension: 0.999526
+[!] AVALANCHE in blocks.3.mlp_fc1 | Flips: 1021 | Tension: 1.000077
+[!] AVALANCHE in blocks.3.mlp_fc2 | Flips: 929 | Tension: 0.999352
+[!] AVALANCHE in blocks.4.mlp_fc1 | Flips: 834 | Tension: 0.999904
+[!] AVALANCHE in blocks.4.mlp_fc2 | Flips: 702 | Tension: 0.999547
+[!] AVALANCHE in blocks.5.mlp_fc1 | Flips: 876 | Tension: 0.999845
+[!] AVALANCHE in blocks.5.mlp_fc2 | Flips: 626 | Tension: 0.999524
+[!] AVALANCHE in blocks.6.mlp_fc1 | Flips: 848 | Tension: 0.999762
+[!] AVALANCHE in blocks.6.mlp_fc2 | Flips: 641 | Tension: 0.999584
+[!] AVALANCHE in blocks.7.mlp_fc1 | Flips: 969 | Tension: 0.999770
+[!] AVALANCHE in blocks.7.mlp_fc2 | Flips: 725 | Tension: 0.999536
+[!] AVALANCHE in blocks.8.mlp_fc1 | Flips: 1033 | Tension: 0.999821
+[!] AVALANCHE in blocks.8.mlp_fc2 | Flips: 702 | Tension: 0.999699
+[!] AVALANCHE in blocks.9.mlp_fc1 | Flips: 1033 | Tension: 0.999676
+[!] AVALANCHE in blocks.9.mlp_fc2 | Flips: 696 | Tension: 0.999610
+[!] AVALANCHE in blocks.10.mlp_fc1 | Flips: 2021 | Tension: 1.000263
+[!] AVALANCHE in blocks.10.mlp_fc2 | Flips: 2136 | Tension: 0.999655
+[!] AVALANCHE in blocks.11.mlp_fc1 | Flips: 1126 | Tension: 1.000034
+[!] AVALANCHE in blocks.11.mlp_fc2 | Flips: 743 | Tension: 0.999841
+[!] AVALANCHE in blocks.12.mlp_fc1 | Flips: 1158 | Tension: 1.001096
+[!] AVALANCHE in blocks.12.mlp_fc2 | Flips: 1834 | Tension: 1.000387
+[!] AVALANCHE in head | Flips: 8178 | Tension: 0.996542
+Step 64 | Loss: 5.5306 | TPS: 5472.14 | Flips: 0.0347% | P-Scale: 0.9996 | Anneal: 0.82 | VRAM: 6.07GB

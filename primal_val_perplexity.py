@@ -125,7 +125,8 @@ def calculate_perplexity():
     print("-" * 40)
     primal_scales = [m.scale for m in model.modules() if isinstance(m, GhostLinear)]
     if primal_scales:
-        avg_scale = torch.stack(primal_scales).mean().item()
+        # Average the means of each scale tensor to handle different layer sizes
+        avg_scale = torch.stack([s.mean() for s in primal_scales]).mean().item()
         print(f"Average Ghost Scale: {avg_scale:.4f}")
     print("-" * 40)
 
