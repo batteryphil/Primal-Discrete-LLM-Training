@@ -30,6 +30,11 @@ def monitor():
         if not line:
             time.sleep(1)
             continue
+        
+        # Filter: only show important lines, skip per-layer AVALANCHE spam
+        skip_prefixes = ("[!] AVALANCHE", "[*] AUTO-SAVE")
+        if any(line.strip().startswith(p) for p in skip_prefixes):
+            continue
             
         print(line, end="")
         

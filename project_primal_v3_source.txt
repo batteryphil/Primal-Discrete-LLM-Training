@@ -74,6 +74,10 @@ CONFIG = {
     "device": "cuda",
     "cooldown_steps": 50,   # [Phase 59] Harder "Sticky" logic
     "scale_decay": 0.01,   # [NEW] Force scales to 1.0
+    "micro_save_interval": 10,      # Save every 10 steps for crash recovery
+    "freeze_threshold": 0.0050,     # Flip rate (%) to trigger Deep Freeze
+    "freeze_window": 20,            # Must stay below threshold for 20 steps
+    "final_polish_steps": 50        # Steps to run on scales only after freeze
 }
 
 PRIMAL_LUT = generate_manifold(device=CONFIG['device'])
@@ -445,11 +449,28 @@ def log_manifold_heatmap(model, step):
     plt.close('all') 
     print(f"[*] SEISMIC MAP GENERATED: manifold_step_{step}.png")
 
-# --- PHASE 60: THE DEEP FREEZE WATCHDOG ---
-def check_freeze_condition(step, flip_rate, loss):
-    # Only start checking after Step 250 (The Granite Phase)
-    if step > 250 and flip_rate < 0.0050:
-        return True
+# --- PHASE 60.5: AUTOMATED WATCHDOG & MICRO-SAVE LOGIC ---
+def run_automated_training_cycle(model, step, flip_rate, loss, optimizer):
+    # --- AUTOMATED MICRO-SAVE ---
+    if step % CONFIG['micro_save_interval'] == 0:
+        torch.save({
+            'step': step,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': loss,
+        }, "primal_ghost_autosave.pt")
+
+    # --- AUTOMATED DEEP FREEZE WATCHDOG ---
+    if not hasattr(run_automated_training_cycle, "stability_counter"):
+        run_automated_training_cycle.stability_counter = 0
+
+    if step > 250 and flip_rate < CONFIG['freeze_threshold']:
+        run_automated_training_cycle.stability_counter += 1
+    else:
+        run_automated_training_cycle.stability_counter = 0
+
+    if run_automated_training_cycle.stability_counter >= CONFIG['freeze_window']:
+        return True 
     return False
 
 def train():
@@ -525,11 +546,17 @@ def train():
             total_flips = 0
             total_params = 0
             
-            # [PHASE 60] Check for Deep Freeze Trigger
-            if not freeze_active and check_freeze_condition(step, last_flip_rate, loss.item()*CONFIG['grad_accum']):
-                print(f"\n[!] STABILITY THRESHOLD REACHED at Step {step}")
+            # [PHASE 60.5] Automated Watchdog
+            if not freeze_active and run_automated_training_cycle(model, step, last_flip_rate, loss.item()*CONFIG['grad_accum'], optimizer):
+                print(f"\n[!] AUTOMATION TRIGGER: Stability target reached at Step {step}")
                 print(f"[!] Final Loss: {loss.item()*CONFIG['grad_accum']:.4f} | Flip Rate: {last_flip_rate:.6f}%")
-                print("[!] TRIGGERING PHASE 60: THE DEEP FREEZE (Grid Lock + 50 Step Scale Polish)...")
+                print(f"[*] PHASE 60: Weight Grid Locked. Performing {CONFIG['final_polish_steps']}-step Scale Polish...")
+                
+                # Permanent Grid Lock
+                for m in model.modules():
+                    if isinstance(m, GhostLinear):
+                        m.grid_indices.requires_grad = False 
+                
                 freeze_active = True
 
             with torch.no_grad():
@@ -573,7 +600,7 @@ def train():
                 log_manifold_heatmap(model, step)
 
             # [PHASE 60] Final Export
-            if freeze_steps >= 50:
+            if freeze_active and freeze_steps >= CONFIG['final_polish_steps']:
                 torch.save(model.state_dict(), "primal_trinity_final_cured.pt")
                 sys.exit("[*] TRAINING COMPLETE: The Granite has Set.")
             

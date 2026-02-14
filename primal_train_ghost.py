@@ -37,6 +37,10 @@ CONFIG = {
     "device": "cuda",
     "cooldown_steps": 50,   # [Phase 59] Harder "Sticky" logic
     "scale_decay": 0.01,   # [NEW] Force scales to 1.0
+    "micro_save_interval": 10,      # Save every 10 steps for crash recovery
+    "freeze_threshold": 0.0050,     # Flip rate (%) to trigger Deep Freeze
+    "freeze_window": 20,            # Must stay below threshold for 20 steps
+    "final_polish_steps": 50        # Steps to run on scales only after freeze
 }
 
 PRIMAL_LUT = manifolds.generate_manifold(device=CONFIG['device'])
@@ -405,12 +409,85 @@ def log_manifold_heatmap(model, step):
     plt.close('all') 
     print(f"[*] SEISMIC MAP GENERATED: manifold_step_{step}.png")
 
-# --- PHASE 60: THE DEEP FREEZE WATCHDOG ---
-def check_freeze_condition(step, flip_rate, loss):
-    # Only start checking after Step 250 (The Granite Phase)
-    if step > 250 and flip_rate < 0.0050:
-        return True
+# --- PHASE 60.5: AUTOMATED WATCHDOG & MICRO-SAVE LOGIC ---
+def run_automated_training_cycle(model, step, flip_rate, loss, optimizer):
+    # --- AUTOMATED MICRO-SAVE ---
+    if step % CONFIG['micro_save_interval'] == 0:
+        torch.save({
+            'step': step,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': loss,
+        }, "primal_ghost_autosave.pt")
+        print(f"[*] AUTO-SAVE: Grid and Optimizer state secured at Step {step}")
+
+    # --- AUTOMATED DEEP FREEZE WATCHDOG ---
+    if not hasattr(run_automated_training_cycle, "stability_counter"):
+        run_automated_training_cycle.stability_counter = 0
+
+    if step > 250 and flip_rate < CONFIG['freeze_threshold']:
+        run_automated_training_cycle.stability_counter += 1
+    else:
+        run_automated_training_cycle.stability_counter = 0
+
+    if run_automated_training_cycle.stability_counter >= CONFIG['freeze_window']:
+        return True 
     return False
+
+# --- PHASE 61: HARDENED RECOVERY BLOCK ---
+def load_latest_state(model, optimizer):
+    """Check for autosave checkpoint and resume from it if found."""
+    checkpoint_path = "primal_ghost_autosave.pt"
+    if os.path.exists(checkpoint_path):
+        print(f"[*] RECOVERY DETECTED: Loading state from {checkpoint_path}...")
+        checkpoint = torch.load(checkpoint_path, map_location=CONFIG['device'])
+        
+        # Filter out legacy scalar scales (Phase 52 compat)
+        state = checkpoint['model_state_dict']
+        keys_to_remove = [k for k, v in state.items() if k.endswith('.scale') and v.dim() == 0]
+        for k in keys_to_remove:
+            del state[k]
+        
+        model.load_state_dict(state, strict=False)
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        start_step = checkpoint['step']
+        print(f"[*] RESUMING FROM STEP {start_step}. No progress lost.")
+        return start_step
+    else:
+        print("[!] No autosave checkpoint found. Using standard resume path.")
+        return 0
+
+# --- PHASE 61: SIDECAR TRIGGER LOGIC ---
+def trigger_sidecar_audit(model, step, flip_rate):
+    """Launch CPU-only PPL audit at stability milestones without interrupting GPU training."""
+    import subprocess
+    stability_milestones = [0.04, 0.03, 0.02, 0.01, 0.005]
+    
+    if not hasattr(trigger_sidecar_audit, "last_triggered"):
+        trigger_sidecar_audit.last_triggered = 1.0  # Default high
+
+    for milestone in stability_milestones:
+        if flip_rate <= milestone < trigger_sidecar_audit.last_triggered:
+            print(f"\n[!] STABILITY MILESTONE REACHED: {milestone}%")
+            print("[*] LOCKING STATE & LAUNCHING SIDECAR PPL AUDIT...")
+            
+            # 1. FORCE AN IMMEDIATE PERSISTENT SAVE
+            checkpoint_name = f"milestone_{milestone}_checkpoint.pt"
+            torch.save(model.state_dict(), checkpoint_name)
+            
+            # 2. TRIGGER THE CPU SIDECAR (Non-blocking, GPU stays free)
+            env = os.environ.copy()
+            env["CUDA_VISIBLE_DEVICES"] = ""
+            subprocess.Popen(
+                ["python", "primal_val_perplexity.py", "--checkpoint", checkpoint_name],
+                env=env,
+                stdout=open(f"ppl_milestone_{milestone}.txt", "w"),
+                stderr=subprocess.STDOUT
+            )
+            print(f"[*] SIDECAR LAUNCHED: Results -> ppl_milestone_{milestone}.txt")
+            
+            trigger_sidecar_audit.last_triggered = milestone
+            break
 
 def train():
     print("[*] Launching 0.1B ANTIGRAVITY (Phase 53)...", flush=True)
@@ -485,11 +562,17 @@ def train():
             total_flips = 0
             total_params = 0
             
-            # [PHASE 60] Check for Deep Freeze Trigger
-            if not freeze_active and check_freeze_condition(step, last_flip_rate, loss.item()*CONFIG['grad_accum']):
-                print(f"\n[!] STABILITY THRESHOLD REACHED at Step {step}")
+            # [PHASE 60.5] Automated Watchdog
+            if not freeze_active and run_automated_training_cycle(model, step, last_flip_rate, loss.item()*CONFIG['grad_accum'], optimizer):
+                print(f"\n[!] AUTOMATION TRIGGER: Stability target reached at Step {step}")
                 print(f"[!] Final Loss: {loss.item()*CONFIG['grad_accum']:.4f} | Flip Rate: {last_flip_rate:.6f}%")
-                print("[!] TRIGGERING PHASE 60: THE DEEP FREEZE (Grid Lock + 50 Step Scale Polish)...")
+                print(f"[*] PHASE 60: Weight Grid Locked. Performing {CONFIG['final_polish_steps']}-step Scale Polish...")
+                
+                # Permanent Grid Lock
+                for m in model.modules():
+                    if isinstance(m, GhostLinear):
+                        m.grid_indices.requires_grad = False 
+                
                 freeze_active = True
 
             with torch.no_grad():
@@ -528,6 +611,9 @@ def train():
             
             print(f"Step {step} | Loss: {loss.item()*CONFIG['grad_accum']:.4f} | TPS: {tps:.2f} | Flips: {flip_rate:.4f}% | P-Scale: {p_scale:.4f} | Anneal: {annealing_factor:.2f} | VRAM: {torch.cuda.memory_reserved()/1e9:.2f}GB", flush=True)
 
+            # [PHASE 61] Sidecar PPL Audit at Stability Milestones
+            trigger_sidecar_audit(model, step, flip_rate)
+
             if step % 100 == 0:
                 log_manifold_heatmap(model, step)
                 print(f"[*] Generated Manifold Heatmap at Step {step}", flush=True)
@@ -537,7 +623,7 @@ def train():
                 print(f"[*] Saved Live Checkpoint at Step {step}")
 
             # [PHASE 60] Final Export
-            if freeze_steps >= 50:
+            if freeze_active and freeze_steps >= CONFIG['final_polish_steps']:
                 torch.save(model.state_dict(), "primal_trinity_final_cured.pt")
                 sys.exit("[*] TRAINING COMPLETE: The Granite has Set.")
             

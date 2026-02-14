@@ -1,0 +1,30 @@
+[*] Generating 8-bit Prime-Harmonic Manifold...
+[*] Initial Manifold Size: 267
+[*] Pruning 11 values...
+[*] Final Manifold Size: 256
+[*] Loading Model Architecture...
+[*] Loading Checkpoint milestone_0.03_checkpoint.pt...
+Traceback (most recent call last):
+  File "C:\Users\phil\.gemini\antigravity\scratch\Project_Trinity\Trinity-1.58bit-Release\primal_val_perplexity.py", line 139, in <module>
+    calculate_perplexity(checkpoint_override=args.checkpoint)
+  File "C:\Users\phil\.gemini\antigravity\scratch\Project_Trinity\Trinity-1.58bit-Release\primal_val_perplexity.py", line 26, in calculate_perplexity
+    state_dict = torch.load(checkpoint_path, map_location=torch.device(device))
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 1462, in load
+    return _load(
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 1964, in _load
+    result = unpickler.load()
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\_weights_only_unpickler.py", line 512, in load
+    self.append(self.persistent_load(pid))
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 1928, in persistent_load
+    typed_storage = load_tensor(
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 1900, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 1806, in restore_location
+    return default_restore_location(storage, str(map_location))
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 693, in default_restore_location
+    result = fn(storage, location)
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 631, in _deserialize
+    device = _validate_device(location, backend_name)
+  File "C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\serialization.py", line 610, in _validate_device
+    raise RuntimeError(
+RuntimeError: Attempting to deserialize object on CUDA device 0 but torch.cuda.device_count() is 0. Please use torch.load with map_location to map your storages to an existing device.

@@ -9,19 +9,21 @@ import sys
 # Force UTF-8 output
 sys.stdout.reconfigure(encoding='utf-8')
 
-def calculate_perplexity():
+import argparse
+
+def calculate_perplexity(checkpoint_override=None):
     print("[*] Loading Model Architecture...", flush=True)
     # Ensure config matches training
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = GhostGPT(CONFIG).to(device)
     
-    checkpoint_path = "primal_ghost_live.pt"
+    checkpoint_path = checkpoint_override or "primal_ghost_live.pt"
     if not os.path.exists(checkpoint_path):
         print(f"[!] Checkpoint {checkpoint_path} not found!", flush=True)
         return
 
     print(f"[*] Loading Checkpoint {checkpoint_path}...", flush=True)
-    state_dict = torch.load(checkpoint_path, map_location=device)
+    state_dict = torch.load(checkpoint_path, map_location=torch.device(device))
     model.load_state_dict(state_dict, strict=False)
     model.eval()
     
@@ -131,4 +133,7 @@ def calculate_perplexity():
     print("-" * 40)
 
 if __name__ == "__main__":
-    calculate_perplexity()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--checkpoint", type=str, default=None, help="Path to checkpoint file")
+    args = parser.parse_args()
+    calculate_perplexity(checkpoint_override=args.checkpoint)
