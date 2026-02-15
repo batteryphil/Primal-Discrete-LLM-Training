@@ -8,6 +8,13 @@ workspace.xml
 *.pt
 *.bin
 !models/trinity_1.58bit_packed.bin
+checkpoints/
+tmp_models/
+
+# Organized Artifacts
+outputs/
+logs/
+data/
 
 # Environment
 .venv/

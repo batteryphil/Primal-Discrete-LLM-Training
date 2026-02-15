@@ -35,10 +35,10 @@ CONFIG = {
     "grad_accum": 8,       # Effective Batch 64
     "lr": 5e-5,            # [Phase 59] Lower for final descent
     "device": "cuda",
-    "cooldown_steps": 50,   # [Phase 59] Harder "Sticky" logic
+    "cooldown_steps": 100,  # [Phase 60] Increased from 50 to reduce chatter
     "scale_decay": 0.01,   # [NEW] Force scales to 1.0
     "micro_save_interval": 10,      # Save every 10 steps for crash recovery
-    "freeze_threshold": 0.0050,     # Flip rate (%) to trigger Deep Freeze
+    "freeze_threshold": 0.0100,     # [Phase 60] Increased from 0.0050 to allow stabilization
     "freeze_window": 20,            # Must stay below threshold for 20 steps
     "final_polish_steps": 50        # Steps to run on scales only after freeze
 }
@@ -96,7 +96,7 @@ class GhostLinear(nn.Module):
         raw_w = torch.randn(out_features, in_features) * 0.02
         self.register_buffer('grid_indices', self.quantize_to_indices(raw_w))
         self.register_buffer('vote_buffer', torch.zeros(out_features, in_features, dtype=torch.int8))
-        self.register_buffer('cooldown', torch.zeros(out_features, in_features, dtype=torch.uint8))
+        self.register_buffer('cooldown', torch.zeros(out_features, in_features, dtype=torch.int32))
         self.scale = nn.Parameter(torch.ones(out_features, 1))
 
     def quantize_to_indices(self, weights):

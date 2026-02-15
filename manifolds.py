@@ -91,6 +91,13 @@ def generate_manifold(device='cpu'):
     tensor_lut = torch.tensor(lut_list, device=device, dtype=torch.float32)
     return tensor_lut
 
+def generate_linear_manifold(device='cpu'):
+    """Generates a fully populated, evenly spaced 8-bit linear grid (-1.0 to 1.0)."""
+    print("[*] Generating 8-bit Linear Manifold (Ghost-TTS Hotfix)...")
+    # 256 evenly spaced values between -1.0 and 1.0
+    lut = torch.linspace(-1.0, 1.0, 256, device=device)
+    return lut
+
 if __name__ == "__main__":
     lut = generate_manifold()
     print("Sample Values (Center):", lut[120:136])

@@ -5,7 +5,23 @@
 > **License:** MIT
 
 ## 🚀 The 11GB Challenge
-Training Large Language Models (LLMs) usually requires massive VRAM because of the **Shadow Weight Tax**. Standard Quantization-Aware Training (QAT) keeps the model in 4-bit but maintains a full FP16/FP32 copy of the weights for updates, effectively doubling memory usage.
+Training Large Language Models (LLMs) usually requires massive VRAM because of the **Shadow Weight Tax- **Neural Vocoder:** HiFi-GAN v3 integration via SpeechBrain.
+- **Automation:** `voice_test.py` for batch inference verification.
+
+## 🚀 Quick Start (Inference)
+
+To generate speech from text, ensure you are in the project root and run:
+
+```powershell
+# Single Sentence
+python tts_inference.py --text "Project Trinity is alive." --checkpoint "checkpoints/ghost_tts/best_sentinel.pt" --output "output.wav"
+
+# Automated Batch Test
+python voice_test.py
+```
+
+Results will be saved in `tests/voice_samples/`.
+ing (QAT) keeps the model in 4-bit but maintains a full FP16/FP32 copy of the weights for updates, effectively doubling memory usage.
 
 **Project PRIMAL** removes the shadow weights entirely.
 
