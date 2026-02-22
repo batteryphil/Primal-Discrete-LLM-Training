@@ -286,7 +286,7 @@ def map_voter_activity(model, block_size=None):
 # ==============================================================================
 # PROTOCOL v6.00: NIGHT SHIFT SUPERVISOR
 # ==============================================================================
-def night_shift_step(model, optimizer, gamma_controller, dam_state, total_flips=0, active_layers=0, current_step=None):
+def night_shift_step(model, optimizer, gamma_controller, dam_state, total_flips=0, active_layers=0, current_step=None, supervisor=None):
     """Protocol v6.08: MASTER LOCK.
     
     Hold the dam closed until step 1000 to ensure core focus.
@@ -318,7 +318,26 @@ def night_shift_step(model, optimizer, gamma_controller, dam_state, total_flips=
     
     if stall_streak >= 5:
         # Only NOW do we declare a TRUE emergency and release the dam.
-        print(f"[NIGHT SHIFT] 🚨 TRUE STARVATION: Zero flips for {stall_streak} consecutive steps. Releasing Dam.")
+        print(f"[NIGHT SHIFT] \U0001f6a8 TRUE STARVATION: Zero flips for {stall_streak} consecutive steps. Releasing Dam.")
+        
+        # [PROTOCOL v6.14: LR DEFIBRILLATOR] 
+        # Forcibly jolt the manifold with a massive LR spike
+        print(f"[NIGHT SHIFT] \u26a1 DEFIBRILLATOR ENGAGED: Spiking LR to 0.001 to force manifold consensus.")
+        for param_group in optimizer.param_groups:
+            param_group['lr'] = 0.001
+        
+        # Access the supervisor via argument
+        if supervisor is not None:
+            supervisor.defib_step_count = 5  # 5-step decay so LR ramps down smoothly: 0.001 -> 0.0001
+            
+            # [PROTOCOL v6.15: EMERGENCY LOW-GATE]
+            # Temporarily drop supermajority threshold from 20 -> 3 so the
+            # Temperature Shock gradients can actually clear the vote barrier.
+            supervisor._pre_defib_threshold = supervisor.current_threshold
+            supervisor._update_model_thresholds(3)
+            supervisor.current_threshold = 3
+            print(f"[NIGHT SHIFT] \U0001f511 LOW-GATE ENGAGED: Threshold dropped to 3 (was {supervisor._pre_defib_threshold})")
+        
         for p in model.head.parameters():
             p.requires_grad = True
         gamma_controller.set_redistribution_ratio(0.60, 0.40)
@@ -467,6 +486,9 @@ class NightShiftSupervisor:
         if hasattr(model, 'output_tamer'):
             self.last_running_std = model.output_tamer.running_std.item()
 
+        # [PROTOCOL v6.14: LR DEFIBRILLATOR]
+        self.defib_step_count = 0
+
     def get_layer_activity(self, layer_name):
         """Calculates precise activity for a named layer."""
         for name, module in self.model.named_modules():
@@ -482,11 +504,32 @@ class NightShiftSupervisor:
                     return ready_count / num_blocks
         return 0.0
 
-    def adjust_throttle(self, active_consensus_pct, current_step=None):
+    def adjust_throttle(self, active_consensus_pct=None, current_step=None):
         """
         [PROTOCOL v6.09: CONSENSUS-DRIVEN LR DECAY]
         [PROTOCOL v6.10: VENTING SYNC]
+        [PROTOCOL v6.14: LR DEFIBRILLATOR COOLDOWN]
         """
+        if self.defib_step_count > 0:
+            self.defib_step_count -= 1
+            current_lr = self.optimizer.param_groups[0]['lr']
+            # Rapid decay: cut in half every step
+            new_lr = current_lr / 2.0
+            
+            print(f"[NIGHT SHIFT] \u26a1 DEFIBRILLATOR COOLDOWN: Decaying LR to {new_lr:.6f} ({self.defib_step_count} steps left)")
+            for param_group in self.optimizer.param_groups:
+                param_group['lr'] = new_lr
+            
+            # [PROTOCOL v6.15: LOW-GATE RESTORE]
+            # When cooldown expires, restore the threshold to the pre-defib value.
+            if self.defib_step_count == 0:
+                restore_thresh = getattr(self, '_pre_defib_threshold', 20)
+                self._update_model_thresholds(restore_thresh)
+                self.current_threshold = restore_thresh
+                print(f"[NIGHT SHIFT] \U0001f513 LOW-GATE RELEASED: Threshold restored to {restore_thresh}")
+            
+            return # Safety: override normal logic during cooldown
+            
         if current_step is not None:
             # [DIAGNOSTIC: CORE TRIPWIRE]
             if current_step >= 1200:
@@ -522,8 +565,14 @@ class NightShiftSupervisor:
                     if current_step % 10 == 0:
                         print(f"[NIGHT SHIFT] 🛬 SOFT LANDING: Step {current_step}/1100 | Gamma (C/H): {new_core_gamma:.2f}/{new_head_gamma:.2f}")
 
-                # Pin the LR to 0.00005 [v6.11 Mandatory]
+            # [PROTOCOL v6.11: SOFT-LANDING RELEASE]
+            if 1001 <= current_step <= 1100:
+                # ... (soft landing code)
+                pass # (truncated for context)
                 new_lr = 0.00005
+            elif active_consensus_pct is None:
+                # Skip normal logic if no fresh consensus data provided
+                return
             elif current_step > 1100:
                 # Full release complete
                 self.venting_active = False
@@ -536,6 +585,17 @@ class NightShiftSupervisor:
                     new_lr = 0.00005
                 else:
                     new_lr = 0.00010
+            elif current_step < 200:
+                # [PROTOCOL v6.15: COLD-START GRACE PERIOD]
+                # Don't strangle LR before vote buffers have accumulated.
+                # Keep at config baseline so pressure_scale = 1.0 (not 0.1).
+                if active_consensus_pct < 1.0:
+                    new_lr = 0.00010  # Baseline — allows defib to work
+                elif active_consensus_pct < 4.0:
+                    new_lr = 0.00010
+                else:
+                    new_lr = 0.00010
+                print(f"[NIGHT SHIFT] 🌱 COLD-START GRACE: Step {current_step}/200 | Consensus {active_consensus_pct:.2f}% | Holding LR at 1e-4", flush=True)
             elif 750 <= current_step < 1000:
                 # [PROTOCOL v6.10: CONTROLLED VENTING]
                 if not self.venting_active:
@@ -782,7 +842,7 @@ class GhostGPT(nn.Module):
         # but absorbs catastrophic spikes when the reasoning_gate first activates.
         self.output_tamer = AdaptiveVarianceTamer(base_threshold=6.0, max_threshold=16.0)
 
-    def forward(self, idx, targets=None, annealing_factor=1.0, training_step=0):
+    def forward(self, idx, targets=None, annealing_factor=1.0, training_step=0, temperature=1.0):
         B, T = idx.shape
         pos = torch.arange(0, T, dtype=torch.long, device=idx.device)
         x = self.token_emb(idx) + (self.pos_emb(pos) * 2.5)
@@ -799,6 +859,12 @@ class GhostGPT(nn.Module):
         # ONLY the output_tamer guards the final logits.
         # trm_core.tamer belongs inside the recursive hidden-state loop — NOT here.
         logits = self.output_tamer(logits)
+
+        # [PROTOCOL v6.15: TEMPERATURE SHOCK]
+        # Dividing by temperature > 1.0 flattens the softmax distribution,
+        # forcing a loss spike and generating massive gradients into the vote buffers.
+        if temperature != 1.0:
+            logits = logits / temperature
 
         loss = None
         if targets is not None:
@@ -960,11 +1026,16 @@ def train(resume=False):
         # Annealing
         annealing_factor = 0.5 + (0.5 * (min(step, 100) / 100.0))
 
-
+        # [PROTOCOL v6.15: TEMPERATURE SHOCK]
+        # When the Defibrillator is active, apply a temperature >1 to flatten
+        # the logit distribution, force a loss spike, and generate strong gradients.
+        defib_temperature = 2.0 if supervisor.defib_step_count > 0 else 1.0
+        if defib_temperature != 1.0 and (i + 1) % CONFIG['grad_accum'] == 1:
+            print(f"[NIGHT SHIFT] 🌡️  TEMPERATURE SHOCK ACTIVE: logits / {defib_temperature} (defib steps left: {supervisor.defib_step_count})", flush=True)
 
         # 2. Mixed Precision Forward (v4.2 Passing Step)
         with autocast('cuda'):
-            logits, loss = model(input_ids, targets=targets, annealing_factor=annealing_factor, training_step=step)
+            logits, loss = model(input_ids, targets=targets, annealing_factor=annealing_factor, training_step=step, temperature=defib_temperature)
             loss = loss / CONFIG['grad_accum']
             
             # Scale Decay (v5.71: Unified Weight Penalty)
@@ -1046,7 +1117,13 @@ def train(resume=False):
             dam_state = night_shift_step(model, optimizer, gamma_controller, dam_state, 
                                          total_flips=_sentinel_total_flips, 
                                          active_layers=_sentinel_active_layers,
-                                         current_step=step)
+                                         current_step=step,
+                                         supervisor=supervisor)
+            
+            # [PROTOCOL v6.14: DEFIBRILLATOR COOLDOWN SYNC]
+            # Ensure the cooldown logic runs every step, even if standard consensus adjustments are periodic.
+            if supervisor.defib_step_count > 0:
+                supervisor.adjust_throttle(current_step=step)
             
             if success:
                 optimizer.zero_grad()

@@ -413,7 +413,8 @@ class GhostTandemQuantFunction(torch.autograd.Function):
         lut = ctx.lut
         
         # Normalize by max() to prevent explosion but preserve relative geometry
-        grad_normed = grad_output / (grad_output.abs().max() + 1e-8)
+        # [Protocol v6.14] Tightened epsilon so near-zero gradients still apply vote pressure
+        grad_normed = grad_output / (grad_output.abs().max() + 1e-12)
         
         # Inject pressure proportionally. 
         pressure_injection = (grad_normed * 100.0 * scale.sign()).to(torch.int32)
@@ -510,7 +511,11 @@ class GhostLinearTandem(nn.Module):
             blocks = flat_view.float().view(num_blocks, block_size)
             
             master_vote_magnitude = blocks.abs().mean(dim=1, keepdim=True)
-            authorized_blocks = (master_vote_magnitude >= self.supermajority_threshold)
+            
+            # [PROTOCOL v6.14: LR-SENSITIVE VOTING]
+            # Multiply pressure by normalized LR (1.0 at baseline 1e-4)
+            pressure_scale = learning_rate / 0.0001
+            authorized_blocks = (master_vote_magnitude * pressure_scale >= self.supermajority_threshold)
             
             # [PROTOCOL v6.10: CONTROLLED VENTING]
             # If a custom_cap is provided (max allowed flipped parameters), 
