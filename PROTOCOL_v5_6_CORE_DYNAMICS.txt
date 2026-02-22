@@ -1,0 +1,61 @@
+================================================================================
+PROTOCOL v5.6: CODER'S TANDEM & SENTINEL RECOVERY DYNAMICS
+================================================================================
+
+1. THE VOTING SYSTEM (DISCRETE GRADIENT ACCUMULATION)
+--------------------------------------------------------------------------------
+The "Tandem" system uses two discrete 8-bit grids (Base and Fine) to mimic 
+floating-point precision without needing floats for inference.
+
+A. VOTE ACCUMULATION (Backward Pass)
+   Gradients are analyzed against sensitivity thresholds. If a gradient is 
+   "loud" enough, it casts a ±1 vote into int16 accumulators.
+
+   - Structural (Base) Threshold: g_mean + (sensitivity_base * g_std)
+   - Syntactic (Fine) Threshold: g_mean + (sensitivity_fine * g_std)
+
+B. THE STOCHASTIC STEP (apply_tandem_votes)
+   Votes only resolve into index changes based on an adaptive probability.
+   - Fine Grid: Flipped if rand() < (adaptive_prob * 2)
+   - Base Grid: Flipped if rand() < (adaptive_prob * 0.5)
+
+C. CARRY PROTOCOL
+   When the Fine index overflows its range (±120), it resolves into a structural
+   shift (+1/-1) in the Base grid and resets to 0. This creates a "multi-scale" 
+   discrete weighting.
+
+2. THE SENTINEL SYSTEM (TRAINING GOVERNOR)
+--------------------------------------------------------------------------------
+The Governor acts as an automated flight controller, monitoring the "heartbeat"
+(flip rate) and "vital signs" (loss) to prevent stagnation.
+
+A. DETECTION: THE STALL STREAK
+   A stall is declared if:
+   - Bit Flips <= 0.0005% (Flatlining) OR
+   - Loss is NaN/Inf (Explosion detected)
+
+B. RECOVERY PHASE 1: MELTING (Stall Streak 5-19)
+   - Lowers 'Fine' sensitivity (makes it easier for bits to flip).
+   - Injects 10% Fine Jitter (random ±1 noise).
+   - Voltage Spike: Boosts voltage scale by 10% to "thermalize" the manifold.
+
+C. RECOVERY PHASE 2: THE SLEDGEHAMMER (Stall Streak 20+)
+   - Structural Jolt: Shakes foundation weights (Base Grid) with 5% noise.
+   - Heavy Jitter: 30% Fine noise injection.
+   - High Voltage/High Gain: Triggers a 3.0x LR multiplier to blast through 
+     quantization local minima.
+
+3. THE CIRCUIT BREAKER (SAFESTEP)
+--------------------------------------------------------------------------------
+An autograd safety layer that intercepts corrupted gradients before the weights 
+are update.
+
+- NaN/Inf Detection: Iterates through gradients after unscaling.
+- Automatic Abort: If corruption is found, the optimizer.zero_grad() is called,
+  the scaler is updated (to reset state), and the step is skipped.
+- Integration: Directly feeds into the Sentinel's recovery loop to trigger 
+  vibration/reset.
+
+================================================================================
+"SafeStep" = Shield | "Sentinel" = Decision | "Voting" = Engine
+================================================================================

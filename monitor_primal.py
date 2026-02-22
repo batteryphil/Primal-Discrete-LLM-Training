@@ -12,7 +12,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
         import codecs
         sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
-LOG_FILE = "training.log"
+LOG_FILE = "training_v5_71.log"
 
 def format_line(line):
     """
@@ -34,22 +34,32 @@ def format_line(line):
         
         # Regex to pull metrics
         def get_val(key):
-            match = re.search(fr"{key}:\s*([\d\.]+)", line)
+            match = re.search(fr"{key}:\s*([naninf\d\.\-]+)", line, re.IGNORECASE)
             return match.group(1) if match else "?"
+
+        def safe_float(val, default=0.0):
+            try:
+                return float(val)
+            except:
+                return default
 
         step_match = re.search(r"Step (\d+)", line)
         step = step_match.group(1) if step_match else "?"
         
-        loss = get_val("Loss")
+        loss_str = get_val("Loss")
         tps = get_val("TPS")
-        flips = get_val("Flips")
-        pscale = get_val("P-Scale")
+        flips_str = get_val("Flips")
+        stride = get_val("Stride")
+        lr = get_val("LR")
+        
+        loss = safe_float(loss_str)
+        flips = safe_float(flips_str)
         
         # Determine health colors
-        loss_col = GREEN if float(loss) < 6.0 else YELLOW if float(loss) < 8.0 else RED
-        flip_col = GREEN if float(flips) < 0.05 else YELLOW if float(flips) < 0.1 else RED
+        loss_col = GREEN if loss < 6.0 else YELLOW if loss < 8.0 else RED
+        flip_col = GREEN if flips < 0.05 else YELLOW if flips < 0.1 else RED
         
-        return f"{BOLD}{CYAN}[Step {step}]{RESET} | {loss_col}Loss: {loss}{RESET} | {YELLOW}TPS: {tps}{RESET} | {flip_col}Flips: {flips}%{RESET} | P-Scale: {pscale}"
+        return f"{BOLD}{CYAN}[Step {step}]{RESET} | {loss_col}Loss: {loss_str}{RESET} | {YELLOW}TPS: {tps}{RESET} | {flip_col}Flips: {flips_str}%{RESET} | Stride: {stride} | LR: {lr}"
     
     # Pass through other logs (Avalanches, thermal resets, etc)
     if "[!]" in line:

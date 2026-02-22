@@ -40,7 +40,7 @@ Instead of linear INT4 quantization (which wastes precision on large numbers), P
 | **7** | `0.0` | Exact zero for sparsity. |
 | **Fine** | `±0.66, ±0.25...` | (Layer 12 Only) High-precision bridge. |
 
-### 2. The "Poltergeist" Method (Decoupled Flipping)
+### 2. The "Poltergeist"# Antigravity: Shadowless 8-bit Discrete Training (Linear Protocol)
 Discrete training often fails due to "stochastic thrashing" during gradient accumulation. PRIMAL solves this with **Decoupled Flipping**:
 * **Backward Pass:** No updates. Gradients cast "votes" (`+1` or `-1`) into an `int8` buffer.
 * **Optimizer Step:** Votes are aggregated. Weights only flip if there is a **consensus** across micro-batches (e.g., Batch 64).

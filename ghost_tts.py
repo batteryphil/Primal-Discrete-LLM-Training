@@ -61,7 +61,7 @@ class GhostQuantFunction(torch.autograd.Function):
         return None, grad_scale, None, None, None
 
 class GhostLinear(nn.Module):
-    def __init__(self, in_features, out_features, sensitivity=0.5):
+    def __init__(self, in_features, out_features, sensitivity=0.15):
         super().__init__()
         self.sensitivity = sensitivity 
         
@@ -74,6 +74,7 @@ class GhostLinear(nn.Module):
         # Audit Buffers (Vote Buffer & Cooldown)
         self.register_buffer('vote_buffer', torch.zeros(out_features, in_features, dtype=torch.int8))
         self.register_buffer('cooldown', torch.zeros(out_features, in_features, dtype=torch.uint8))
+        self.register_buffer('steps', torch.zeros(1, dtype=torch.long))
         
         # Scale Parameter (Trainable)
         self.scale = nn.Parameter(torch.ones(out_features, 1))
@@ -129,8 +130,10 @@ class GhostLinear(nn.Module):
         prob_tensor = torch.full_like(self.vote_buffer.float(), adaptive_prob)
         high_pressure_mask = self.vote_buffer.abs() >= 32
         prob_tensor[high_pressure_mask] = 0.1 
-        saturated_mask = self.vote_buffer.abs() >= 127
-        prob_tensor[saturated_mask] = 1.0 
+        
+        # [SENTINEL] Conviction Override
+        saturated_mask = self.vote_buffer.abs() >= 16
+        prob_tensor[saturated_mask] = 1.0
         
         # 4. Stochastic Flip
         final_direction = torch.sign(self.vote_buffer).to(torch.int8)
@@ -155,12 +158,14 @@ class GhostLinear(nn.Module):
                 lock_duration = CONFIG['cooldown_steps']
             self.cooldown[valid_flips != 0] = lock_duration
         
-        # 8. Linear Friction
-        with torch.no_grad():
-            pos_mask = self.vote_buffer > 0
-            neg_mask = self.vote_buffer < 0
-            self.vote_buffer[pos_mask] -= 1
-            self.vote_buffer[neg_mask] += 1
+        # 8. Linear Friction (Reduced: Every 10 steps)
+        self.steps += 1
+        if self.steps.item() % 10 == 0:
+            with torch.no_grad():
+                pos_mask = self.vote_buffer > 0
+                neg_mask = self.vote_buffer < 0
+                self.vote_buffer[pos_mask] -= 1
+                self.vote_buffer[neg_mask] += 1
         
         return num_flips
 
@@ -366,8 +371,8 @@ class GhostTTS(nn.Module):
         if duration_target is not None:
              duration_rounded = duration_target
         else:
-             # Inference: use prediction
-             duration_rounded = torch.clamp((torch.exp(log_duration_prediction) - 1), min=0).long()
+              # Inference: use prediction
+             duration_rounded = torch.clamp((torch.exp(log_duration_prediction) - 1), min=2).long()
              
         # Length Regulation
         x = self.length_regulator(encoder_output, duration_rounded)

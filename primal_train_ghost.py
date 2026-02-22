@@ -21,6 +21,7 @@ import sys
 import manifolds # Expects manifolds.py to exist
 # Forces the terminal output to handle whatever weirdness your model generates
 sys.stdout.reconfigure(encoding='utf-8')
+import json
 
 # ------------------------------------------------------------------------------
 # 1. THE "ANTIGRAVITY" CONFIG
@@ -40,7 +41,8 @@ CONFIG = {
     "micro_save_interval": 10,      # Save every 10 steps for crash recovery
     "freeze_threshold": 0.0100,     # [Phase 60] Increased from 0.0050 to allow stabilization
     "freeze_window": 20,            # Must stay below threshold for 20 steps
-    "final_polish_steps": 50        # Steps to run on scales only after freeze
+    "final_polish_steps": 50,       # Steps to run on scales only after freeze
+    "stats_file": "stats.json"
 }
 
 PRIMAL_LUT = manifolds.generate_manifold(device=CONFIG['device'])
@@ -434,6 +436,11 @@ def run_automated_training_cycle(model, step, flip_rate, loss, optimizer):
         return True 
     return False
 
+def export_stats(stats_list):
+    """Export training stats to JSON for browser monitor."""
+    with open(CONFIG['stats_file'], "w") as f:
+        json.dump(stats_list, f)
+
 # --- PHASE 61: HARDENED RECOVERY BLOCK ---
 def load_latest_state(model, optimizer):
     """Check for autosave checkpoint and resume from it if found."""
@@ -610,6 +617,26 @@ def train():
             p_scale = torch.stack(primal_scales).mean().item() if primal_scales else 0.0
             
             print(f"Step {step} | Loss: {loss.item()*CONFIG['grad_accum']:.4f} | TPS: {tps:.2f} | Flips: {flip_rate:.4f}% | P-Scale: {p_scale:.4f} | Anneal: {annealing_factor:.2f} | VRAM: {torch.cuda.memory_reserved()/1e9:.2f}GB", flush=True)
+
+            # Export for monitor
+            if not hasattr(train, "stats_history"):
+                train.stats_history = []
+            
+            # Keep history manageable (last 1000 steps)
+            if len(train.stats_history) > 1000:
+                train.stats_history.pop(0)
+                
+            train.stats_history.append({
+                "step": step,
+                "loss": round(loss.item()*CONFIG['grad_accum'], 4),
+                "flips": round(flip_rate, 4),
+                "tps": round(tps, 2),
+                "pscale": round(p_scale, 4),
+                "anneal": round(float(annealing_factor), 2),
+                "vram": round(torch.cuda.memory_reserved()/1e9, 2),
+                "timestamp": time.time()
+            })
+            export_stats(train.stats_history)
 
             # [PHASE 61] Sidecar PPL Audit at Stability Milestones
             trigger_sidecar_audit(model, step, flip_rate)

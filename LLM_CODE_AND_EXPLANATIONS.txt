@@ -1,0 +1,65 @@
+# ==============================================================================
+# PROJECT PRIMAL: CODE & TECHNICAL ARCHITECTURE EXPLANATION (v4.0)
+# ==============================================================================
+# This document contains the complete source code and detailed documentation 
+# for the Recursive-Refinement Discrete LLM (Antigravity Protocol v4.0).
+
+TABLE OF CONTENTS:
+1. THE MANIFOLD ENGINE (Linear-Harmonic v4.0)
+2. THE GHOST CORE (Recursive-Refinement TRM)
+3. SENTINEL PROTOCOLS (Throttling & Logit-Tamer)
+4. ARCHITECTURAL DEEP DIVE
+
+---
+
+1. THE MANIFOLD ENGINE (manifolds.py)
+-----------------------------------------------
+The v4.0 engine utilizes the 8-bit Linear Manifold for uniform signal distribution, crucial for stabilizing recursive gradients.
+
+```python
+def generate_linear_manifold(device='cpu'):
+    # Evenly spaced values between -1.0 and 1.0
+    return torch.linspace(-1.0, 1.0, 256, device=device)
+```
+
+2. THE GHOST CORE (ghost_core.py)
+-----------------------------------------------
+The "Ghost" engine v4.0 introduces **Recursive-Refinement**, a "Thinking" loop where the model refined its answer over multiple internal cycles.
+
+**PrimalTRMCore (The Brain):**
+```python
+class PrimalTRMCore(nn.Module):
+    def forward(self, x):
+        y = torch.zeros_like(x) # Initial Answer
+        z = torch.zeros_like(x) # Initial Workspace
+        for t in range(self.iterations):
+            # Update Reasoning Workspace (z)
+            z_update = self.reasoning_gate(torch.cat([x, y, z], dim=-1))
+            z = torch.tanh(z_update)
+            # Update Draft Answer (y) with Residual Refinement
+            y = y + self.refinement_gate(z)
+            # Apply Logit-Tamer to prevent recursion explosion
+            y = self.tamer(y)
+        return y
+```
+
+3. SENTINEL PROTOCOLS (Throttling & Logit-Tamer)
+-----------------------------------------------
+A. **Logit-Tamer Protocol**
+The final predictions are clamped to a Standard Deviation of **2.5**. This prevents the 8-bit manifold from exploding during recursive feedback loops.
+
+B. **Decoupled Flip Throttle**
+The Output Head is constrained to a 0.005% flip rate to protect vocabulary semantics, while internal layers are allowed 0.05% for structural adaptation.
+
+C. **Thermal Vigilance**
+A hardware-direct monitoring thread (polling `pynvml`) ensures the 1080 Ti does not exceed 82°C.
+
+4. ARCHITECTURAL DEEP DIVE
+-----------------------------------------------
+- **Virtual Depth**: By iterating 8 times over 2 physical layers, the model achieves a reasoning depth equivalent to a 16-layer stack.
+- **Anchor-Draft Logic**: The input `x` remains a static anchor, while `y` (the draft) and `z` (the workspace) evolve through recursion.
+- **Manifold Stability**: v4.0 transitions away from high-density prime clustering toward uniform linear distribution to simplify recursive optimization.
+
+==============================================================================
+[DOCUMENT UPDATED: v4.0 RECURSIVE-REFINEMENT ACTIVE]
+==============================================================================

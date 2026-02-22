@@ -1,0 +1,228 @@
+C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\torch\cuda\__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[*] Generating 8-bit Linear Manifold (Ghost-TTS Hotfix)...
+[*] Starting Antigravity v3.2 Run | Manifold: linear
+C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\primal_train_modular.py:299: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+[*] Resuming from checkpoint: project_real_live.pt
+[*] Resuming stats from Step 426
+C:\Users\phil\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Token indices sequence length is longer than the specified maximum sequence length for this model (1055 > 1024). Running this sequence through the model will result in indexing errors
+C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\primal_train_modular.py:354: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1144
+[!] AVALANCHE in head | Flips: 2336
+[LINEAR] Step 426 | Loss: 7.0180 | Entropy: 7.12 | Flips: 0.0094% | TPS: 3100.84
+
+[WORD SALAD] Step 426:  there the household vary fin and rebuttSpider transformative for things to Weld the Fourا� pun fore...
+
+[!] AVALANCHE in head | Flips: 4357
+[LINEAR] Step 427 | Loss: 7.7289 | Entropy: 7.13 | Flips: 0.0140% | TPS: 8321.97
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1094
+[!] AVALANCHE in head | Flips: 3465
+[LINEAR] Step 428 | Loss: 7.3336 | Entropy: 7.18 | Flips: 0.0121% | TPS: 13332.62
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1271
+[!] AVALANCHE in head | Flips: 4779
+[LINEAR] Step 429 | Loss: 7.0899 | Entropy: 7.32 | Flips: 0.0158% | TPS: 13721.62
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1404
+[!] AVALANCHE in head | Flips: 3850
+[LINEAR] Step 430 | Loss: 7.7868 | Entropy: 7.25 | Flips: 0.0140% | TPS: 13464.91
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1528
+[!] AVALANCHE in head | Flips: 5326
+[LINEAR] Step 431 | Loss: 7.2551 | Entropy: 7.23 | Flips: 0.0178% | TPS: 10768.25
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1546
+[!] AVALANCHE in head | Flips: 4234
+[LINEAR] Step 432 | Loss: 7.2930 | Entropy: 7.16 | Flips: 0.0154% | TPS: 13626.12
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1724
+[!] AVALANCHE in head | Flips: 5190
+[LINEAR] Step 433 | Loss: 7.4179 | Entropy: 7.10 | Flips: 0.0183% | TPS: 13708.67
+[!] AVALANCHE in head | Flips: 4463
+[LINEAR] Step 434 | Loss: 7.3514 | Entropy: 7.13 | Flips: 0.0144% | TPS: 13449.42
+[!] AVALANCHE in head | Flips: 5154
+[LINEAR] Step 435 | Loss: 7.3527 | Entropy: 7.23 | Flips: 0.0163% | TPS: 13729.76
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1030
+[!] AVALANCHE in head | Flips: 4514
+[LINEAR] Step 436 | Loss: 7.8428 | Entropy: 7.30 | Flips: 0.0143% | TPS: 14248.53
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1023
+[!] AVALANCHE in head | Flips: 5153
+[LINEAR] Step 437 | Loss: 7.4898 | Entropy: 7.26 | Flips: 0.0159% | TPS: 14000.93
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1008
+[!] AVALANCHE in head | Flips: 4470
+[LINEAR] Step 438 | Loss: 7.1184 | Entropy: 7.09 | Flips: 0.0141% | TPS: 13462.13
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1041
+[!] AVALANCHE in head | Flips: 5262
+[LINEAR] Step 439 | Loss: 7.5624 | Entropy: 7.24 | Flips: 0.0162% | TPS: 13336.26
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1102
+[!] AVALANCHE in head | Flips: 4397
+[LINEAR] Step 440 | Loss: 7.5338 | Entropy: 7.22 | Flips: 0.0143% | TPS: 13675.27
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1135
+[!] AVALANCHE in head | Flips: 5183
+[LINEAR] Step 441 | Loss: 7.3021 | Entropy: 7.13 | Flips: 0.0162% | TPS: 10792.95
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1108
+[!] AVALANCHE in head | Flips: 4573
+[LINEAR] Step 442 | Loss: 7.7734 | Entropy: 7.31 | Flips: 0.0148% | TPS: 12835.64
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1190
+[!] AVALANCHE in head | Flips: 4969
+[LINEAR] Step 443 | Loss: 8.1187 | Entropy: 7.25 | Flips: 0.0160% | TPS: 13762.81
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1200
+[!] AVALANCHE in head | Flips: 4454
+[LINEAR] Step 444 | Loss: 7.1627 | Entropy: 7.10 | Flips: 0.0148% | TPS: 13592.55
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1171
+[!] AVALANCHE in head | Flips: 4997
+[LINEAR] Step 445 | Loss: 7.4123 | Entropy: 7.22 | Flips: 0.0160% | TPS: 13420.46
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1171
+[!] AVALANCHE in head | Flips: 4088
+[LINEAR] Step 446 | Loss: 7.1645 | Entropy: 7.24 | Flips: 0.0138% | TPS: 13547.89
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1166
+[!] AVALANCHE in head | Flips: 4331
+[LINEAR] Step 447 | Loss: 7.3779 | Entropy: 7.26 | Flips: 0.0144% | TPS: 13396.35
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1191
+[!] AVALANCHE in head | Flips: 3585
+[LINEAR] Step 448 | Loss: 7.6530 | Entropy: 7.33 | Flips: 0.0126% | TPS: 13478.39
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1227
+[!] AVALANCHE in head | Flips: 3894
+[LINEAR] Step 449 | Loss: 7.4606 | Entropy: 7.26 | Flips: 0.0135% | TPS: 13198.83
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1235
+[!] AVALANCHE in head | Flips: 3268
+[LINEAR] Step 450 | Loss: 7.2817 | Entropy: 7.20 | Flips: 0.0121% | TPS: 13061.93
+
+[WORD SALAD] Step 450:  across developing the thousands. In The surrounding, five Irish two could singular. Please this
+The...
+
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1185
+[!] AVALANCHE in head | Flips: 3615
+[LINEAR] Step 451 | Loss: 7.6968 | Entropy: 7.28 | Flips: 0.0128% | TPS: 8135.01
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1267
+[!] AVALANCHE in head | Flips: 3029
+[LINEAR] Step 452 | Loss: 7.4181 | Entropy: 7.29 | Flips: 0.0116% | TPS: 13325.22
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1225
+[!] AVALANCHE in head | Flips: 3353
+[LINEAR] Step 453 | Loss: 7.3610 | Entropy: 7.20 | Flips: 0.0123% | TPS: 13368.94
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1288
+[!] AVALANCHE in head | Flips: 2987
+[LINEAR] Step 454 | Loss: 7.1583 | Entropy: 7.18 | Flips: 0.0115% | TPS: 13422.91
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1280
+[!] AVALANCHE in head | Flips: 3047
+[LINEAR] Step 455 | Loss: 7.1444 | Entropy: 7.26 | Flips: 0.0116% | TPS: 13471.76
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1246
+[!] AVALANCHE in head | Flips: 2648
+[LINEAR] Step 456 | Loss: 8.2796 | Entropy: 7.25 | Flips: 0.0106% | TPS: 13341.82
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1286
+[!] AVALANCHE in head | Flips: 2746
+[LINEAR] Step 457 | Loss: 7.4899 | Entropy: 7.19 | Flips: 0.0110% | TPS: 13298.78
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1264
+[!] AVALANCHE in head | Flips: 2626
+[LINEAR] Step 458 | Loss: 7.5665 | Entropy: 7.16 | Flips: 0.0107% | TPS: 12444.42
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1298
+[!] AVALANCHE in head | Flips: 3108
+[LINEAR] Step 459 | Loss: 7.4684 | Entropy: 7.17 | Flips: 0.0119% | TPS: 13427.75
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1345
+[!] AVALANCHE in head | Flips: 3101
+[LINEAR] Step 460 | Loss: 7.6006 | Entropy: 7.32 | Flips: 0.0121% | TPS: 13408.65
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1354
+[!] AVALANCHE in head | Flips: 3302
+[LINEAR] Step 461 | Loss: 7.7400 | Entropy: 7.27 | Flips: 0.0124% | TPS: 10485.28
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1319
+[!] AVALANCHE in head | Flips: 3034
+[LINEAR] Step 462 | Loss: 7.4166 | Entropy: 7.11 | Flips: 0.0119% | TPS: 13336.38
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1280
+[!] AVALANCHE in head | Flips: 3677
+[LINEAR] Step 463 | Loss: 7.3730 | Entropy: 7.23 | Flips: 0.0133% | TPS: 13307.64
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1317
+[!] AVALANCHE in head | Flips: 3295
+[LINEAR] Step 464 | Loss: 7.6982 | Entropy: 7.16 | Flips: 0.0124% | TPS: 13420.47
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1341
+[!] AVALANCHE in head | Flips: 4159
+[LINEAR] Step 465 | Loss: 7.5496 | Entropy: 7.25 | Flips: 0.0145% | TPS: 13387.95
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1317
+[!] AVALANCHE in head | Flips: 3888
+[LINEAR] Step 466 | Loss: 7.8588 | Entropy: 7.26 | Flips: 0.0139% | TPS: 13465.17
+
+[!] AUTOPILOT: Plateau detected at Loss 7.8588. Increasing Global Friction to 2!
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1292
+[!] AVALANCHE in head | Flips: 4530
+[LINEAR] Step 467 | Loss: 7.6305 | Entropy: 7.29 | Flips: 0.0154% | TPS: 13275.50
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1174
+[!] AVALANCHE in head | Flips: 4318
+[LINEAR] Step 468 | Loss: 7.6592 | Entropy: 7.19 | Flips: 0.0144% | TPS: 13397.43
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1055
+[!] AVALANCHE in head | Flips: 4315
+[LINEAR] Step 469 | Loss: 7.6400 | Entropy: 7.24 | Flips: 0.0141% | TPS: 13359.74
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1061
+[!] AVALANCHE in head | Flips: 4385
+[LINEAR] Step 470 | Loss: 7.3696 | Entropy: 7.22 | Flips: 0.0143% | TPS: 13284.32
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1023
+[!] AVALANCHE in head | Flips: 4435
+[LINEAR] Step 471 | Loss: 7.7098 | Entropy: 7.32 | Flips: 0.0142% | TPS: 10508.83
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1089
+[!] AVALANCHE in head | Flips: 4664
+[LINEAR] Step 472 | Loss: 7.8167 | Entropy: 7.29 | Flips: 0.0150% | TPS: 13414.97
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1015
+[!] AVALANCHE in head | Flips: 4391
+[LINEAR] Step 473 | Loss: 7.5305 | Entropy: 7.23 | Flips: 0.0141% | TPS: 13369.46
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1026
+[!] AVALANCHE in head | Flips: 4613
+[LINEAR] Step 474 | Loss: 7.1011 | Entropy: 7.21 | Flips: 0.0147% | TPS: 13369.07
+[!] AVALANCHE in head | Flips: 4624
+[LINEAR] Step 475 | Loss: 7.1262 | Entropy: 7.22 | Flips: 0.0146% | TPS: 13365.14
+[!] AVALANCHE in head | Flips: 4473
+[LINEAR] Step 476 | Loss: 7.1310 | Entropy: 7.15 | Flips: 0.0140% | TPS: 13351.04
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1010
+[!] AVALANCHE in head | Flips: 4489
+[LINEAR] Step 477 | Loss: 7.6683 | Entropy: 7.23 | Flips: 0.0143% | TPS: 13168.18
+[!] AVALANCHE in head | Flips: 4460
+[LINEAR] Step 478 | Loss: 7.3283 | Entropy: 7.20 | Flips: 0.0142% | TPS: 13999.31
+[!] AVALANCHE in head | Flips: 4404
+[LINEAR] Step 479 | Loss: 7.3520 | Entropy: 7.14 | Flips: 0.0139% | TPS: 14006.77
+[!] AVALANCHE in head | Flips: 4264
+[LINEAR] Step 480 | Loss: 7.2403 | Entropy: 7.16 | Flips: 0.0135% | TPS: 13655.28
+[!] AVALANCHE in trm_core.reasoning_gate | Flips: 1097
+[!] AVALANCHE in head | Flips: 4242
+[LINEAR] Step 481 | Loss: 8.0175 | Entropy: 7.21 | Flips: 0.0139% | TPS: 10447.84
+[!] AVALANCHE in head | Flips: 4330
+[LINEAR] Step 482 | Loss: 7.3074 | Entropy: 7.15 | Flips: 0.0138% | TPS: 13032.21
+[!] AVALANCHE in head | Flips: 4265
+[LINEAR] Step 483 | Loss: 7.5120 | Entropy: 7.23 | Flips: 0.0135% | TPS: 13255.95
+[!] AVALANCHE in head | Flips: 4265
+[LINEAR] Step 484 | Loss: 7.4945 | Entropy: 7.20 | Flips: 0.0137% | TPS: 13272.93
+[!] AVALANCHE in head | Flips: 4138
+[LINEAR] Step 485 | Loss: 7.5717 | Entropy: 7.30 | Flips: 0.0134% | TPS: 13286.74
+[!] AVALANCHE in head | Flips: 4088
+[LINEAR] Step 486 | Loss: 7.4527 | Entropy: 7.13 | Flips: 0.0132% | TPS: 13372.85
+[!] AVALANCHE in head | Flips: 3831
+[LINEAR] Step 487 | Loss: 7.1111 | Entropy: 7.18 | Flips: 0.0125% | TPS: 12739.54
+[!] AVALANCHE in head | Flips: 3952
+[LINEAR] Step 488 | Loss: 7.4862 | Entropy: 7.18 | Flips: 0.0127% | TPS: 13381.45
+[!] AVALANCHE in head | Flips: 3896
+[LINEAR] Step 489 | Loss: 7.3865 | Entropy: 7.13 | Flips: 0.0126% | TPS: 13369.18
+[!] AVALANCHE in head | Flips: 3679
+[LINEAR] Step 490 | Loss: 7.3641 | Entropy: 7.21 | Flips: 0.0121% | TPS: 13354.14
+[!] AVALANCHE in head | Flips: 3509
+[LINEAR] Step 491 | Loss: 7.3139 | Entropy: 7.19 | Flips: 0.0117% | TPS: 4953.16
+[!] AVALANCHE in head | Flips: 3413
+[LINEAR] Step 492 | Loss: 7.5198 | Entropy: 7.27 | Flips: 0.0115% | TPS: 13296.10
+[!] AVALANCHE in head | Flips: 3518
+[LINEAR] Step 493 | Loss: 7.5742 | Entropy: 7.17 | Flips: 0.0116% | TPS: 13351.50
+[!] AVALANCHE in head | Flips: 3428
+[LINEAR] Step 494 | Loss: 7.0758 | Entropy: 7.16 | Flips: 0.0116% | TPS: 13301.37
+[!] AVALANCHE in head | Flips: 3504
+[LINEAR] Step 495 | Loss: 7.6411 | Entropy: 7.28 | Flips: 0.0119% | TPS: 12646.52
+[!] AVALANCHE in head | Flips: 3487
+[LINEAR] Step 496 | Loss: 7.2879 | Entropy: 7.26 | Flips: 0.0118% | TPS: 13291.35
+[!] AVALANCHE in head | Flips: 3365
+[LINEAR] Step 497 | Loss: 7.2768 | Entropy: 7.23 | Flips: 0.0114% | TPS: 13413.96
+[!] AVALANCHE in head | Flips: 3389
+[LINEAR] Step 498 | Loss: 7.3718 | Entropy: 7.23 | Flips: 0.0116% | TPS: 13339.55
+[!] AVALANCHE in head | Flips: 3588
+[LINEAR] Step 499 | Loss: 7.6338 | Entropy: 7.25 | Flips: 0.0119% | TPS: 13280.19
+Traceback (most recent call last):
+  File "C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\primal_train_modular.py", line 514, in <module>
+    train()
+  File "C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\primal_train_modular.py", line 402, in train
+    stabilizer.step(step, entropy)
+  File "C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\primal_train_modular.py", line 101, in step
+    m.inject_noise(jitter_range=0.01)
+  File "C:\Users\phil\.gemini\antigravity\scratch\Primal-Discrete-LLM-Training\ghost_core.py", line 152, in inject_noise
+    noise = (torch.randn_like(self.vote_buffer) * jitter_range).to(self.vote_buffer.device)
+RuntimeError: "normal_kernel_cuda" not implemented for 'Char'
