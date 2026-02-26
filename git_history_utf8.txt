@@ -1,0 +1,27 @@
+﻿7989ac8 Protocol v6.15: Temperature Shock, Emergency Low-Gate, and Cold-Start Grace Period
+4ca6f1a Protocol v6.13: Gamma Overflow Fix & Kinetic Ignition (Legacy Preserved)
+7a8129d Organize project structure: moved artifacts to outputs/ and logs/
+5422403 Step 12172: Benchmark suite + monitor fix + Phase 61 results (PPL 756.38, Density 233/256)
+93cc30b cleanup: remove legacy files, create master FILE_INVENTORY.md (42 files archived)
+3d0e451 snapshot: pre-cleanup full state (Phase 60 active, all legacy files preserved)
+30030f4 feat: add automated cpu-safe perplexity benchmarking tools
+8baf5b5 legal: adopt MIT license for Project PRIMAL democratization
+a92ed42 Phase 46: Flip Rate Monitoring (Verified)
+27c04fd Sync: Step 451 Progress Update - Loss 5.81 (Stable)
+811bf4d Phase 45: Stabilized Training (LR 1.5e-4)
+84a32e0 Standardized Project Structure (renamed main script, added requirements.txt, fixed README)
+5db9684 Refining Documentation for Primal Launch
+8d817fa Phase 44: Migration to Primal-Discrete-LLM-Training, Phase 43 Code
+c452d70 feat(core): Rebrand Phase 10 - Trinity to PRIMAL V3.0.0 (Prime Rich Architecture)
+0f92ddf feat: V3.0.0 Prime Rich Grid - Added 13-value LUT
+f911d2b docs: Update PAPER.md title to V2.0.0 4-bit standard
+e1ee120 refactor: V2.0.0 Redemption - 4-bit Prime Harmonic Quantization
+8a7947d docs: Add BENCHMARKS.md with detailed Python vs C++ analysis
+798cecb docs: Update README and PAPER with C++ Engine (V1.0.3) details
+dcd6f3a feat(inference) - CPU optimizations (V1.0.3) - Pre-Freeze initialization & Int8 dynamic quantization.
+9d4a49e fix: v1.0.1 hotfix - improved inference stability, speed, and scale matching
+bfaa394 docs: add marketing materials, roadmap, and release verification tool
+db84b0e feat: public release revamp (v1.0.0)
+114fa75 Release: Project Trinity V1.0 - Added Scientific Paper and Packed Binary
+1a9b6de docs: finalize scientific paper with references and acknowledgements
+8535d79 feat: initial release of Project Trinity (Prime Harmonic 1.58-bit LLM)

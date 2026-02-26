@@ -39,7 +39,6 @@ class GhostQuantFunction(torch.autograd.Function):
 
     @staticmethod
     def backward(ctx, grad_output):
-        # [RECURSION FIX] Retrieve from context
         indices, scale = ctx.saved_tensors
         lut = ctx.lut
         vote_buffer = ctx.vote_buffer
@@ -48,27 +47,30 @@ class GhostQuantFunction(torch.autograd.Function):
         # Gradient Centering
         grad_output = grad_output - grad_output.mean(dim=1, keepdim=True)
         
-        # Scale Gradient
-        weights_proxy = lut[indices.long()]
-        grad_scale = (grad_output * weights_proxy).sum(dim=1, keepdim=True)
+        # [PROTOCOL v6.16: CHUNKED BACKWARD]
+        grad_scale = torch.zeros_like(scale)
+        chunk_size = 4096
+        out_features = indices.size(0)
         
-        # [v5.2] Whisper Voting Logic (Hard Integer)
-        # All comparisons and votes are integer based.
-        direction = -torch.sign(grad_output).to(torch.int16)
-        grad_abs = torch.abs(grad_output)
-        
-        # Sensitivity-based threshold (still using some float for the stats calculation, 
-        # as grad_output is float, but the result applied to vote_buffer is pure int)
-        g_mean = grad_abs.mean()
-        g_std = grad_abs.std()
-        threshold = g_mean + (sensitivity * g_std)
-        
-        significant_mask = (grad_abs > threshold).to(torch.int16)
-        votes = direction * significant_mask
-        
-        # vote_buffer is strictly int16 in Protocol v5.2
-        vote_buffer.add_(votes)
-        
+        for i in range(0, out_features, chunk_size):
+            end = min(i + chunk_size, out_features)
+            idx_chunk = indices[i:end].long()
+            g_out = grad_output[i:end]
+            
+            # --- SCALE GRADIENT ---
+            weights_proxy = lut[idx_chunk]
+            grad_scale[i:end] = (g_out * weights_proxy).sum(dim=1, keepdim=True)
+            
+            # --- WHISPER VOTING ---
+            direction = -torch.sign(g_out).to(torch.int16)
+            grad_abs = torch.abs(g_out)
+            
+            # Per-chunk threshold (approximation of global entropy)
+            threshold = grad_abs.mean() + (sensitivity * grad_abs.std())
+            significant_mask = (grad_abs > threshold).to(torch.int16)
+            
+            vote_buffer[i:end].add_(direction * significant_mask)
+            
         return None, grad_scale, None, None, None
 
 class GhostLinear(nn.Module):
@@ -400,8 +402,17 @@ class PrimalTRMCore(nn.Module):
 class GhostTandemQuantFunction(torch.autograd.Function):
     @staticmethod
     def forward(ctx, base_idx, fine_idx, scale, lut, vote_buffer, sensitivity):
-        combined_idx = (base_idx.to(torch.int32) * 256 + fine_idx.to(torch.int32)).long()
-        weights = lut[combined_idx] * scale
+        try:
+            import primal_cuda
+            if base_idx.is_cuda and scale.is_cuda and lut.is_cuda:
+                weights = primal_cuda.forward(base_idx, fine_idx, scale, lut)
+            else:
+                combined_idx = (base_idx.to(torch.int32) * 256 + fine_idx.to(torch.int32)).long()
+                weights = lut[combined_idx] * scale
+        except ImportError:
+            combined_idx = (base_idx.to(torch.int32) * 256 + fine_idx.to(torch.int32)).long()
+            weights = lut[combined_idx] * scale
+            
         ctx.save_for_backward(base_idx, fine_idx, scale)
         ctx.lut = lut
         ctx.vote_buffer = vote_buffer
@@ -411,22 +422,46 @@ class GhostTandemQuantFunction(torch.autograd.Function):
     def backward(ctx, grad_output):
         base_idx, fine_idx, scale = ctx.saved_tensors
         lut = ctx.lut
+        vote_buffer = ctx.vote_buffer
         
-        # Normalize by max() to prevent explosion but preserve relative geometry
-        # [Protocol v6.14] Tightened epsilon so near-zero gradients still apply vote pressure
-        grad_normed = grad_output / (grad_output.abs().max() + 1e-12)
+        # Calculate max for normalization across the WHOLE gradient
+        grad_max = grad_output.abs().max().item() + 1e-12
         
-        # Inject pressure proportionally. 
-        pressure_injection = (grad_normed * 100.0 * scale.sign()).to(torch.int32)
+        try:
+            import primal_cuda
+            if grad_output.is_cuda and base_idx.is_cuda:
+                grad_scale = primal_cuda.backward(
+                    grad_output, base_idx, fine_idx, scale, lut, vote_buffer, float(grad_max)
+                )
+                return None, None, grad_scale, None, None, None
+        except ImportError:
+            pass
+
+        # [Fallback PROTOCOL v6.16: CHUNKED BACKWARD]
+        grad_scale = torch.zeros_like(scale)
+        chunk_size = 4096 
+        out_features = base_idx.size(0)
         
-        # Protect against int16 overflow during violent early training
-        new_votes = torch.clamp(ctx.vote_buffer.to(torch.int32) + pressure_injection, -32760, 32760)
-        ctx.vote_buffer.copy_(new_votes.to(torch.int16))
-        
-        # Scale the gradient for the upstream network
-        combined_idx = (base_idx.to(torch.int32) * 256 + fine_idx.to(torch.int32)).long()
-        grad_scale = (grad_output * lut[combined_idx]).sum(dim=1, keepdim=True)
-        
+        for i in range(0, out_features, chunk_size):
+            end = min(i + chunk_size, out_features)
+            
+            # --- SCALE GRADIENT ---
+            b_chunk = base_idx[i:end].to(torch.int32)
+            f_chunk = fine_idx[i:end].to(torch.int32)
+            c_idx = (b_chunk * 256 + f_chunk).long()
+            
+            g_out = grad_output[i:end]
+            grad_scale[i:end] = (g_out * lut[c_idx]).sum(dim=1, keepdim=True)
+            
+            # --- VOTE INJECTION ---
+            g_normed = g_out / grad_max
+            pressure = (g_normed * 100.0 * scale[i:end].sign()).to(torch.int32)
+            
+            # Update vote buffer in-place
+            current_votes = vote_buffer[i:end].to(torch.int32)
+            new_votes = torch.clamp(current_votes + pressure, -32760, 32760)
+            vote_buffer[i:end].copy_(new_votes.to(torch.int16))
+            
         return None, None, grad_scale, None, None, None
 
 class GhostLinearTandem(nn.Module):
@@ -442,6 +477,8 @@ class GhostLinearTandem(nn.Module):
         
         # Map float bounds to our 16-bit manifold (0 to 65535, center is 32768)
         index_bound = int(bound * 32768)
+        
+        print(f"[GHOST] Init {out_features}x{in_features} ghost layer...")
         
         # Generate random uniform integer indices centered around zero (32768)
         random_combined = torch.randint(
@@ -459,16 +496,13 @@ class GhostLinearTandem(nn.Module):
         self.register_buffer('vote_buffer', torch.zeros(out_features, in_features, dtype=torch.int16))
         self.scale = nn.Parameter(torch.ones(out_features, 1))
         
-        # Cooldown logic (Deprecated in v5.73 but kept for structure)
-        self.register_buffer('cooldown', torch.zeros(out_features, in_features, dtype=torch.int16))
-        
-        # Protocol v5.85: Master Voter State
-        self.register_buffer('block_size_buf', torch.tensor(32, dtype=torch.int32))
-        self.supermajority_threshold = 20 # Protocol v5.98
+        # Protocol v5.98: Settings
+        self.supermajority_threshold = 20 
         
     @property
     def block_size(self):
-        return self.block_size_buf.item()
+        # Default block size, no longer a buffer
+        return 32
         
     @block_size.setter
     def block_size(self, value):

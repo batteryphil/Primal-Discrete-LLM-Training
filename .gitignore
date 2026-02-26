@@ -25,3 +25,11 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Primal Engine Runtime Artifacts
+*.log
+*.json
+*.pyd
+GITHUB_RELEASE/
+__pycache__/
+*.pt.linear_backup

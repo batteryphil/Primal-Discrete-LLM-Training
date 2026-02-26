@@ -10,7 +10,7 @@ from typing import List
 app = FastAPI(title="Trinity Peak Monitoring System")
 
 STATS_FILE = "stats.json"
-LOG_FILE = "training_v5_71.log"
+LOG_FILE = "training_qwen.log"
 
 class StatItem(BaseModel):
     step: int
@@ -56,7 +56,7 @@ async def get_v5_perplexity():
 
 @app.get("/api/stats/project_real")
 async def get_project_real_stats():
-    data = read_json_safe("stats_project_real.json")
+    data = read_json_safe("stats_coder.json")
     if data:
         # Sanitize NaN/Inf for JSON compliance
         clean_data = json.loads(json.dumps(data).replace('NaN', 'null').replace('Infinity', 'null').replace('-Infinity', 'null'))
@@ -93,45 +93,58 @@ async def get_supervisor_state():
         "starvation_patience": 0
     }
 
+@app.get("/api/recovery_status")
+async def get_recovery_status():
+    """Returns the current status of the discrete healing mission."""
+    last_step = 0
+    if os.path.exists("stats_coder.json"):
+        try:
+            with open("stats_coder.json", "r") as f:
+                data = json.load(f)
+                if data: last_step = data[-1]['step']
+        except: pass
+    
+    if last_step < 200:
+        phase = "Stabilization"
+        detail = "Fixing Language Head & Embeddings"
+        peel = "Locked"
+    else:
+        phase = "Layer Peel"
+        unlocked = min(((last_step - 200) // 50 + 1) * 2, 28)
+        detail = f"Harmonic healing active for top {unlocked} layers"
+        peel = f"Unlocked [{28-unlocked}-27]"
+
+    return {
+        "step": last_step,
+        "phase": phase,
+        "detail": detail,
+        "peel": peel,
+        "target": "Qwen2.5-Coder-1.5B PRIME"
+    }
+
 @app.get("/api/stats")
 async def get_stats():
-    """Fallback for legacy dashboard requests."""
-    prime_file = "stats_prime.json"
-    if os.path.exists(prime_file):
-        with open(prime_file, "r") as f:
-            return json.load(f)
+    data = read_json_safe("stats_coder.json")
+    if data:
+        # Sanitize NaN/Inf for JSON compliance
+        clean_data = json.loads(json.dumps(data).replace('NaN', 'null').replace('Infinity', 'null').replace('-Infinity', 'null'))
+        return clean_data
     return []
-
-@app.get("/api/logs/project_real")
-async def get_project_real_logs():
-    return await read_last_lines("training_v5_71.log")
-
-async def read_last_lines(filename, count=100):
-    if not os.path.exists(filename):
-        return {"logs": f"{filename} not found."}
-    try:
-        with open(filename, "r", encoding="utf-8", errors="replace") as f:
-            lines = f.readlines()
-            return {"logs": "".join(lines[-count:])}
-    except Exception as e:
-        return {"logs": f"Error reading {filename}: {str(e)}"}
 
 @app.get("/api/logs")
 async def get_logs():
     if not os.path.exists(LOG_FILE):
         return {"logs": "Log file not found."}
     try:
-        # Get last 100 lines
         with open(LOG_FILE, "r", encoding="utf-8", errors="replace") as f:
             lines = f.readlines()
-            latest_lines = lines[-100:]
-            return {"logs": "".join(latest_lines)}
+            return {"logs": "".join(lines[-100:])}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        return {"logs": f"Error: {str(e)}"}
 
 # Serve static files from dashboard directory
 app.mount("/", StaticFiles(directory="dashboard", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8005)

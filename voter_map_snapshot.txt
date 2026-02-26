@@ -1,6 +1,6 @@
 --- ANTIGRAVITY MANIFOLD REPORT ---
-TIMESTAMP: 2026-02-21 20:20:37
-TRAINING STEP: 6640
+TIMESTAMP: 2026-02-22 09:01:12
+TRAINING STEP: 140
 
 [LATEST WORD SALAD]
 N/A (Generation skipped)
@@ -11,13 +11,13 @@ N/A (Generation skipped)
 
 LAYER: token_emb
 Total Voter Precincts: 1608224
-Active/Near-Consensus: 19241 (1.20%)
+Active/Near-Consensus: 0 (0.00%)
 MAP: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]
 
 LAYER: trm_core.reasoning_gate
 Total Voter Precincts: 196608
-Active/Near-Consensus: 68427 (34.80%)
-MAP: [████████████████████████████████████████]
+Active/Near-Consensus: 0 (0.00%)
+MAP: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]
 
 LAYER: trm_core.refinement_gate
 Total Voter Precincts: 65536

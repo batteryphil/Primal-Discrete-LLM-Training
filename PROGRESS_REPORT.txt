@@ -1,0 +1,75 @@
+# QWEN 1.5B PRIME CONVERSION - MISSION MANIFEST & PROGRESS LOG
+
+================================================================================
+MISSION OBJECTIVE
+================================================================================
+Goal: Convert the 1.5 Billion parameter `Qwen/Qwen2.5-Coder-1.5B-Instruct` model into the Antigravity PRIME discrete format and execute high-fidelity "Answer-Masked" fine-tuning on resource-constrained hardware (GTX 1080 Ti with 11GB VRAM). 
+
+Key Technical Pillars:
+1. Prime-Harmonic Quantization: Shrinking FP16 weights into a 65,536-step rigid lookup table composed of mathematically optimal non-linear intervals tailored to gradient distributions.
+2. Layer Peel Protocol (Night Shift Supervisor v7): Thawing the model layer-by-layer strictly top-down during training to prevent cascading entropy collapse ("avalanche").
+3. Discrete Voting (Antigravity): Gradients do not alter weights. They cast integer "votes" into strictly separated buffers. Only a supermajority flips a weight to its neighboring rigid index.
+
+================================================================================
+CURRENT STATUS & PROGRESS REPORT
+================================================================================
+Date/Time: 2026-02-23 (Initial Report)
+Phase: Phase 2 - Preparations Complete, Ready for Training
+
+[COMPLETED ACTIONS]
+- Core Verification: Reviewed infrastructure logic (`qwen25_prime_wrapper.py`, `qwen25_prime_importer.py`, `qwen25_prime_train.py`, `verify_qwen25_prime.py`).
+- Flaw Detection & Correction: Identified a critical bug where the entire pipeline was pointing to a standard 16-bit Linear Manifold instead of the true Prime-Harmonic Manifold. The old weights were backed up to `qwen25_coder_prime_init.pt.linear_backup`. We corrected the math globally across the suite.
+- Re-Initialization (The Gentrification): Successfully ran `qwen25_prime_importer.py` to deterministically re-map 1.5 billion FP16 weights down to our rigid Prime-Harmonic indices.
+- Quality Control: Ran `verify_qwen25_prime.py` on the newly generated Prime weights. It confirmed structurally sound distribution and proved that the forward pass propagates cleanly (Logits range: [-15.64, 20.62], NO NaNs detected).
+- User Interface / Telemetry: Constructed a brand-new custom terminal monitor (`monitor_qwen.py`) and successfully launched the HTML web dashboard (`trinity_peak.py` moved to port 8005 to avoid LocalClaw conflicts) tailored specifically to track Layer Peel states and discrete healing metrics.
+
+[IMMEDIATE NEXT STEPS]
+1. The user must manually launch the training protocol via terminal: `python qwen25_prime_train.py`.
+2. As soon as the script commences, monitor system VRAM (11GB budget) and ensure the `Base L: ` starts somewhere near 10.0-15.0 and drops predictably as the embeddings stabilize.
+
+================================================================================
+FUTURE LOGS WILL BE APPENDED BELOW
+================================================================================
+
+[2026-02-23 18:55 - PROGRESS UPDATE]
+Current State: Phase 1 (Stabilization)
+Training Step: 2
+Loss: 14.3766 (-0.25 from Step 1)
+Total Voter Flips: 0.103M
+Processing Speed: ~68.8 TPS (Batches/Sec)
+Autonomy Status: Nominal - Night Shift Supervisor active.
+VRAM: 10.8 GB / 11.0 GB (Peak Optimization)
+
+Observations:
+The model has successfully survived the initial "Gentrification" shock. Step 1 loss was high (14.6) as expected, but we already see a clean downward trajectory in Step 2. Transitioning into the stabilization of the Head/Embeddings layer.
+
+Next Milestone: Step 200 (Beginning of Layer Peel Protocol).
+[CRITICAL WARNING - THE AUTOGRAD EXPANSION THREAT]
+Be advised: At exactly Step 200, the Night Shift Supervisor will flip Layer 27 to `requires_grad = True`. This will force PyTorch's Autograd engine to begin caching attention matrices and MLP intermediate activations for that layer, demanding a sudden spike in VRAM. 
+* Currently hovering at 10.8 GB / 11.0 GB. This is a very thin margin. 
+* Contingency: If a CUDA OOM occurs at Step 200, we will immediately implement a Micro-Batch Reduction (e.g. reduce `seq_len` to 384) and proportionately increase gradient accumulation to preserve the math while shrinking the activation tensors.
+
+[2026-02-23 - TRAINING TIMELINE & ESTIMATES]
+The training pipeline is designed to be 100% AUTONOMOUS once `python qwen25_prime_train.py` is launched. 
+
+Autonomy Features:
+* Night Shift Supervisor (V7): Automatically manages the complex Layer Peel protocol without manual intervention.
+* Telemetry: Automatically syncs its real-time stats to the UI server every 30-200 batches.
+* Auto-saving: Drops a snapshot chunk to the hard drive (`qwen25_coder_prime_step_XXX.pt`) every 100 successful steps.
+
+Time Estimates (GTX 1080 Ti - 11GB VRAM):
+Note: 1 Training "Step" = 32 accumulated micro-batches
+
+PHASE 1: THE STABILIZATION (Steps 0 to 200)
+- Goal: Fix extreme mathematical errors in the Language Head and Embeddings exclusively.
+- ETA: ~1.5 to 3 Hours.
+- Why: This is exceptionally fast because layers 0-27 are "locked". Gradients do not need to flow deeply through the model, allowing incredibly fast batch processing.
+
+PHASE 2: THE CASCADE / LAYER PEEL (Steps 200 to 900)
+- Goal: Systematically "heal" 2 layers mathematically every 50 steps, from the top-down. 
+- ETA: ~8 to 14 Hours.
+- Why: As layers "thaw", PyTorch has to compute gradients deeper and deeper into the network. Step 250 (2 layers thawed) will execute much faster than Step 850 (26 layers thawed). 
+
+PHASE 3: DEEP CRYSTALLIZATION (Steps 900+)
+- Goal: Final fine-tuning with 100% of the entire 1.5B parameters unlocked and voting simultaneously.
+- ETA: Can run indefinitely until the underlying Alpaca-Python dataset runs out, but meaningful structural alignment is usually observed after ~4-6 hours holding in Phase 3.
